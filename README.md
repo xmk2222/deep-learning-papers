@@ -1,6 +1,6 @@
-## What to do about finding a ideal job
+# What to do about finding a ideal job
 This is for computer vision positions
-## 1.Relevant Books
+# 1.Relevant Books
 - [ ] 李航 **"统计学习方法"**
 - [ ] 周志华 **"机器学习"**
 - [ ] 何海涛 **"剑指offer"**
@@ -11,8 +11,10 @@ This is for computer vision positions
 - [ ] Ian Goodfellow **"深度学习"**
 - [ ] Jon Bentley **"编程珠玑"**
 
-## 2.Best Papers
-### Classical Network Structures
+# 2.Best Papers
+
+## Classical Network Structures
+
 ##### 2012
 - [ ] AlexNet **"Imagenet classification with deep convolutional neural networks"**
 ##### 2014
@@ -29,14 +31,16 @@ This is for computer vision positions
 ##### 2018
 - [x] DenseNet **"Densely Connected Convolutional Networks"**
 
-### Models
+## Models
+
 ##### 2014
 - [ ] DropOut **"Dropout: a simple way to prevent neural networks from overfitting"**
 ##### 2015
 - [ ] BatchNorm **"Batch normalization: Accelerating deep network training by reducing internal covariate shift"**
 - [ ] Net2Net **"Net2net: Accelerating learning via knowledge transfer"**
 
-### Object Detection
+## Object Detection
+
 ##### 2014
 - [ ] RCNN **"Rich feature hierarchies for accurate object detection and semantic segmentation"**
 - [ ] SPPNet **"Spatial pyramid pooling in deep convolutional networks for visual recognition"**
@@ -48,7 +52,8 @@ This is for computer vision positions
 ##### 2017
 - [ ] **"Mask R-CNN"**
 
-### Optimization
+## Optimization
+
 ##### 2013
 - [ ] Momentum **"On the importance of initialization and momentum in deep learning"**
 ##### 2014
@@ -59,7 +64,8 @@ This is for computer vision positions
 - [ ] Neural Optimizer **"Learning to learn by gradient descent by gradient descent"**
 - [ ] SqueezeNet **"SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and< 1MB model size"**
 
-### Deep Generative Model
+## Deep Generative Model
+
 ##### 2013
 - [ ] VAE **"Auto-encoding variational bayes"**
 ##### 2014
@@ -67,16 +73,19 @@ This is for computer vision positions
 ##### 2015
 - [ ] VAE with attention **"DRAW: A recurrent neural network for image generation"**
 
-### RNN
+## RNN
 
-### Deep Reinforcement Learning
+
+## Deep Reinforcement Learning
+
 ##### 2015
 - [ ] **"Human-level control through deep reinforcement learning"**
 ##### 2016
 - [ ] **"Asynchronous methods for deep reinforcement learning"**
 - [ ] AlphaGo **"Mastering the game of Go with deep neural networks and tree search"**
 
-### Deep Transfer Learning
+## Deep Transfer Learning
+
 
 
 
