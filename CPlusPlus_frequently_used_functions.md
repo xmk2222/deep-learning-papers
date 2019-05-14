@@ -16,6 +16,27 @@ vector<T> newVec(first, last);
 string substr (size_t pos = 0, size_t len = npos) const;
 ```
 
+## heap
+
+make_heap
+
+pop_heap
+
+push_heap
+
+sort_heap
+
+```C++
+int myints[] = {10,20,30,5,15};
+std::vector<int> v(myints,myints+5);
+std::make_heap (v.begin(),v.end());
+std::pop_heap (v.begin(),v.end()); 
+v.pop_back();
+v.push_back(99); 
+std::push_heap (v.begin(),v.end());
+std::sort_heap (v.begin(),v.end());
+```
+
 # Classes
 
 ## string
