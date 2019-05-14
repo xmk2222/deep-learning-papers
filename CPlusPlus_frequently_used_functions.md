@@ -16,6 +16,17 @@ vector<T> newVec(first, last);
 string substr (size_t pos = 0, size_t len = npos) const;
 ```
 
+## string-int convertion
+
+string to int
+```C++
+std::stoi(string str);
+```
+int to string
+```C++
+std::to_string(int n);
+```
+
 ## heap
 
 make_heap
