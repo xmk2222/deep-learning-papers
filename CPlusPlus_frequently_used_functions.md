@@ -14,6 +14,14 @@ vector<T> newVec(first, last);
 
 ```C++
 string substr (size_t pos = 0, size_t len = npos) const;
+
+std::string str="We think in generalities, but we live in details.";
+                                           
+std::string str2 = str.substr (3,5);     // "think"
+
+std::size_t pos = str.find("live");      // position of "live" in str
+
+std::string str3 = str.substr (pos);     // get from "live" to the end
 ```
 
 ## string-int convertion
