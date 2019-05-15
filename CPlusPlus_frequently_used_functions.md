@@ -35,6 +35,16 @@ int to string
 std::to_string(int n);
 ```
 
+## sort
+
+```C++
+void sort (RandomAccessIterator first, RandomAccessIterator last);
+```
+```C++
+void sort (RandomAccessIterator first, RandomAccessIterator last, Compare comp);
+static bool compare(int n1, int n2) {return n1 > n2;}
+```
+
 ## heap
 
 make_heap
