@@ -39,6 +39,12 @@ This is for computer vision positions
 - [ ] BatchNorm **"Batch normalization: Accelerating deep network training by reducing internal covariate shift"**
 - [ ] Net2Net **"Net2net: Accelerating learning via knowledge transfer"**
 
+## Efficient Computation
+##### 2017
+- [ ] Survey **"A Survey of Model Compression and Acceleration for Deep Neural Networks"**
+##### 2018
+- [ ] Survey **"Recent Advances in Efficient Computation of Deep Convolutional Neural Networks"**
+
 ## Object Detection
 
 ##### 2014
