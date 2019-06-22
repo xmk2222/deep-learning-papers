@@ -1,5 +1,4 @@
-# What to do about finding a ideal job
-This is for computer vision positions
+# What should we do to find an ideal job as a deep learning engineer
 # 1.Relevant Books
 - [ ] 李航 **"统计学习方法"**
 - [ ] 周志华 **"机器学习"**
@@ -43,6 +42,8 @@ This is for computer vision positions
 - [ ] Net2Net **"Net2net: Accelerating learning via knowledge transfer"**
 
 ## Efficient Computation
+##### 2015
+- [ ] Deep Compression **"Deep compression: Compressing deep neural network with pruning, trained quantization and huffman coding"**
 ##### 2016
 - [ ] SqueezeNet **"SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size"**
 ##### 2017
@@ -50,6 +51,15 @@ This is for computer vision positions
 - [ ] ShuffleNet **"ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices"**
 ##### 2018
 - [ ] Survey **"Recent Advances in Efficient Computation of Deep Convolutional Neural Networks"**
+
+## Optimization
+
+##### 2013
+- [ ] Momentum **"On the importance of initialization and momentum in deep learning"**
+##### 2014
+- [ ] Adam **"Adam: A method for stochastic optimization"**
+##### 2016
+- [ ] Neural Optimizer **"Learning to learn by gradient descent by gradient descent"**
 
 ## Object Detection
 
@@ -63,18 +73,6 @@ This is for computer vision positions
 - [ ] R-FCN **"R-FCN: Object Detection via Region-based Fully Convolutional Networks"**
 ##### 2017
 - [ ] **"Mask R-CNN"**
-
-## Optimization
-
-##### 2013
-- [ ] Momentum **"On the importance of initialization and momentum in deep learning"**
-##### 2014
-- [ ] Adam **"Adam: A method for stochastic optimization"**
-##### 2015
-- [ ] Deep Compression **"Deep compression: Compressing deep neural network with pruning, trained quantization and huffman coding"**
-##### 2016
-- [ ] Neural Optimizer **"Learning to learn by gradient descent by gradient descent"**
-- [ ] SqueezeNet **"SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and< 1MB model size"**
 
 ## Deep Generative Model
 
