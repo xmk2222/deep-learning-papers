@@ -28,6 +28,8 @@ This is for computer vision positions
 - [ ] Attention **"Show, Attend and Tell Neural Image Caption Generation with Visual Attention"**
 ##### 2017
 - [ ] Xception **"Xception: Deep Learning with Depthwise Separable Convolutions"**
+- [ ] MobileNet **"MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications"**
+- [ ] ResNeXt **"Aggregated Residual Transformations for Deep Neural Networks"**
 ##### 2018
 - [x] DenseNet **"Densely Connected Convolutional Networks"**
 
@@ -35,13 +37,17 @@ This is for computer vision positions
 
 ##### 2014
 - [ ] DropOut **"Dropout: a simple way to prevent neural networks from overfitting"**
+- [ ] Network in Network **"Network In Network"**
 ##### 2015
 - [ ] BatchNorm **"Batch normalization: Accelerating deep network training by reducing internal covariate shift"**
 - [ ] Net2Net **"Net2net: Accelerating learning via knowledge transfer"**
 
 ## Efficient Computation
+##### 2016
+- [ ] SqueezeNet **"SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size"**
 ##### 2017
 - [ ] Survey **"A Survey of Model Compression and Acceleration for Deep Neural Networks"**
+- [ ] ShuffleNet **"ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices"**
 ##### 2018
 - [ ] Survey **"Recent Advances in Efficient Computation of Deep Convolutional Neural Networks"**
 
