@@ -15,11 +15,12 @@
 ## Classical Network Structures
 
 ##### 2012
-- [ ] AlexNet **"Imagenet classification with deep convolutional neural networks"**
+- [x] AlexNet [**"Imagenet classification with deep convolutional neural networks"**](#AlexNet)
 ##### 2014
-- [ ] VGGNet [**"Very deep convolutional networks for large-scale image recognition"**](#VGGNet)
+- [x] VGGNet [**"Very deep convolutional networks for large-scale image recognition"**](#VGGNet)
+- [ ] Network in Network **"Network In Network"**
 ##### 2015
-- [ ] GoogLeNet **"Going deeper with convolutions"**
+- [x] GoogLeNet [**"Going deeper with convolutions"**](#GoogLeNet)
 - [x] ResNet **"Deep residual learning for image recognition"**
 - [ ] Inception-v3 **"Rethinking the Inception Architecture for Computer Vision"**
 ##### 2016
@@ -36,7 +37,6 @@
 
 ##### 2014
 - [ ] DropOut **"Dropout: a simple way to prevent neural networks from overfitting"**
-- [ ] Network in Network **"Network In Network"**
 ##### 2015
 - [ ] BatchNorm **"Batch normalization: Accelerating deep network training by reducing internal covariate shift"**
 - [ ] Net2Net **"Net2net: Accelerating learning via knowledge transfer"**
@@ -103,18 +103,33 @@
 # 3.Papers Summaries
 ## Classical Network Structures
 
-##### 2012
 ### AlexNet 
+
 **"Imagenet classification with deep convolutional neural networks"**(https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)
-##### 2014
+
+
 ### VGGNet 
 [**"Very deep convolutional networks for large-scale image recognition"**](https://arxiv.org/pdf/1409.1556.pdf)
+
 [Review: VGGNet](https://medium.com/coinmonks/paper-review-of-vggnet-1st-runner-up-of-ilsvlc-2014-image-classification-d02355543a11)
+
 1. The use of stack 3×3 filters is effient than of 5×5 or 7×7 filters
 2. A deep net with small filters outperforms a shallow net with larger filters
 3. Combining the outputs of several models by averaging their soft-max class posteriors improves the performance due to complementarity of the models
-##### 2015
+
+
 ### GoogLeNet 
+
 **"Going deeper with convolutions"**
+
+[Review](https://medium.com/coinmonks/paper-review-of-googlenet-inception-v1-winner-of-ilsvlc-2014-image-classification-c2b3565a64e7)
+
+1. 1×1 convolution is used as a dimension reduction module to reduce the computation. By reducing the computation bottleneck, depth and width can be increased
+2. When image’s coming in, different sizes of convolutions as well as max pooling are tried. Then different kinds of features are extracted.
+3. Global average pooling is used nearly at the end of network by averaging each feature map from 7×7 to 1×1, and authors found that a move from FC layers to average pooling improved the top-1 accuracy by about 0.6%.
+4. Auxiliary classifiers for combating gradient vanishing problem, also providing regularization.
+5. besides the network design, the other stuffs like ensemble methods, multi-scale and multi-crop approaches are also essential to reduce the error rate
+
 ### Inception-v4
+
 提出了一种新的inception模型，并提出了一种inception与residual connection结合的模型
