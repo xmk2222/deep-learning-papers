@@ -7,8 +7,7 @@
 - [ ] scutan90 **"DeepLearning-500-questions"** https://github.com/scutan90/DeepLearning-500-questions
 - [ ] Stephen Prata **"C++ Primer Plus"**
 - [ ] **"数据结构"**
-- [ ] Ian Goodfellow **"深度学习"**
-- [ ] Jon Bentley **"编程珠玑"**
+- [ ] Ian Goodfellow [**"深度学习"**](https://exacity.github.io/deeplearningbook-chinese/)
 
 # 2.Best Papers
 
@@ -18,7 +17,7 @@
 - [x] AlexNet [**"Imagenet classification with deep convolutional neural networks"**](#AlexNet)
 ##### 2014
 - [x] VGGNet [**"Very deep convolutional networks for large-scale image recognition"**](#VGGNet)
-- [ ] Network in Network **"Network In Network"**
+- [ ] Network in Network [**"Network In Network"**](#NIN)
 ##### 2015
 - [x] GoogLeNet [**"Going deeper with convolutions"**](#GoogLeNet)
 - [x] ResNet **"Deep residual learning for image recognition"**
@@ -111,11 +110,16 @@
 ### VGGNet 
 [**"Very deep convolutional networks for large-scale image recognition"**](https://arxiv.org/pdf/1409.1556.pdf)
 
-[Review: VGGNet](https://medium.com/coinmonks/paper-review-of-vggnet-1st-runner-up-of-ilsvlc-2014-image-classification-d02355543a11)
+[Review](https://medium.com/coinmonks/paper-review-of-vggnet-1st-runner-up-of-ilsvlc-2014-image-classification-d02355543a11)
 
 1. The use of stack 3×3 filters is effient than of 5×5 or 7×7 filters
 2. A deep net with small filters outperforms a shallow net with larger filters
 3. Combining the outputs of several models by averaging their soft-max class posteriors improves the performance due to complementarity of the models
+
+### NIN
+[]
+
+[Review](https://towardsdatascience.com/review-nin-network-in-network-image-classification-69e271e499ee)
 
 
 ### GoogLeNet 
