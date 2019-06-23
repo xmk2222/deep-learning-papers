@@ -17,7 +17,7 @@
 ##### 2012
 - [ ] AlexNet **"Imagenet classification with deep convolutional neural networks"**
 ##### 2014
-- [ ] VGGNet **"Very deep convolutional networks for large-scale image recognition"**
+- [ ] VGGNet [**"Very deep convolutional networks for large-scale image recognition"**](#VGGNet)
 ##### 2015
 - [ ] GoogLeNet **"Going deeper with convolutions"**
 - [x] ResNet **"Deep residual learning for image recognition"**
@@ -100,5 +100,17 @@
 
 
 ---------------------------
+# 3.Papers Summaries
+## Classical Network Structures
+
+##### 2012
+### AlexNet 
+**"Imagenet classification with deep convolutional neural networks"**
+##### 2014
+### VGGNet 
+[**"Very deep convolutional networks for large-scale image recognition"**](https://medium.com/coinmonks/paper-review-of-vggnet-1st-runner-up-of-ilsvlc-2014-image-classification-d02355543a11)
+##### 2015
+### GoogLeNet 
+**"Going deeper with convolutions"**
 ### Inception-v4
 提出了一种新的inception模型，并提出了一种inception与residual connection结合的模型
