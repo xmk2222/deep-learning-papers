@@ -105,10 +105,14 @@
 
 ##### 2012
 ### AlexNet 
-**"Imagenet classification with deep convolutional neural networks"**
+**"Imagenet classification with deep convolutional neural networks"**(https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)
 ##### 2014
 ### VGGNet 
-[**"Very deep convolutional networks for large-scale image recognition"**](https://medium.com/coinmonks/paper-review-of-vggnet-1st-runner-up-of-ilsvlc-2014-image-classification-d02355543a11)
+[**"Very deep convolutional networks for large-scale image recognition"**](https://arxiv.org/pdf/1409.1556.pdf)
+[Review: VGGNet](https://medium.com/coinmonks/paper-review-of-vggnet-1st-runner-up-of-ilsvlc-2014-image-classification-d02355543a11)
+1. The use of stack 3×3 filters is effient than of 5×5 or 7×7 filters
+2. A deep net with small filters outperforms a shallow net with larger filters
+3. Combining the outputs of several models by averaging their soft-max class posteriors improves the performance due to complementarity of the models
 ##### 2015
 ### GoogLeNet 
 **"Going deeper with convolutions"**
