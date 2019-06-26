@@ -97,7 +97,6 @@
 
 
 
-
 ---------------------------
 # 3.Papers Summaries
 ## Classical Network Structures
@@ -122,7 +121,9 @@
 [Review](https://towardsdatascience.com/review-nin-network-in-network-image-classification-69e271e499ee)
 
 1. Proposed a new network structure--mlpconv layer
-![mlpconv](https://github.com/xmk2222/deep-learning-papers/blob/master/mlpconv.png?raw=true)
+
+  ![mlpconv](./images/NIN/mlpconv.png)
+
 2. Usually, fully connected layers are used at the end of network, however, they are prone to overfitting. This article used global average pooling layer as the last layer of the network, it is more native to the convolution structure by enforcing correspondences between feature maps and categories, and could prevent over-fitting.
 
 
@@ -132,11 +133,17 @@
 
 [Review](https://medium.com/coinmonks/paper-review-of-googlenet-inception-v1-winner-of-ilsvlc-2014-image-classification-c2b3565a64e7)
 
+![inception_naive](./images/GoogleNet/inception_module_naive.png)
+
+![inception_module](./images/GoogleNet/Inception_module.png)
+
 1. 1×1 convolution is used as a dimension reduction module to reduce the computation. By reducing the computation bottleneck, depth and width can be increased
 2. When image’s coming in, different sizes of convolutions as well as max pooling are tried. Then different kinds of features are extracted.
 3. Global average pooling is used nearly at the end of network by averaging each feature map from 7×7 to 1×1, and authors found that a move from FC layers to average pooling improved the top-1 accuracy by about 0.6%.
 4. Auxiliary classifiers for combating gradient vanishing problem, also providing regularization.
 5. besides the network design, the other stuffs like ensemble methods, multi-scale and multi-crop approaches are also essential to reduce the error rate
+
+![googlenet](./images/GoogleNet/googlenet.png)
 
 ### Inception-v4
 
