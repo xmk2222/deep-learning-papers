@@ -122,6 +122,7 @@
 [Review](https://towardsdatascience.com/review-nin-network-in-network-image-classification-69e271e499ee)
 
 1. Proposed a new network structure--mlpconv layer
+![mlpconv](https://github.com/xmk2222/deep-learning-papers/blob/master/mlpconv.png?raw=true)
 2. Usually, fully connected layers are used at the end of network, however, they are prone to overfitting. This article used global average pooling layer as the last layer of the network, it is more native to the convolution structure by enforcing correspondences between feature maps and categories, and could prevent over-fitting.
 
 
