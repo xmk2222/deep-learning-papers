@@ -17,7 +17,7 @@
 - [x] AlexNet [**"Imagenet classification with deep convolutional neural networks"**](#AlexNet)
 ##### 2014
 - [x] VGGNet [**"Very deep convolutional networks for large-scale image recognition"**](#VGGNet)
-- [ ] Network in Network [**"Network In Network"**](#NIN)
+- [x] Network in Network [**"Network In Network"**](#NIN)
 ##### 2015
 - [x] GoogLeNet [**"Going deeper with convolutions"**](#GoogLeNet)
 - [x] ResNet **"Deep residual learning for image recognition"**
@@ -117,9 +117,12 @@
 3. Combining the outputs of several models by averaging their soft-max class posteriors improves the performance due to complementarity of the models
 
 ### NIN
-[]
+[**"Network In Network"**](https://arxiv.org/abs/1312.4400)
 
 [Review](https://towardsdatascience.com/review-nin-network-in-network-image-classification-69e271e499ee)
+
+1. Proposed a new network structure--mlpconv layer
+2. Usually, fully connected layers are used at the end of network, however, they are prone to overfitting. This article used global average pooling layer as the last layer of the network, it is more native to the convolution structure by enforcing correspondences between feature maps and categories, and could prevent over-fitting.
 
 
 ### GoogLeNet 
