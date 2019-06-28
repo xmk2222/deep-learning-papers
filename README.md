@@ -25,10 +25,12 @@
 ##### 2016
 - [x] Inception-v4 [**"Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning"**](#Inception-v4)
 - [ ] Attention **"Show, Attend and Tell Neural Image Caption Generation with Visual Attention"**
+- [ ] SqueezeNet **"SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size"**
 ##### 2017
 - [ ] Xception **"Xception: Deep Learning with Depthwise Separable Convolutions"**
 - [x] MobileNet [**"MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications"**](#MobileNet)
 - [ ] ResNeXt **"Aggregated Residual Transformations for Deep Neural Networks"**
+- [ ] ShuffleNet **"ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices"**
 ##### 2018
 - [x] DenseNet **"Densely Connected Convolutional Networks"**
 - [x] MobileNetV2 [**"MobileNetV2: Inverted Residuals and Linear Bottlenecks"**](#MobileNetV2)
@@ -45,12 +47,10 @@
 ## Efficient Computation
 ##### 2015
 - [ ] Deep Compression **"Deep compression: Compressing deep neural network with pruning, trained quantization and huffman coding"**
-##### 2016
-- [ ] SqueezeNet **"SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size"**
 ##### 2017
 - [ ] Survey **"A Survey of Model Compression and Acceleration for Deep Neural Networks"**
-- [ ] ShuffleNet **"ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices"**
 ##### 2018
+
 - [ ] Survey **"Recent Advances in Efficient Computation of Deep Convolutional Neural Networks"**
 
 ## Optimization
@@ -152,13 +152,31 @@
 
 [Review](https://towardsdatascience.com/review-mobilenetv1-depthwise-separable-convolution-light-weight-model-a382df364b69)
 
-1.
+1.Depthwise separable convolution
+
+![DepthWiseConv](./images/MobileNet/DepthWiseConv.png)
+
+2.Width multiplier α for thinner models, Width Multiplier α is introduced to **control the input width of a layer**
+
+3.Resolution Multiplier ρ is introduced to **control the input image resolution**of the network
+
+
+
+
 
 ### MobileNetV2
 [**"MobileNetV2: Inverted Residuals and Linear Bottlenecks"**](https://arxiv.org/abs/1801.04381)
 
 [Review](https://towardsdatascience.com/review-mobilenetv2-light-weight-model-image-classification-8febb490e61c)
 
+1.Convolutional Blocks
+
+![conv block](./images/MobileNetV2/ConvBlocks.png)
+
+2. Overall Architecture
+
+   ![architecture](./images/MobileNetV2/architecture.png)
+
 ### Inception-v4
 
-提出了一种新的inception模型，并提出了一种inception与residual connection结合的模型
+
