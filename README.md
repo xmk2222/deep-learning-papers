@@ -27,10 +27,12 @@
 - [ ] Attention **"Show, Attend and Tell Neural Image Caption Generation with Visual Attention"**
 ##### 2017
 - [ ] Xception **"Xception: Deep Learning with Depthwise Separable Convolutions"**
-- [ ] MobileNet **"MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications"**
+- [x] MobileNet [**"MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications"**](#MobileNet)
 - [ ] ResNeXt **"Aggregated Residual Transformations for Deep Neural Networks"**
 ##### 2018
 - [x] DenseNet **"Densely Connected Convolutional Networks"**
+- [x] MobileNetV2 [**"MobileNetV2: Inverted Residuals and Linear Bottlenecks"**](#MobileNetV2)
+- [ ] NASNet **"Learning Transferable Architectures for Scalable Image Recognition"**
 
 ## Models
 
@@ -144,6 +146,18 @@
 5. besides the network design, the other stuffs like ensemble methods, multi-scale and multi-crop approaches are also essential to reduce the error rate
 
 ![googlenet](./images/GoogleNet/googlenet.png)
+
+### MobileNet
+[**"MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications"**](https://arxiv.org/abs/1704.04861)
+
+[Review](https://towardsdatascience.com/review-mobilenetv1-depthwise-separable-convolution-light-weight-model-a382df364b69)
+
+1.
+
+### MobileNetV2
+[**"MobileNetV2: Inverted Residuals and Linear Bottlenecks"**](https://arxiv.org/abs/1801.04381)
+
+[Review](https://towardsdatascience.com/review-mobilenetv2-light-weight-model-image-classification-8febb490e61c)
 
 ### Inception-v4
 
