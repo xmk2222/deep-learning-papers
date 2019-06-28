@@ -147,6 +147,7 @@
 
 ![googlenet](./images/GoogleNet/googlenet.png)
 
+
 ### MobileNet
 [**"MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications"**](https://arxiv.org/abs/1704.04861)
 
@@ -161,9 +162,6 @@
 3.Resolution Multiplier ρ is introduced to **control the input image resolution**of the network
 
 
-
-
-
 ### MobileNetV2
 [**"MobileNetV2: Inverted Residuals and Linear Bottlenecks"**](https://arxiv.org/abs/1801.04381)
 
@@ -175,7 +173,7 @@
 
 2. Overall Architecture
 
-   ![architecture](./images/MobileNetV2/architecture.png)
+![architecture](./images/MobileNetV2/architecture.png)
 
 ### Inception-v4
 
