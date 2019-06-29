@@ -151,19 +151,37 @@
 ### MobileNet
 [**"MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications"**](https://arxiv.org/abs/1704.04861)
 
+[Keras implementation](https://github.com/keras-team/keras-applications/blob/master/keras_applications/mobilenet.py)
+
 [Review](https://towardsdatascience.com/review-mobilenetv1-depthwise-separable-convolution-light-weight-model-a382df364b69)
 
 1.Depthwise separable convolution
 
 ![DepthWiseConv](./images/MobileNet/DepthWiseConv.png)
 
-2.Width multiplier α for thinner models, Width Multiplier α is introduced to **control the input width of a layer**
+Standard convolution has the computatianal cost of:
+
+$$
+D_K /dot D_K /dot M /dot N /dot D_F /dot D_F
+$$
+
+where $D_K$ is the size of the kernel, $D_F$is the size of the input feature map, $M$ and $N$ is the number of input and out put channels.
+
+Depthwise saparable convolutions cost:
+
+$$
+D_K /dot D_K /dot M /dot D_F /dot D_F + M /dot N /dot D_F /dot D_F
+$$
+
+2.Width Multiplier α is introduced to **control the input width of a layer**, for a given layer and width multiplier α, tαhe number of input channels M becomes αM and the number of output channels N bocomes αN
 
 3.Resolution Multiplier ρ is introduced to **control the input image resolution**of the network
 
 
 ### MobileNetV2
 [**"MobileNetV2: Inverted Residuals and Linear Bottlenecks"**](https://arxiv.org/abs/1801.04381)
+
+[Keras implementation](https://github.com/keras-team/keras-applications/blob/master/keras_applications/mobilenet_v2.py)
 
 [Review](https://towardsdatascience.com/review-mobilenetv2-light-weight-model-image-classification-8febb490e61c)
 
