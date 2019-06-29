@@ -178,8 +178,12 @@ $$
 
 3.Resolution Multiplier ρ is introduced to **control the input image resolution**of the network
 
+3.Overall architecture
+
+![architecture](./images/MobileNet/architecture.png)
 
 ### MobileNetV2
+
 [**"MobileNetV2: Inverted Residuals and Linear Bottlenecks"**](https://arxiv.org/abs/1801.04381)
 
 [Keras implementation](https://github.com/keras-team/keras-applications/blob/master/keras_applications/mobilenet_v2.py)
