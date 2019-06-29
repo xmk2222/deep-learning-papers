@@ -162,7 +162,7 @@
 Standard convolution has the computatianal cost of:
 
 $$
-D_K /dot D_K /dot M /dot N /dot D_F /dot D_F
+D_K \cdot D_K \cdot M \cdot N \cdot D_F \cdot D_F
 $$
 
 where $D_K$ is the size of the kernel, $D_F$is the size of the input feature map, $M$ and $N$ is the number of input and out put channels.
@@ -170,7 +170,7 @@ where $D_K$ is the size of the kernel, $D_F$is the size of the input feature map
 Depthwise saparable convolutions cost:
 
 $$
-D_K /dot D_K /dot M /dot D_F /dot D_F + M /dot N /dot D_F /dot D_F
+D_K \cdot D_K \cdot M \cdot D_F \cdot D_F + M \cdot N \cdot D_F \cdot D_F
 $$
 
 2.Width Multiplier α is introduced to **control the input width of a layer**, for a given layer and width multiplier α, tαhe number of input channels M becomes αM and the number of output channels N bocomes αN
