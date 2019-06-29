@@ -159,8 +159,9 @@
 
 ![DepthWiseConv](./images/MobileNet/DepthWiseConv.png)
 
-Standard convolution has the computatianal cost of:
+(This figure is a little confusing that the last 1x1 conv actually is a ordinary 1x1 conv layer that has depth of M, and there are N such filters)
 
+Standard convolution has the computatianal cost of:
 $$
 D_K \cdot D_K \cdot M \cdot N \cdot D_F \cdot D_F
 $$
@@ -188,6 +189,8 @@ $$
 1.Convolutional Blocks
 
 ![conv block](./images/MobileNetV2/ConvBlocks.png)
+
+The first 1x1 Conv in MobileNetV2 is used for expanding input depth (by 6 default).
 
 2. Overall Architecture
 
