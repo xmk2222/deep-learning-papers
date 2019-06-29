@@ -2,12 +2,19 @@
 #include<algorithm> // sort(a.begin(), a.end(), greater<int>()) reverse(a.begin(), a.end())
 #include<cmath> // pow(double x, double y)
 #include<limits.h> // INT_MAX, INT_MIN
-#include<vector> //push_back()
-#include<string> //substr(pos, len), count(str.begin(), str.end(), ch)
-#include<set> //insert()
+#include<vector> //push_back(), myvec.erase(pos_iter), myvec.erase(start_iter, end_iter)
+// pair<class T, class T>, mypair.first, mypair.second
+#include<list> //push_back(), push_front(), mylist.sort(), mylist.insert(pos_iter, ele_num, ele), mylist.erase(iter), mylist.erase(iter_first, iter_last)
+#include<deque> //push_back(), push_front()
 #include<queue> //push(), pop()
-#include<map>
+// priority_queue<>, first element is the greatest, top(), push(), pop()
+#include<stack> //top(), push(), pop()
+#include<string> //substr(pos, len), count(str.begin(), str.end(), ch)
+#include<set> //insert(), erase(), count(), find()
+#include<map> //count(), erase(key), insert({key, element})
+#include<unordered_set>
 #include<unordered_map>
+#include<iterator>
 using namespace std;
 
 struct ListNode {
