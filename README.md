@@ -41,7 +41,7 @@
 ##### 2014
 - [ ] DropOut **"Dropout: a simple way to prevent neural networks from overfitting"**
 ##### 2015
-- [x] BatchNorm [**"Batch normalization: Accelerating deep network training by reducing internal covariate shift"**] (#BatchNorm)
+- [x] BatchNorm [**"Batch normalization: Accelerating deep network training by reducing internal covariate shift"**](#BatchNorm)
 - [ ] Net2Net **"Net2net: Accelerating learning via knowledge transfer"**
 
 ## Efficient Computation
