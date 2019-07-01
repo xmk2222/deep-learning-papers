@@ -182,7 +182,7 @@ $$
 
 ![architecture](./images/MobileNet/architecture.png)
 
-### MobileNetV2
+### MobileNetV2D
 
 [**"MobileNetV2: Inverted Residuals and Linear Bottlenecks"**](https://arxiv.org/abs/1801.04381)
 
@@ -214,6 +214,29 @@ The first 1x1 Conv in MobileNetV2 is used for expanding input depth (by 6 defaul
 
 The distribution of each layer's input chages during training, as the parameters of the previous layers change. This slows down the training by requiring lower learning rate and careful parameter initialization, and makes it notoriously hard to train with saturating nonlinearities. That is **internal covariate shift**!
 
-2. 
+2. How  does batch norm work?
 
+batch normalization normalizes the output of a previous activation layer by subtracting the batch mean and dividing by the batch standard deviation.
+
+batch normalization adds two trainable parameters to each layer, so the normalized output is multiplied by a “standard deviation” parameter (gamma) and add a “mean” parameter (beta). In other words, batch normalization lets SGD do the denormalization by changing only these two weights for each activation, instead of losing the stability of the network by changing all the weights
+
+![algorithm1](./images/BatchNorm/algorithm.png)
+
+![algorithm2](./images/BatchNorm/algorithm2.png)
+
+
+
+> There is a subtle difference between training and inferencing, During training, it is normalized by 
+
+> $\sigma_B^2 \gets \frac{1}{m}\sum_i^m(x_i-\mu_B)^2$
+
+> Then when testing, it is normalized by **unbiased variance estimate**:
+
+> $Var[x] \gets \frac{m}{m-1}E_B[\sigma_B^2]$
+
+3. Advantages 
+   1. Batch normalization reduces the amount by what hidden unit values shift arouad (covariance shift )
+   2. Batch normalization has a beneficial effect on the gradient flow through the etwork, by reducing the dependence of gradients on the scale of the parameters or for their initial values. This allow us to use much highter learning rates without the risk of divergence.
+   3. Batch normalization regularizes the model and reduces the need for dropout.
+   4. Batch normalized makes it possible to use saturating nonlinearities by preventing the network form getting stuck in the saturated modes.
 
