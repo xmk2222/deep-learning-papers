@@ -41,7 +41,7 @@
 ##### 2014
 - [ ] DropOut **"Dropout: a simple way to prevent neural networks from overfitting"**
 ##### 2015
-- [ ] BatchNorm **"Batch normalization: Accelerating deep network training by reducing internal covariate shift"**
+- [x] BatchNorm [**"Batch normalization: Accelerating deep network training by reducing internal covariate shift"**] (#BatchNorm)
 - [ ] Net2Net **"Net2net: Accelerating learning via knowledge transfer"**
 
 ## Efficient Computation
@@ -201,5 +201,19 @@ The first 1x1 Conv in MobileNetV2 is used for expanding input depth (by 6 defaul
 ![architecture](./images/MobileNetV2/architecture.png)
 
 ### Inception-v4
+
+### BatchNorm
+
+[**"Batch normalization: Accelerating deep network training by reducing internal covariate shift"**](https://arxiv.org/pdf/1502.03167v3.pdf)
+
+[Review: Batch normalization in Neural Networks](https://towardsdatascience.com/batch-normalization-in-neural-networks-1ac91516821c)
+
+[Review: Batch Normalization — What the hey?](https://gab41.lab41.org/batch-normalization-what-the-hey-d480039a9e3b)
+
+1. Why we use batch normalization?
+
+The distribution of each layer's input chages during training, as the parameters of the previous layers change. This slows down the training by requiring lower learning rate and careful parameter initialization, and makes it notoriously hard to train with saturating nonlinearities. That is **internal covariate shift**!
+
+2. 
 
 
