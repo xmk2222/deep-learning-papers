@@ -2,11 +2,11 @@
 
 # Content
 
-[1. Books](#1.Books)
+[1. Books](#1books)
 
-[2. Papers](#2.Papers)
+[2. Papers](#2papers)
 
-[3. Papers Summaries](#3. Papers Summaries)
+[3. Papers Summaries](#3papers-summaries)
 
 # 1.Books
 - [ ] 李航 **"统计学习方法"**
