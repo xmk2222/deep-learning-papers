@@ -8,6 +8,8 @@
 
 [3. Papers Summaries](#3papers-summaries)
 
+[4. Concept Explanation](#4concept-explanation)
+
 # 1.Books
 - [ ] 李航 **"统计学习方法"**
 - [ ] 周志华 **"机器学习"**
@@ -231,8 +233,6 @@ batch normalization adds two trainable parameters to each layer, so the normaliz
 
 ![algorithm2](./images/BatchNorm/algorithm2.png)
 
-
-
 > There is a subtle difference between training and inferencing, During training, it is normalized by 
 
 > $\sigma_B^2 \gets \frac{1}{m}\sum_i^m(x_i-\mu_B)^2$
@@ -247,3 +247,54 @@ batch normalization adds two trainable parameters to each layer, so the normaliz
    3. Batch normalization regularizes the model and reduces the need for dropout.
    4. Batch normalized makes it possible to use saturating nonlinearities by preventing the network form getting stuck in the saturated modes.
 
+# 4. Concept Explanation
+
+## Content
+[Gradient Explode and Vanish](#Gradient-Explode-and-Vanish)
+
+## Explanation
+### Gradient Explode and Vanish
+
+1. What is gradient explosion or vanishing
+
+These problems arise during training of a deep network when the gradients are being propagated back in time all the way to the initial layer. The gradients coming from the deeper layers have to go through continuous matrix multiplications because of the the chain rule, and as they approach the earlier layers, if they have small values (<1), they shrink exponentially until they vanish and make it impossible for the model to learn , this is the vanishing gradient problem. While on the other hand if they have large values (>1) they get larger and eventually blow up and crash the model, this is the exploding gradient problem.
+
+The difficulty that arises is that when the parameter gradient is very large, a gradient descent parameter update could throw the parameters very far, into a region where the objective function is larger, undoing much of the work that had been done to reach the current solution. And when the parameter tradient is very small, the back propagation won't work at all.
+
+2. Why does these happen
+
+  - Poor choice of learning rate that results in large weight updates.
+  - Poor choice of data preparation, allowing large differences in the target variable.
+  - Poor choice of loss function, allowing the calculation of large error values.
+
+2. Dealing with exploding gradient
+
+Exploding gradients can be avoided in general by careful configuration of the network model, such as choice of small learning rate, scaled target variables, and a standard loss function. Nevertheless, exploding gradients may still be an issue with recurrent networks with a large number of input time steps.
+
+There is a good method to prevent gradient explosion--gradient clipping, which place a predefined threshold on the gradients to prevent it from getting too large.
+
+Keras supports gradient clipping on each optimization algorithm, with the same scheme applied to all layers in the model.
+
+Gradient norm scaling involves changing the derivatives of the loss function to have a given vector norm when the L2 vector norm (sum of the squared values) of the gradient vector exceeds a threshold value.
+
+```
+# configure sgd with gradient norm clipping
+opt = SGD(lr=0.01, momentum=0.9, clipnorm=1.0)
+```
+
+Gradient value clipping involves clipping the derivatives of the loss function to have a given value if a gradient value is less than a negative threshold or more than the positive threshold.
+
+```
+# configure sgd with gradient value clipping
+opt = SGD(lr=0.01, momentum=0.9, clipvalue=0.5)
+```
+
+3. Dealing with Vanishing Gradients
+
+One simple solution for dealing with vanishing gradient is the identity RNN architecture; where the network weights are initialized to the identity matrix and the activation functions are all set to ReLU and this ends up encouraging the network computations to stay close to the identity function.
+
+An even more popular and widely used solution is the Long Short-Term Memory architecture (LSTM)
+
+#### Reference:
+[How to Avoid Exploding Gradients With Gradient Clipping](https://machinelearningmastery.com/how-to-avoid-exploding-gradients-in-neural-networks-with-gradient-clipping/)
+[The curious case of the vanishing & exploding gradient](https://medium.com/learn-love-ai/the-curious-case-of-the-vanishing-exploding-gradient-bf58ec6822eb)
