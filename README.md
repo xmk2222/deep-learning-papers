@@ -6,9 +6,7 @@
 
 [2. Papers](#2papers)
 
-[3. Papers Summaries](#3papers-summaries)
-
-[4. Concept Explanation](#4concept-explanation)
+[3. Concept Explanation](#3concept-explanation)
 
 # 1.Books
 - [ ] 李航 **"统计学习方法"**
@@ -109,13 +107,14 @@
 
 
 ---------------------------
-# 3.Papers Summaries
+# Papers Summaries
 ## Classical Network Structures
 
 ### AlexNet 
 
 **"Imagenet classification with deep convolutional neural networks"**(https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)
 
+[back to top](#content)
 
 ### VGGNet 
 [**"Very deep convolutional networks for large-scale image recognition"**](https://arxiv.org/pdf/1409.1556.pdf)
@@ -125,6 +124,8 @@
 1. The use of stack 3×3 filters is effient than of 5×5 or 7×7 filters
 2. A deep net with small filters outperforms a shallow net with larger filters
 3. Combining the outputs of several models by averaging their soft-max class posteriors improves the performance due to complementarity of the models
+
+[back to top](#content)
 
 ### NIN
 [**"Network In Network"**](https://arxiv.org/abs/1312.4400)
@@ -137,6 +138,7 @@
 
 2. Usually, fully connected layers are used at the end of network, however, they are prone to overfitting. This article used global average pooling layer as the last layer of the network, it is more native to the convolution structure by enforcing correspondences between feature maps and categories, and could prevent over-fitting.
 
+[back to top](#content)
 
 ### GoogLeNet 
 
@@ -156,6 +158,7 @@
 
 ![googlenet](./images/GoogleNet/googlenet.png)
 
+[back to top](#content)
 
 ### MobileNet
 [**"MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications"**](https://arxiv.org/abs/1704.04861)
@@ -191,6 +194,8 @@ $$
 
 ![architecture](./images/MobileNet/architecture.png)
 
+[back to top](#content)
+
 ### MobileNetV2D
 
 [**"MobileNetV2: Inverted Residuals and Linear Bottlenecks"**](https://arxiv.org/abs/1801.04381)
@@ -208,6 +213,8 @@ The first 1x1 Conv in MobileNetV2 is used for expanding input depth (by 6 defaul
 2. Overall Architecture
 
 ![architecture](./images/MobileNetV2/architecture.png)
+
+[back to top](#content)
 
 ### Inception-v4
 
@@ -247,7 +254,9 @@ batch normalization adds two trainable parameters to each layer, so the normaliz
    3. Batch normalization regularizes the model and reduces the need for dropout.
    4. Batch normalized makes it possible to use saturating nonlinearities by preventing the network form getting stuck in the saturated modes.
 
-# 4. Concept Explanation
+[back to top](#content)
+
+# 4.Concept Explanation
 
 ## Content
 [Gradient Explode and Vanish](#Gradient-Explode-and-Vanish)
@@ -296,5 +305,9 @@ One simple solution for dealing with vanishing gradient is the identity RNN arch
 An even more popular and widely used solution is the Long Short-Term Memory architecture (LSTM)
 
 #### Reference:
+
 [How to Avoid Exploding Gradients With Gradient Clipping](https://machinelearningmastery.com/how-to-avoid-exploding-gradients-in-neural-networks-with-gradient-clipping/)
+
 [The curious case of the vanishing & exploding gradient](https://medium.com/learn-love-ai/the-curious-case-of-the-vanishing-exploding-gradient-bf58ec6822eb)
+
+[back to top](#content)
