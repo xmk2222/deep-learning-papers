@@ -108,18 +108,17 @@
 
 ---------------------------
 # Papers Summaries
-## Classical Network Structures
 
-### AlexNet 
+## AlexNet 
 
 #### Reference
 
 [1][**"Imagenet classification with deep convolutional neural networks"**](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)
 
-[back to top](#content)
+[**back to top**](#content)
 
 
-### VGGNet 
+## VGGNet 
 
 1. The use of stack 3×3 filters is effient than of 5×5 or 7×7 filters
 
@@ -136,10 +135,7 @@
 [back to top](#content)
 
 
-### NIN
-[**"Network In Network"**](https://arxiv.org/abs/1312.4400)
-
-[Review](https://towardsdatascience.com/review-nin-network-in-network-image-classification-69e271e499ee)
+## NIN
 
 1. Proposed a new network structure--mlpconv layer
 
@@ -147,13 +143,16 @@
 
 2. Usually, fully connected layers are used at the end of network, however, they are prone to overfitting. This article used global average pooling layer as the last layer of the network, it is more native to the convolution structure by enforcing correspondences between feature maps and categories, and could prevent over-fitting.
 
-[back to top](#content)
+#### Reference
 
-### GoogLeNet 
+[1][**"Network In Network"**](https://arxiv.org/abs/1312.4400)
 
-[**"Going deeper with convolutions"**](https://www.cs.unc.edu/~wliu/papers/GoogLeNet.pdf)
+[2][Review: NIN — Network In Network (Image Classification)](https://towardsdatascience.com/review-nin-network-in-network-image-classification-69e271e499ee)
 
-[Review](https://medium.com/coinmonks/paper-review-of-googlenet-inception-v1-winner-of-ilsvlc-2014-image-classification-c2b3565a64e7)
+[**back to top**](#content)
+
+
+## GoogLeNet 
 
 ![inception_naive](./images/GoogleNet/inception_module_naive.png)
 
@@ -167,14 +166,16 @@
 
 ![googlenet](./images/GoogleNet/googlenet.png)
 
-[back to top](#content)
+#### Reference
 
-### MobileNet
-[**"MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications"**](https://arxiv.org/abs/1704.04861)
+[1][**"Going deeper with convolutions"**](https://www.cs.unc.edu/~wliu/papers/GoogLeNet.pdf)
 
-[Keras implementation](https://github.com/keras-team/keras-applications/blob/master/keras_applications/mobilenet.py)
+[2][Review: GoogLeNet (Inception v1)— Winner of ILSVRC 2014 (Image Classification)](https://medium.com/coinmonks/paper-review-of-googlenet-inception-v1-winner-of-ilsvlc-2014-image-classification-c2b3565a64e7)
 
-[Review](https://towardsdatascience.com/review-mobilenetv1-depthwise-separable-convolution-light-weight-model-a382df364b69)
+[**back to top**](#content)
+
+
+## MobileNet
 
 1.Depthwise separable convolution
 
@@ -203,15 +204,18 @@ $$
 
 ![architecture](./images/MobileNet/architecture.png)
 
-[back to top](#content)
+#### Reference
 
-### MobileNetV2D
+[1][**"MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications"**](https://arxiv.org/abs/1704.04861)
 
-[**"MobileNetV2: Inverted Residuals and Linear Bottlenecks"**](https://arxiv.org/abs/1801.04381)
+[2][Keras implementation](https://github.com/keras-team/keras-applications/blob/master/keras_applications/mobilenet.py)
 
-[Keras implementation](https://github.com/keras-team/keras-applications/blob/master/keras_applications/mobilenet_v2.py)
+[3][Review: MobileNetV1 — Depthwise Separable Convolution (Light Weight Model)](https://towardsdatascience.com/review-mobilenetv1-depthwise-separable-convolution-light-weight-model-a382df364b69)
 
-[Review](https://towardsdatascience.com/review-mobilenetv2-light-weight-model-image-classification-8febb490e61c)
+[**back to top**](#content)
+
+
+## MobileNetV2D
 
 1.Convolutional Blocks
 
@@ -223,17 +227,18 @@ The first 1x1 Conv in MobileNetV2 is used for expanding input depth (by 6 defaul
 
 ![architecture](./images/MobileNetV2/architecture.png)
 
-[back to top](#content)
+#### Reference
 
-### Inception-v4
+[1][**"MobileNetV2: Inverted Residuals and Linear Bottlenecks"**](https://arxiv.org/abs/1801.04381)
 
-### BatchNorm
+[2][Keras implementation](https://github.com/keras-team/keras-applications/blob/master/keras_applications/mobilenet_v2.py)
 
-[**"Batch normalization: Accelerating deep network training by reducing internal covariate shift"**](https://arxiv.org/pdf/1502.03167v3.pdf)
+[3][Review: MobileNetV2 — Light Weight Model (Image Classification)](https://towardsdatascience.com/review-mobilenetv2-light-weight-model-image-classification-8febb490e61c)
 
-[Review: Batch normalization in Neural Networks](https://towardsdatascience.com/batch-normalization-in-neural-networks-1ac91516821c)
+[**back to top**](#content)
 
-[Review: Batch Normalization — What the hey?](https://gab41.lab41.org/batch-normalization-what-the-hey-d480039a9e3b)
+
+## BatchNorm
 
 1. Why we use batch normalization?
 
@@ -263,15 +268,23 @@ batch normalization adds two trainable parameters to each layer, so the normaliz
    3. Batch normalization regularizes the model and reduces the need for dropout.
    4. Batch normalized makes it possible to use saturating nonlinearities by preventing the network form getting stuck in the saturated modes.
 
-[back to top](#content)
+#### Reference
+
+[1][**"Batch normalization: Accelerating deep network training by reducing internal covariate shift"**](https://arxiv.org/pdf/1502.03167v3.pdf)
+
+[2][Review: Batch normalization in Neural Networks](https://towardsdatascience.com/batch-normalization-in-neural-networks-1ac91516821c)
+
+[3][Review: Batch Normalization — What the hey?](https://gab41.lab41.org/batch-normalization-what-the-hey-d480039a9e3b)
+
+[**back to top**](#content)
 
 # 3.Concept Explanation
 
 ## Content
 [Gradient Explode and Vanish](#Gradient-Explode-and-Vanish)
 
-## Explanation
-### Gradient Explode and Vanish
+--------------------
+## Gradient Explode and Vanish
 
 1. What is gradient explosion or vanishing
 
@@ -323,10 +336,10 @@ Finally, batch normalization layers can also resolve the issue. As stated before
 
 #### Reference:
 
-[How to Avoid Exploding Gradients With Gradient Clipping](https://machinelearningmastery.com/how-to-avoid-exploding-gradients-in-neural-networks-with-gradient-clipping/)
+[1][How to Avoid Exploding Gradients With Gradient Clipping](https://machinelearningmastery.com/how-to-avoid-exploding-gradients-in-neural-networks-with-gradient-clipping/)
 
-[The curious case of the vanishing & exploding gradient](https://medium.com/learn-love-ai/the-curious-case-of-the-vanishing-exploding-gradient-bf58ec6822eb)
+[2][The curious case of the vanishing & exploding gradient](https://medium.com/learn-love-ai/the-curious-case-of-the-vanishing-exploding-gradient-bf58ec6822eb)
 
-[The Vanishing Gradient Problem](https://towardsdatascience.com/the-vanishing-gradient-problem-69bf08b15484)
+[3][The Vanishing Gradient Problem](https://towardsdatascience.com/the-vanishing-gradient-problem-69bf08b15484)
 
-[back to top](#content)
+[**back to top**](#content)
