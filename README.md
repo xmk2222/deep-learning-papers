@@ -1,5 +1,14 @@
 # What should we do to find an ideal job as a deep learning engineer
-# 1.Relevant Books
+
+# Content
+
+[1. Books](#Books to Learn)
+
+[2. Papers](#Papers)
+
+[3. Papers Summaries](#Papers Summaries)
+
+# 1.Books
 - [ ] 李航 **"统计学习方法"**
 - [ ] 周志华 **"机器学习"**
 - [ ] 何海涛 **"剑指offer"**
@@ -9,7 +18,7 @@
 - [ ] **"数据结构"**
 - [ ] Ian Goodfellow [**"深度学习"**](https://exacity.github.io/deeplearningbook-chinese/)
 
-# 2.Best Papers
+# 2.Papers
 
 ## Classical Network Structures
 
@@ -83,8 +92,6 @@
 - [ ] GAN **"Generative adversarial nets"**
 ##### 2015
 - [ ] VAE with attention **"DRAW: A recurrent neural network for image generation"**
-
-## RNN
 
 
 ## Deep Reinforcement Learning
