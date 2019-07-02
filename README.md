@@ -256,7 +256,7 @@ batch normalization adds two trainable parameters to each layer, so the normaliz
 
 [back to top](#content)
 
-# 4.Concept Explanation
+# 3.Concept Explanation
 
 ## Content
 [Gradient Explode and Vanish](#Gradient-Explode-and-Vanish)
@@ -270,13 +270,19 @@ These problems arise during training of a deep network when the gradients are be
 
 The difficulty that arises is that when the parameter gradient is very large, a gradient descent parameter update could throw the parameters very far, into a region where the objective function is larger, undoing much of the work that had been done to reach the current solution. And when the parameter tradient is very small, the back propagation won't work at all.
 
-2. Why does these happen
+2. Why does gradient explosion happen
 
   - Poor choice of learning rate that results in large weight updates.
   - Poor choice of data preparation, allowing large differences in the target variable.
   - Poor choice of loss function, allowing the calculation of large error values.
 
-2. Dealing with exploding gradient
+3. Why does gradient vanishing happen
+
+Certain activation functions, like the sigmoid function, squishes a large input space into a small input space between 0 and 1. Therefore, a large change in the input of the sigmoid function will cause a small change in the output. Hence, the derivative becomes small.
+
+When n hidden layers use an activation like the sigmoid function, n small derivatives are multiplied together. Thus, the gradient decreases exponentially as we propagate down to the initial layers.
+
+4. Dealing with exploding gradient
 
 Exploding gradients can be avoided in general by careful configuration of the network model, such as choice of small learning rate, scaled target variables, and a standard loss function. Nevertheless, exploding gradients may still be an issue with recurrent networks with a large number of input time steps.
 
@@ -298,16 +304,20 @@ Gradient value clipping involves clipping the derivatives of the loss function t
 opt = SGD(lr=0.01, momentum=0.9, clipvalue=0.5)
 ```
 
-3. Dealing with Vanishing Gradients
+5. Dealing with Vanishing Gradients
 
-One simple solution for dealing with vanishing gradient is the identity RNN architecture; where the network weights are initialized to the identity matrix and the activation functions are all set to ReLU and this ends up encouraging the network computations to stay close to the identity function.
+The simplest solution is to use other activation functions, such as ReLU, which doesn’t cause a small derivative.
 
-An even more popular and widely used solution is the Long Short-Term Memory architecture (LSTM)
+Residual networks are another solution, as they provide residual connections straight to earlier layers
+
+Finally, batch normalization layers can also resolve the issue. As stated before, the problem arises when a large input space is mapped to a small one, causing the derivatives to disappear. Batch normalization reduces this problem by simply normalizing the input so |x| doesn’t reach the outer edges of the sigmoid function. 
 
 #### Reference:
 
 [How to Avoid Exploding Gradients With Gradient Clipping](https://machinelearningmastery.com/how-to-avoid-exploding-gradients-in-neural-networks-with-gradient-clipping/)
 
 [The curious case of the vanishing & exploding gradient](https://medium.com/learn-love-ai/the-curious-case-of-the-vanishing-exploding-gradient-bf58ec6822eb)
+
+[The Vanishing Gradient Problem](https://towardsdatascience.com/the-vanishing-gradient-problem-69bf08b15484)
 
 [back to top](#content)
