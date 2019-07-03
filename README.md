@@ -30,7 +30,7 @@
 ##### 2015
 - [x] GoogLeNet [**"Going deeper with convolutions"**](#GoogLeNet)
 - [x] ResNet **"Deep residual learning for image recognition"**
-- [ ] Inception-v3 **"Rethinking the Inception Architecture for Computer Vision"**
+- [ ] Inception-v3 [**"Rethinking the Inception Architecture for Computer Vision"**](#InceptionV3)
 ##### 2016
 - [x] Inception-v4 [**"Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning"**](#Inception-v4)
 - [ ] Attention **"Show, Attend and Tell Neural Image Caption Generation with Visual Attention"**
@@ -178,10 +178,61 @@
 
 [**back to top**](#content)
 
+## InceptionV2
+
+1. Factorizing Convolutions with Large Filter Size
+
+In theory, we can **replace any n x n convolution by a 1 x n convolution followed by a n x 1 convolution** and the computational cost saving increases dramatically as n grows.
+
+In practice, **it is found that employing this factorization does not work well on early layers, but it fives very good results on medium grid-size.**
+
+![moduleA](./images/InceptionV2/moduleA.png)
+
+![moduleB](./images/InceptionV2/moduleB.png)
+
+![moduleC](./images/InceptionV2/moduleC.png)
+
+2. Utility of Auxiliary Classifiers
+
+The auxiliary classifiers act as **relularizer**.
+
+![auxiliary](./images/InceptionV2/auxiliary.png)
+
+3. Efficient Grid Size Reduction
+
+**Conventionally**, such as AlexNet and VGGNet, the feature map downsizing is done by max pooling. But the drawback is either **too greedy by max pooling followed by conv layer**, or **too expensive by conv layer followed by max pooling**. Here, an efficient grid size reduction is proposed as follows:
+
+![grid](./images/InceptionV2/grid.png)
+
+With the efficient grid size reduction, **320 feature maps** are done by **conv with stride 2**. **320 feature maps** are obtained by **max pooling**. And these 2 sets of feature maps are **concatenated as 640 feature maps** and go to the next level of inception module.
+
+**Less expensive and still efficient network** is achieved by this efficient grid size reduction.
+
+4. Overall Architecture
+
+![architecture](./images/InceptionV2/architecture.png)
+
+5. General Design Principles
+   1. **Avoid representational bottlenecks, especially early in the network.** One should avoid bottlenecks with extreme compression. In general, the representation size should gently decrease. Theoretically, information content can not be assessed merely by the dimensionality of the representation as it discards important factors like correlation structure, the dimensional merely provides a rough estimate of information content.
+   2. **Higher dimensional representations are easier to process locally within a network.** Increasing the activation per tile in a network allows for more disentangled features. The resulting networks will train faster.
+   3. **Spatial aggregation can be done over lower dimensional embeddings without much or any loss in representational power.** The strong correlation between adjacent units results in much less loss of information during dimension reduction.
+   4. **Balance the width and depth of the network.** Increasing both the width and depth of the network can contribute to higher quality network.
+
+#### Reference 
+
+[1] [Rethinking the Inception Architecture for Computer Vision](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Szegedy_Rethinking_the_Inception_CVPR_2016_paper.pdf)
+
+[2] [Keras implement](https://github.com/keras-team/keras-applications/blob/master/keras_applications/inception_v3.py)
+
+[3] [Pytorch implement](https://github.com/pytorch/vision/blob/master/torchvision/models/inception.py)
+
+[4] [Review: Inception-v3 — 1st Runner Up (Image Classification) in ILSVRC 2015](https://medium.com/@sh.tsang/review-inception-v3-1st-runner-up-image-classification-in-ilsvrc-2015-17915421f77c)
+
+[**back to top**](#content)
 
 ## MobileNet
 
-1.Depthwise separable convolution
+1. Depthwise separable convolution
 
 ![DepthWiseConv](./images/MobileNet/DepthWiseConv.png)
 
@@ -200,11 +251,11 @@ $$
 D_K \cdot D_K \cdot M \cdot D_F \cdot D_F + M \cdot N \cdot D_F \cdot D_F
 $$
 
-2.Width Multiplier α is introduced to **control the input width of a layer**, for a given layer and width multiplier α, tαhe number of input channels M becomes αM and the number of output channels N bocomes αN
+2. Width Multiplier α is introduced to **control the input width of a layer**, for a given layer and width multiplier α, tαhe number of input channels M becomes αM and the number of output channels N bocomes αN
 
-3.Resolution Multiplier ρ is introduced to **control the input image resolution**of the network
+3. Resolution Multiplier ρ is introduced to **control the input image resolution**of the network
 
-3.Overall architecture
+4. Overall architecture
 
 ![architecture](./images/MobileNet/architecture.png)
 
@@ -221,7 +272,7 @@ $$
 
 ## MobileNetV2
 
-1.Convolutional Blocks
+1. Convolutional Blocks
 
 ![conv block](./images/MobileNetV2/ConvBlocks.png)
 
