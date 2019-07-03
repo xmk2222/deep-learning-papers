@@ -174,11 +174,13 @@
 
 [1][**"Going deeper with convolutions"**](https://www.cs.unc.edu/~wliu/papers/GoogLeNet.pdf)
 
-[2][Review: GoogLeNet (Inception v1)— Winner of ILSVRC 2014 (Image Classification)](https://medium.com/coinmonks/paper-review-of-googlenet-inception-v1-winner-of-ilsvlc-2014-image-classification-c2b3565a64e7)
+[2][Pytorch implement](https://github.com/pytorch/vision/blob/master/torchvision/models/inception.py)
+
+[3][Review: GoogLeNet (Inception v1)— Winner of ILSVRC 2014 (Image Classification)](https://medium.com/coinmonks/paper-review-of-googlenet-inception-v1-winner-of-ilsvlc-2014-image-classification-c2b3565a64e7)
 
 [**back to top**](#content)
 
-## InceptionV2
+## InceptionV3
 
 1. Factorizing Convolutions with Large Filter Size
 
