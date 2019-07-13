@@ -96,11 +96,32 @@
 
 ## Deep Reinforcement Learning
 
+##### 2013
+
+- [ ] **"Playing atari with deep reinforcement learning"**
+
 ##### 2015
+
 - [ ] **"Human-level control through deep reinforcement learning"**
+- [ ] **"Continuous control with deep reinforcement learning"**
 ##### 2016
 - [ ] **"Asynchronous methods for deep reinforcement learning"**
 - [ ] AlphaGo **"Mastering the game of Go with deep neural networks and tree search"**
+- [ ] **"Deep reinforcement learning with double q-learning"**
+
+##### 2017
+
+- [ ] **"Deep reinforcement learning: An overview"**
+- [ ] **"Target-driven visual navigation in indoor scenes using deep reinforcement learning"**
+- [ ] **"Deep reinforcement learning for robotic manipulation with asynchronous off-policy updates"**
+- [ ] **"Playing FPS games with deep reinforcement learning"**
+
+##### 2018
+
+- [ ] **"Rainbow: Combining improvements in deep reinforcement learning"**
+- [ ] **"Deep reinforcement learning that matters"**
+
+
 
 ## Deep Transfer Learning
 
