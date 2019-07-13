@@ -338,9 +338,100 @@ batch normalization adds two trainable parameters to each layer, so the normaliz
 # 3.Concept Explanation
 
 ## Content
+[Loss Function](#loss-function)
+
+[Optimizers](#optimizers)
+
 [Gradient Explode and Vanish](#Gradient-Explode-and-Vanish)
 
---------------------
+## Loss Function
+
+#### Mean Squared Error
+
+$$
+MSE = \frac{1}{n} \sum_{i=1}^n (y_i-\hat{y}_i)^2
+$$
+
+#### Mean Absolute Error
+
+$$
+MSE = \frac{1}{n} \sum_{i=1}^n |y_i-\hat{y}_i|
+$$
+
+*L1 loss is more robust to outliers, but its derivatives are not continuous, making it inefficient to find the solution. L2 loss is sensitive to outliers, but gives a more stable and closed form solution (by setting its derivative to 0.)*
+
+#### Mean Absolute Percentage Error 
+
+#### Mean Squared Logarithmic Error
+
+#### Squared Hinge 
+
+#### Hinge
+
+#### Huber
+
+$$
+L_\delta = \left\{\begin{array}{lr}
+	\frac{1}{2}(y-\hat{y})^2\quad &if|(y-\hat{y}| < \delta)\\
+	\delta(y-\hat{y}) - \frac{1}{2}\delta\quad&otherwise
+	\end{array}
+\right.
+$$
+
+*Typically used for regression. It’s less sensitive to outliers than the MSE as it treats error as square only inside an interval.*
+
+#### Categorical Hinge 
+
+#### Logcosh
+
+#### Categorical Crossentropy 
+
+In binary classification
+$$
+-(ylog(p) + (1-y)log(1-p))
+$$
+if M > 2(i.e.  multi-class classification)
+$$
+-\sum_{c=1}^M y_clog(p_c)
+$$
+
+
+#### Sparse Categorical Crossentropy
+
+#### Binary Crossentropy 
+
+#### Kullback-Leibler Divergence
+
+#### Poisson
+
+#### Cosine Proximity
+
+[**back to contents**](#contents)
+
+### Optimizers
+
+#### Adadelta
+
+#### Adagrad
+
+#### Adam
+
+#### Conjugate Gradients
+
+#### BFGS
+
+#### Momentum
+
+#### Nesterov Momentum
+
+#### Newton's Method
+
+#### RMSProp
+
+#### SGD
+
+
+
 ## Gradient Explode and Vanish
 
 1. What is gradient explosion or vanishing
@@ -351,9 +442,9 @@ The difficulty that arises is that when the parameter gradient is very large, a 
 
 2. Why does gradient explosion happen
 
-  - Poor choice of learning rate that results in large weight updates.
-  - Poor choice of data preparation, allowing large differences in the target variable.
-  - Poor choice of loss function, allowing the calculation of large error values.
+- Poor choice of learning rate that results in large weight updates.
+- Poor choice of data preparation, allowing large differences in the target variable.
+- Poor choice of loss function, allowing the calculation of large error values.
 
 3. Why does gradient vanishing happen
 
@@ -393,10 +484,13 @@ Finally, batch normalization layers can also resolve the issue. As stated before
 
 #### Reference:
 
-[1][How to Avoid Exploding Gradients With Gradient Clipping](https://machinelearningmastery.com/how-to-avoid-exploding-gradients-in-neural-networks-with-gradient-clipping/)
+[1] [How to Avoid Exploding Gradients With Gradient Clipping](https://machinelearningmastery.com/how-to-avoid-exploding-gradients-in-neural-networks-with-gradient-clipping/)
 
-[2][The curious case of the vanishing & exploding gradient](https://medium.com/learn-love-ai/the-curious-case-of-the-vanishing-exploding-gradient-bf58ec6822eb)
+[2] [The curious case of the vanishing & exploding gradient](https://medium.com/learn-love-ai/the-curious-case-of-the-vanishing-exploding-gradient-bf58ec6822eb)
 
-[3][The Vanishing Gradient Problem](https://towardsdatascience.com/the-vanishing-gradient-problem-69bf08b15484)
+[3] [The Vanishing Gradient Problem](https://towardsdatascience.com/the-vanishing-gradient-problem-69bf08b15484)
 
-[**back to top**](#content)
+[**back to contents**](#content)
+
+
+
