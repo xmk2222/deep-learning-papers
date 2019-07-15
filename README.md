@@ -191,6 +191,24 @@
 
 ![googlenet](./images/GoogleNet/googlenet.png)
 
+#### Questions
+
+- inception 结构的优点
+
+  文章认为，通过1x1, 3x3, 5x5并列最后拼接的结构，可以让模型同时感受到多尺度的特征。
+
+- 1x1卷积的作用
+
+  作用是对feature的通道数进行降维，可以大幅度减少模型的运算量，实际上这种分解方式可以通过low-rank来解释，用两个卷积层来等效一个卷积，但大大降低了运算量
+
+- 预测为什么使用global average pooling
+
+  相比全连接层，先通过global average pooling再连接Dense层或直接激活可以大大降低运算量，因为一个模型的最后一层FC往往参数量十分巨大，而且论文证明使用global average pooling的效果也略微更好一点
+
+- 辅助分类器的作用
+
+  对抗梯度消失问题，同时有一定的正则化作用
+
 #### Reference
 
 [1][**"Going deeper with convolutions"**](https://www.cs.unc.edu/~wliu/papers/GoogLeNet.pdf)
@@ -207,7 +225,7 @@
 
 In theory, we can **replace any n x n convolution by a 1 x n convolution followed by a n x 1 convolution** and the computational cost saving increases dramatically as n grows.
 
-In practice, **it is found that employing this factorization does not work well on early layers, but it fives very good results on medium grid-size.**
+In practice, **it is found that employing this factorization does not work well on early layers, but it gives very good results on medium grid-size.**
 
 ![moduleA](./images/InceptionV2/moduleA.png)
 
@@ -241,6 +259,19 @@ With the efficient grid size reduction, **320 feature maps** are done by **conv 
    3. **Spatial aggregation can be done over lower dimensional embeddings without much or any loss in representational power.** The strong correlation between adjacent units results in much less loss of information during dimension reduction.
    4. **Balance the width and depth of the network.** Increasing both the width and depth of the network can contribute to higher quality network.
 
+#### Questions
+
+- 相比googleNet有哪些改进
+
+  - 用两个相连的3x3卷积代替5x5卷积，降低了运算复杂度。
+  - 通过low-rank分解，将nxn的卷积分解为两个1xn和nx1的卷积，降低了模型的运算复杂度。
+  - 通过stride=2的卷积和avg_pool的filter concat实现feature降维，是一种折中的解决方案。
+  - 证明了辅助分类器的正则化作用
+
+- 有什么缺点
+
+  过于宽且深度不同的Inception block会大大降低模型的训练以及预测速度
+
 #### Reference 
 
 [1] [Rethinking the Inception Architecture for Computer Vision](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Szegedy_Rethinking_the_Inception_CVPR_2016_paper.pdf)
@@ -250,6 +281,34 @@ With the efficient grid size reduction, **320 feature maps** are done by **conv 
 [3] [Pytorch implement](https://github.com/pytorch/vision/blob/master/torchvision/models/inception.py)
 
 [4] [Review: Inception-v3 — 1st Runner Up (Image Classification) in ILSVRC 2015](https://medium.com/@sh.tsang/review-inception-v3-1st-runner-up-image-classification-in-ilsvrc-2015-17915421f77c)
+
+[**back to top**](#content)
+
+## InceptionV4
+
+1. It is studied that whether the Inception itself can be made more efficient by making it deeper and wider.
+
+   In order to optimize the training speed, **the layer sizes was tuned carefully to balance the computation between the various model sub-networks**.
+
+2. Since the residual connections are of inherent importance for  training very deep architectures. **it is natural to replace the filter concatenation stage of the Inception architecture with residual connections.**
+
+   **Inception-Resnet-v1 was training much faster, but reached slightly worse final accuracy than Inception-v3.** 
+
+   If the number of filters exceeded 1000, the residual variants started to exhibit instabilities, and the network just “died” early during training. This could be prevented, neither by lowering the learning rate, nor by adding an extra BN to this layer. However, scaling down the residuals before adding them to the previous layer activation seemed to stabilize the training.
+
+   Two-phase training is also suggested, where the first "warm-up" phase is done with very low learning rate, followed by a second phase with high learning rate.
+
+#### Questions
+
+- 有什么改进
+  - 微调inception结构来弥补其在运算速度上的劣势
+  - 改用residual结构来提高模型训练的速度
+
+#### Reference
+
+[1] [[Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning](https://www.aaai.org/ocs/index.php/AAAI/AAAI17/paper/download/14806/14311)
+
+[2] [Keras Implementation](https://github.com/keras-team/keras-applications/blob/master/keras_applications/inception_resnet_v2.py)
 
 [**back to top**](#content)
 
@@ -282,6 +341,16 @@ $$
 
 ![architecture](./images/MobileNet/architecture.png)
 
+#### Questions
+
+- 请简要介绍MobileNet
+
+  MobileNet是一种轻量级神经网络模型，它通过Depthwise separable convolution的方式大大降低了运算量。DW卷积的原理是对输入的每一通道分离，分别用一个filter进行卷积操作，得到一个feature map，之后所有的feature map再通过一个1x1PW卷积进行通道变换，解决DW卷积导致的通道之间信息交流不畅的问题。
+
+- 与传统卷积的运算量对比
+
+  假定输入为$D_k \times D_k \times M$的tensor，输出通道数为N，传统卷积的运算量为$D_K \cdot D_K \cdot M \cdot N \cdot D_F \cdot D_F$, DW卷积的运算量为$D_K \cdot D_K \cdot M  \cdot D_F \cdot D_F$, PW卷积的运算量为$M \cdot N \cdot D_F \cdot D_F$.
+
 #### Reference
 
 [1][**"MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications"**](https://arxiv.org/abs/1704.04861)
@@ -295,15 +364,41 @@ $$
 
 ## MobileNetV2
 
-1. Convolutional Blocks
+1. Linear Bottlenecks
+
+Deep networks only have the power of a linear classifier on the non-zero volume part of the output domain, on the other hand, when ReLU collapses the channel, it inevitably loses information in that channel.
+
+	- if the manifold of interest remains non-zero volume after ReLU transformation, it corresponds to a linear transformation.
+	- ReLU is capable of preserving complete information about the input manifold, but only if the input manifold lies in a low-dimensional subspace of the input space.
+
+Assuming the manifold of interest is low-dimensional we can capture this by inserting linear bottleneck layers into the convolutional blocks. Experimental evidence suggests that **using linear layers is crucial as it prevents non-linearities from destroying too much information**.
+
+2. Inverted residuals
+
+![Inverted](./images/MobileNetV2/inverted.png)
+
+$h \cdot w \cdot k \cdot t (k + d^2 + k')$
+
+3. Convolutional Blocks
 
 ![conv block](./images/MobileNetV2/ConvBlocks.png)
 
 The first 1x1 Conv in MobileNetV2 is used for expanding input depth (by 6 default).
 
-2. Overall Architecture
+4. Overall Architecture
 
 ![architecture](./images/MobileNetV2/architecture.png)
+
+#### Questions
+
+- V2相比V1有哪些改进
+
+  1. 采用inverted residual结构，在block中第一个1x1conv和DW conv之间进行通道扩大以提取更多特征，并在stride=1的block最后采用与ResNet类似的相加结构。
+  2. 为避免ReLU对特征的破坏，在residual block的相加之前的1x1conv采用线性激活
+
+- 为什么使用线性激活
+
+  文章认为网络的激活函数会产生一份信息的副本，且此副本存在某种低维子空间表示，因此可以对通道进行降维，但是当维度较低时非线性激活会产生较大的信息损失。因此文章先将通道数扩大，再进行激活，而最后通道缩小时则采用线性激活以避免信息损失。
 
 #### Reference
 
