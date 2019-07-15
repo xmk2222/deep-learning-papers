@@ -29,10 +29,10 @@
 - [x] Network in Network [**"Network In Network"**](#NIN)
 ##### 2015
 - [x] GoogLeNet [**"Going deeper with convolutions"**](#GoogLeNet)
-- [x] ResNet **"Deep residual learning for image recognition"**
+- [ ] ResNet **"Deep residual learning for image recognition"**
 - [ ] Inception-v3 [**"Rethinking the Inception Architecture for Computer Vision"**](#InceptionV3)
 ##### 2016
-- [x] Inception-v4 [**"Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning"**](#Inception-v4)
+- [ ] Inception-v4 [**"Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning"**](#Inception-v4)
 - [ ] Attention **"Show, Attend and Tell Neural Image Caption Generation with Visual Attention"**
 - [ ] SqueezeNet **"SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size"**
 ##### 2017
@@ -41,9 +41,15 @@
 - [ ] ResNeXt **"Aggregated Residual Transformations for Deep Neural Networks"**
 - [ ] ShuffleNet **"ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices"**
 ##### 2018
-- [x] DenseNet **"Densely Connected Convolutional Networks"**
-- [x] MobileNetV2 [**"MobileNetV2: Inverted Residuals and Linear Bottlenecks"**](#MobileNetV2)
+- [ ] DenseNet **"Densely Connected Convolutional Networks"**
+- [ ] MobileNetV2 [**"MobileNetV2: Inverted Residuals and Linear Bottlenecks"**](#MobileNetV2)
 - [ ] NASNet **"Learning Transferable Architectures for Scalable Image Recognition"**
+- [ ] ShuffleNetV2 **"ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design"**
+
+##### 2019
+
+- [ ] MobileNetV3 **"Searching for MobileNetV3"**
+- [ ] MnasNet **"MnasNet: Platform-Aware Neural Architecture Search for Mobile"**
 
 ## Models
 
@@ -120,12 +126,6 @@
 
 - [ ] **"Rainbow: Combining improvements in deep reinforcement learning"**
 - [ ] **"Deep reinforcement learning that matters"**
-
-
-
-## Deep Transfer Learning
-
-
 
 ---------------------------
 # Papers Summaries
