@@ -415,7 +415,7 @@ The first 1x1 Conv in MobileNetV2 is used for expanding input depth (by 6 defaul
 
 1. Why we use batch normalization?
 
-The distribution of each layer's input chages during training, as the parameters of the previous layers change. This slows down the training by requiring lower learning rate and careful parameter initialization, and makes it notoriously hard to train with saturating nonlinearities. That is **internal covariate shift**!
+The distribution of each layer's input changes during training, as the parameters of the previous layers change. This slows down the training by requiring lower learning rate and careful parameter initialization, and makes it notoriously hard to train with saturating nonlinearities. That is **internal covariate shift**!
 
 2. How  does batch norm work?
 
@@ -436,10 +436,35 @@ batch normalization adds two trainable parameters to each layer, so the normaliz
 > $Var[x] \gets \frac{m}{m-1}E_B[\sigma_B^2]$
 
 3. Advantages 
-   1. Batch normalization reduces the amount by what hidden unit values shift arouad (covariance shift )
-   2. Batch normalization has a beneficial effect on the gradient flow through the etwork, by reducing the dependence of gradients on the scale of the parameters or for their initial values. This allow us to use much highter learning rates without the risk of divergence.
+   1. Batch normalization reduces the amount by what hidden unit values shift around (covariance shift )
+   2. Batch normalization has a beneficial effect on the gradient flow through the network, by reducing the dependence of gradients on the scale of the parameters or for their initial values. This allow us to use much higher learning rates without the risk of divergence.
    3. Batch normalization regularizes the model and reduces the need for dropout.
    4. Batch normalized makes it possible to use saturating nonlinearities by preventing the network form getting stuck in the saturated modes.
+
+#### Questions
+
+- BN解决什么问题
+
+  模型训练时，层与层之间存在高度耦合性，当前一层的参数更新后，当前层的输入的分布便发生改变，这增加了训练的难度，需要更小的学习率和初始化策略。对于类似sigmoid之类存在饱和区的激活函数来说这个问题更加严重。
+
+  BN的作用就是在模型的层与层之间进行归一化，具体的操作是对每一mini-batch，在每一特征维度上进行归一化， 使其满足均值为0，方差为1的分布。
+
+  然而这样做会导致数据失去部分其原本的表达能力，落入sigmoid或tanh的线性激活区。因此增加了两个参数$\gamma, \beta$进行线性变换$Z_j = \gamma_j\hat{Z_j}+\beta_j$, 当$\gamma^2=\sigma^2, \beta=\mu$时是一个原始分布的等价变换。同时对于sgd来说BN层的训练参数限定为$\gamma$和$\beta$，增加了模型的稳定性。
+
+- 预测阶段BN怎么产生作用
+
+  保留训练时每个batch的均值与方差，在预测时计算整个数据均值与方差的**无偏估计**，作为预测数据的归一化参数。
+
+- BN是无偏估计吗
+
+  是。
+
+- BN的作用
+
+  - 使网络每层的输入分布相对稳定，加速训练
+  - 降低了梯度传播对参数的的敏感性，可以使用更大的学习率
+  - 因为相当于为每一层的数据增加了噪声，具有一定的正则化作用，提高了模型的泛化性能。使模型可以不使用dropout。（有论文证明同时使用dropout和BN效果不如只使用他们中的一个）
+  - 使深度模型可以使用sigmoid或tanh等具有饱和区的激活函数
 
 #### Reference
 
