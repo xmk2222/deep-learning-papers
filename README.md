@@ -466,6 +466,14 @@ batch normalization adds two trainable parameters to each layer, so the normaliz
   - 因为相当于为每一层的数据增加了噪声，具有一定的正则化作用，提高了模型的泛化性能。使模型可以不使用dropout。（有论文证明同时使用dropout和BN效果不如只使用他们中的一个）
   - 使深度模型可以使用sigmoid或tanh等具有饱和区的激活函数
 
+- BN中batch size的影响
+
+  当batch size过小时不建议使用BN，均值和方差具有较大的随机性。
+
+- BN的参数数量
+
+  BN层计算参数时将整个输入的feature map当做一个特征进行处理，因此参数数量只与输入的通道数相关（4C）
+
 #### Reference
 
 [1][**"Batch normalization: Accelerating deep network training by reducing internal covariate shift"**](https://arxiv.org/pdf/1502.03167v3.pdf)
