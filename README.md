@@ -30,21 +30,21 @@
 ##### 2015
 - [x] GoogLeNet [**"Going deeper with convolutions"**](#GoogLeNet)
 - [ ] ResNet **"Deep residual learning for image recognition"**
-- [ ] Inception-v3 [**"Rethinking the Inception Architecture for Computer Vision"**](#InceptionV3)
+- [x] Inception-v3 [**"Rethinking the Inception Architecture for Computer Vision"**](#InceptionV3)
 ##### 2016
-- [ ] Inception-v4 [**"Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning"**](#Inception-v4)
+- [x] Inception-v4 [**"Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning"**](#Inception-v4)
 - [ ] Attention **"Show, Attend and Tell Neural Image Caption Generation with Visual Attention"**
 - [ ] SqueezeNet **"SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size"**
 ##### 2017
 - [ ] Xception **"Xception: Deep Learning with Depthwise Separable Convolutions"**
 - [x] MobileNet [**"MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications"**](#MobileNet)
 - [ ] ResNeXt **"Aggregated Residual Transformations for Deep Neural Networks"**
-- [ ] ShuffleNet **"ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices"**
+- [x] ShuffleNet [**"ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices"**](#shufflenet)
 ##### 2018
 - [ ] DenseNet **"Densely Connected Convolutional Networks"**
-- [ ] MobileNetV2 [**"MobileNetV2: Inverted Residuals and Linear Bottlenecks"**](#MobileNetV2)
+- [x] MobileNetV2 [**"MobileNetV2: Inverted Residuals and Linear Bottlenecks"**](#MobileNetV2)
 - [ ] NASNet **"Learning Transferable Architectures for Scalable Image Recognition"**
-- [ ] ShuffleNetV2 **"ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design"**
+- [ ] ShuffleNetV2 [**"ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design"**](#shufflenetv2)
 
 ##### 2019
 
@@ -409,6 +409,53 @@ The first 1x1 Conv in MobileNetV2 is used for expanding input depth (by 6 defaul
 [3][Review: MobileNetV2 — Light Weight Model (Image Classification)](https://towardsdatascience.com/review-mobilenetv2-light-weight-model-image-classification-8febb490e61c)
 
 [**back to top**](#content)
+
+## ShuffleNet
+
+1. Channel shuffle![channel shuffle](./images/ShuffleNet/channel_shuffle.png)
+
+   Stacked group convolutions has one side effect: outputs from a certain channel are only derived from a small fraction of input channel, this property blocks information flow between channel groups and weakens representation.
+
+   Then it is naturally to shuffle the channels between group convolutions, making  it possible to fully relate the input and output channels. Moreover, it is also differentiable, which means it can be embedded into network structure for end-to-end training.
+
+2. Shuffle Unit
+
+   ![shuffle unit](./images/ShuffleNet/unit.png)
+
+   (a) is a residual block with 3x3 depthwise convolution. Then replace the first 1x1 layer with pointwise group convolution followed by a channel shuffle operation. And the second pointwise group convolution is to recover the channel dimension to match the shortcut path.(Which is (b))
+
+   And (c) is how shuffle net apply stride=2, it's a inception like structure.
+
+   Given the input size of c x h x w and the bottleneck channels m, group number g, the number of FLOPs of shuffle net unit is:
+   $$
+   hwcm/g + 9hwm + hwcm/g = hw(2cm/g+9m)
+   $$
+   
+
+3. Ablation study
+
+   1. Model with group convolutions (g>1) consistently perform better than the counterparts without pointwise group convolutions(g=1), smaller models tend to benefit more from groups.
+   2. When group number is relatively large, models with channel shuffle outperform the counterparts by a significant margin, which shows the importance of cross-group information interchange.
+
+#### Questions
+
+- 介绍一下shuffle net
+
+  shuffle net是一种轻量级网络，它通过group convolution和depthwise convolution来减小网络的运算复杂度。shuffle net的创新点在于在group convolution之后增加了一个channel shuffle，可以解决group conv各group之间信息无法流通导致的模型表达能力下降的问题。
+
+- 画一下shuffle net的结构，计算复杂度
+
+  见前述
+
+#### Reference
+
+[1] [ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices](https://arxiv.org/abs/1707.01083)
+
+[**back to top**](#content)
+
+## ShuffleNetV2
+
+
 
 
 ## BatchNorm
