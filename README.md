@@ -455,7 +455,86 @@ The first 1x1 Conv in MobileNetV2 is used for expanding input depth (by 6 defaul
 
 ## ShuffleNetV2
 
+1. Metrics for efficient computation
 
+   Widely used metric--**the number of float-point operations, or FLOPs**--is not equivalent to the direct metric we really care about, such as speed or latency.
+
+   - first, several important factors that have considerable affection on speed are not taken into account by FLOPs.One such factor is **memory access cost (MAC)**, Another one is **degree of parallelism**.
+   - Second, operations with the same FLOPs could have different running time, depending on the platform.
+
+2. Practical Guidelines for Efficient Network Design
+
+   1. **Equal channel width minimizes memory access cost (MAC)**
+
+       We study the kernel shape of the 1 × 1 convolution. The shape is specified by two parameters: the number of input channels $c_1$ and output channels $c_2$. Let h and w be the spatial size of the feature map, **the FLOPs of the 1 × 1 convolution is $B = hwc_1c_2$. ****The memory access cost**
+      **(MAC), or the number of memory access operations, is $MAC = hw(c_1+c_2)+c_1c_2$**. So
+      $$
+      MAC \ge 2\sqrt{hwB} + \frac{B}{hw}
+      $$
+      Therefore, MAC has a lower bound given by FLOPs. **It reaches the lower bound when the numbers of input and output channels are equal**.
+
+   2. **Excessive group convolution increases MAC**
+      $$
+      \begin{align*}
+      MAC =& hw(c_1+c_2) + \frac{c_1c_2}{g}\\
+      =& hwc_1 + \frac{Bg}{c_1} + \frac{B}{hw}
+      \end{align*}
+      $$
+      where g is the number of groups and $B=hwc_1c_2/g$ is the FLOPs.  It is easy to see that, given the fixed input shape c1 × h × w and the computational cost B, **MAC increases with the growth of g**.
+
+      Therefore, we suggest that *the group number should be carefully chosen based on the target platform and task. It is unwise to use a large group number simply because this may enable using more channels, because the benefit of accuracy increase can easily be outweighed by the rapidly increasing computational cost*
+
+   3. **Network fragmentation reduces degree of parallelism**
+
+      Though such fragmented structure has been shown beneficial for accuracy, it could decrease efficiency because it is unfriendly for devices with strong parallel
+      computing powers like GPU. It also introduces extra overheads such as kernel launching and synchronization.
+
+   4. **Element-wise operations are non-negligible**
+
+      element-wise operations occupy considerable amount of time, especially on GPU. Here, the element-wise operators
+      include ReLU, AddTensor, AddBias, etc. They have small FLOPs but relatively heavy MAC. Specially, we also consider depthwise convolution as an element-wise operator as it also has a high MAC/FLOPs ratio.
+
+3. ShuffleNetV2 
+
+   ![unit](./images/ShuffleNetV2/unit.png)
+
+   ![overall](./images/ShuffleNetV2/overall.png)
+
+   Note that there is an additional 1x1 convolution layer added right before global averaged pooling to mix up features.
+
+#### Questions
+
+- Shuffle net v2 对efficient computation提出了什么问题
+
+  过去使用的评价标准FLOPs，即浮点运算数，并不能完全代表网络的运算性能，它与更直观的指标如速度之间存在一定差异性。因此文章重新考虑了之前的经典网络，提出了高效计算的一般性的原则，并提出了新的网络架构。
+
+- shuffle net v2提出了哪些原则
+
+  - bottle neck的或1x1 pointwise conv 的输入和输出channel数应尽量接近，这样可以在FLOPs一定的情况下，使内存消耗MAC达到其下界。
+  - group channel的分组数越大，内存消耗MAC越大。因此应该谨慎得选择分组数
+  - 类似于Inception的结构，网络的碎片化越严重，并行支路越多，网络速度越慢。（当然串行的网络结构也很慢），因此应当适当选择网络单元的宽度和深度。
+  - element wise操作也不可忽视，如ReLU, Add以及depthwise conv对网络速度的影响也很大，应尽量减少此类操作。
+
+- 试分析FLOPs和MAC的关系
+
+  给定输入feature map大小为 h x w， 输入输出channel数为 m， n，1x1 conv layer的浮点运算数为$B = hwmn$，输入feature数为$hwm$, 输出feature数为$hwn$，卷积核参数为$mn$， 因此MAC总数为$MAC=hw(m+n) + mn$. 由不等式关系有$MAC \ge 2\sqrt{hwB} + \frac{B}{hw}$. 当m=n时达到下界。
+
+- 简述shufflenet v2和v1的区别
+
+  - v2在单元中首先按channel将feature map分为两组，一组作为shortcut，而不是复制一份作为shortcut
+  - v2取消了1x1conv的group conv，因为分组会减低速度
+  - v2将末端的add改为了concat，因为add会影响速度
+  - v2将shuffle 操作移动到了concat之后，因为两路是不同的channel，这样可以加强两路之间的交流。
+  - 对于stride=2的unit，没有channel split，两边各自进行strid=2的DW conv，最后feature map减半，channel数double
+  - 在最后的global pool之前加了一层1x1 conv 加强通道之间的交流
+
+#### Reference
+
+[1] [ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design](https://arxiv.org/abs/1807.11164)
+
+[2] [Pytorch implementation](https://github.com/pytorch/vision/blob/master/torchvision/models/shufflenetv2.py)
+
+[**back to top**](#content)
 
 
 ## BatchNorm
