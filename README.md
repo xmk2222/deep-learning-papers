@@ -44,7 +44,7 @@
 - [ ] DenseNet **"Densely Connected Convolutional Networks"**
 - [x] MobileNetV2 [**"MobileNetV2: Inverted Residuals and Linear Bottlenecks"**](#MobileNetV2)
 - [ ] NASNet **"Learning Transferable Architectures for Scalable Image Recognition"**
-- [ ] ShuffleNetV2 [**"ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design"**](#shufflenetv2)
+- [x] ShuffleNetV2 [**"ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design"**](#shufflenetv2)
 
 ##### 2019
 
