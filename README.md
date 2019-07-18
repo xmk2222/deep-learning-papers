@@ -619,6 +619,10 @@ batch normalization adds two trainable parameters to each layer, so the normaliz
 
 [Gradient Explode and Vanish](#Gradient-Explode-and-Vanish)
 
+[k-means](#k-means)
+
+[PCA](#pca)
+
 ## Loss Function
 
 #### Mean Squared Error
@@ -767,5 +771,43 @@ Finally, batch normalization layers can also resolve the issue. As stated before
 
 [**back to contents**](#content)
 
+## k-means
 
+#### Questions
+
+- 简要介绍一下k-means
+
+  k-means是一种无监督的聚类方法，通过不断迭代将数据聚为k类。具体操作方法为先选择k个数据作为初始中心，之后计算每个数据与每个类中心的距离，将数据归为距离最近的类。之后更新每一类的中心为类内所有点的均值，继续迭代计算距离，重新分类，重新计算均值。不断迭代直到分类不再发生改变。
+  
+- k-means初始值的选取对最终结果有影响吗？
+  
+  有
+  
+- k-means计算距离应该计算什么距离
+
+  应该根据具体情况选择距离度量，不同的距离度量会产生不同的结果。可以选取的常用度量有欧式距离、曼哈顿距离、马氏距离等
+  
+[**back to contents**](#content)
+
+## PCA
+
+#### Questions
+
+- 简要介绍一下PCA
+
+  PCA即主成成分分析，作用是通过线性映射将数据从高维空间映射到低位空间，并尽量满足信息量不丢失，是数据降维到主要方法之一。PCA寻找数据方差最大的方向，作为第一主成分，之后寻找与之前找到的主成分方向正交的方向中，方差最大的方向，最为次一级主成分，依次将数据映射到最能反映数据信息量的方向上，达到降维的效果。
+  
+  PCA的具体操作流程为，首先对数据去均值，之后求数据的协方差矩阵，协方差矩阵的对角线代表每一特征的方差，非对角线上为协方差。优化目标为将此协方差矩阵对角化，寻找变换矩阵。具体方法为求协方差矩阵的特征值与特征向量，其中特征向量对应投影方向，特征值对应原始特征投影到该方向之后到方差，这样既可以找到相互正交的向量，也可以找到特征值即方差较大的方向。
+  
+- PCA的优缺点
+
+  优点：降维的同时，可以消除数据维度之间的相关性
+  
+  缺点：失去数据原有含义
+
+- 为什么要进行去均值操作
+
+  去均值之后计算数据的协方差变得非常简单，只要计算$x \cdot x^T$即可。
+  
+[**back to contents**](#content)
 
