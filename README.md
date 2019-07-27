@@ -1,6 +1,6 @@
 # What should we do to find an ideal job as a deep learning engineer
 
-# Contents
+# Content
 
 [1. Books](#1books)
 
@@ -20,7 +20,7 @@
 
 # 2.Papers
 
-## Contents
+## Content
 
 [Image Classification](#image-classification)
 
