@@ -20,7 +20,7 @@
 
 # 2.Papers
 
-## Classical Network Structures
+## Image Classification
 
 ##### 2012
 - [x] AlexNet [**"Imagenet classification with deep convolutional neural networks"**](#AlexNet)
@@ -40,16 +40,17 @@
 - [x] MobileNet [**"MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications"**](#MobileNet)
 - [ ] ResNeXt **"Aggregated Residual Transformations for Deep Neural Networks"**
 - [x] ShuffleNet [**"ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices"**](#shufflenet)
+- [ ] CondenseNet **"CondenseNet: An Efficient DenseNet using Learned Group Convolutions"**
 ##### 2018
 - [ ] DenseNet **"Densely Connected Convolutional Networks"**
 - [x] MobileNetV2 [**"MobileNetV2: Inverted Residuals and Linear Bottlenecks"**](#MobileNetV2)
-- [ ] NASNet **"Learning Transferable Architectures for Scalable Image Recognition"**
-- [x] ShuffleNetV2 [**"ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design"**](#shufflenetv2)
+- [ ] NASNet [**"Learning Transferable Architectures for Scalable Image Recognition"**](#NasNet)
+- [ ] ShuffleNetV2 [**"ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design"**](#shufflenetv2)
 
 ##### 2019
 
-- [ ] MobileNetV3 **"Searching for MobileNetV3"**
-- [ ] MnasNet **"MnasNet: Platform-Aware Neural Architecture Search for Mobile"**
+- [ ] MobileNetV3 [**"Searching for MobileNetV3"**](#MobileNetV3)
+- [ ] MnasNet [**"MnasNet: Platform-Aware Neural Architecture Search for Mobile"**](#MnasNet)
 
 ## Models
 
@@ -59,6 +60,42 @@
 - [x] BatchNorm [**"Batch normalization: Accelerating deep network training by reducing internal covariate shift"**](#BatchNorm)
 - [ ] Net2Net **"Net2net: Accelerating learning via knowledge transfer"**
 
+## Compact Network Design
+
+##### 2016
+
+- [ ] SqueezeNet **"SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size"**
+
+##### 2017
+
+- [ ] Xception **"Xception: Deep Learning with Depthwise Separable Convolutions"**
+- [ ] MobileNet [**"MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications"**](#MobileNet)
+- [ ] ResNeXt **"Aggregated Residual Transformations for Deep Neural Networks"**
+- [x] ShuffleNet [**"ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices"**](#shufflenet)
+- [ ] CondenseNet **"CondenseNet: An Efficient DenseNet using Learned Group Convolutions"**
+
+##### 2018
+
+- [ ] MobileNetV2 [**"MobileNetV2: Inverted Residuals and Linear Bottlenecks"**](#MobileNetV2)
+- [ ] ShuffleNetV2 [**"ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design"**](#shufflenetv2)
+
+##### 
+
+## Neural Architecture Search
+
+##### 2016
+
+- [ ] Nas **Neural Architecture Search with Reinforcement Learning**
+
+##### 2018
+
+- [ ] NASNet [**"Learning Transferable Architectures for Scalable Image Recognition"**](#NasNet)
+
+##### 2019
+
+- [ ] MobileNetV3 [**"Searching for MobileNetV3"**](#MobileNetV3)
+- [ ] MnasNet [**"MnasNet: Platform-Aware Neural Architecture Search for Mobile"**](#MnasNet)
+
 ## Efficient Computation
 ##### 2015
 - [ ] Deep Compression **"Deep compression: Compressing deep neural network with pruning, trained quantization and huffman coding"**
@@ -67,6 +104,12 @@
 ##### 2018
 
 - [ ] Survey **"Recent Advances in Efficient Computation of Deep Convolutional Neural Networks"**
+
+### Pruning
+
+### Quantization
+
+### Knowledge Distillation
 
 ## Optimization
 
@@ -410,6 +453,10 @@ The first 1x1 Conv in MobileNetV2 is used for expanding input depth (by 6 defaul
 
 [**back to top**](#content)
 
+## MobileNetV3
+
+
+
 ## ShuffleNet
 
 1. Channel shuffle![channel shuffle](./images/ShuffleNet/channel_shuffle.png)
@@ -431,7 +478,6 @@ The first 1x1 Conv in MobileNetV2 is used for expanding input depth (by 6 defaul
    hwcm/g + 9hwm + hwcm/g = hw(2cm/g+9m)
    $$
    
-
 3. Ablation study
 
    1. Model with group convolutions (g>1) consistently perform better than the counterparts without pointwise group convolutions(g=1), smaller models tend to benefit more from groups.
@@ -535,6 +581,55 @@ The first 1x1 Conv in MobileNetV2 is used for expanding input depth (by 6 defaul
 [2] [Pytorch implementation](https://github.com/pytorch/vision/blob/master/torchvision/models/shufflenetv2.py)
 
 [**back to top**](#content)
+
+## NasNet
+
+1. **Search for an architectural building block on a small dataset and the transfer the block to a larger dataset.**
+
+   Design a search space so that the complexity of the architecture is independent of the depth of the network and the size of the input images. Searching for the best network architecture is therefore reduced to searching for the best cell structure.
+
+2. **Predict a generic convolutional cell expressed in terms of "motifs"**
+
+   By doing this, it is enough to only predict a **Normal Cell** and a **Reduction Cell**, and simply stack them in series.
+
+   ![cell](./images/NasNet/cell.png)
+
+3. RNN Controller
+
+   ![rnn](./images/NasNet/rnn.png)
+
+   ![steps](./images/NasNet/steps.png)
+
+   - The algorithm appends the newly-created hidden state to the set of existing hidden states as a potential input in subsequent blocks. The controller RNN repeats the above 5 prediction steps B times corresponding to the B blocks in a convolutional cell.(B=5)
+
+   - In steps 3 and 4, the controller RNN selects an operation to apply to the hidden states:
+
+   ![operations](./images/NasNet/operations.png)
+
+   - In step 5 the controller RNN selects a method to combine the two hidden states, either (1) element-wise addition between two hidden states or (2) concatenation between two hidden states along the ﬁlter dimension
+- Specifically, the controller RNN is a one-layer LSTM with 100 hidden units at each layer and 2×5*B* softmax predictions for the two convolutional cells (where *B* is typically 5) associated with each architecture decision.
+   - Each of the 10*B* predictions of the controller RNN is associated with a probability. The joint probability of a child network is the product of all probabilities at these 10*B* softmaxes. This joint probability is used to compute the gradient for the controller RNN.
+   - The gradient is scaled by the validation accuracy of the child network to update the controller RNN such that the controller assigns low probabilities for bad child networks and high probabilities for good child networks.
+   
+   ![schema](./images/NasNet/schema.png)
+   
+   ![a](./images/NasNet/a.png)
+   
+   ![b](./images/NasNet/b.png)
+   
+   ![c](./images/NasNet/c.png)
+
+#### Reference
+
+[1] [Learning Transferable Architectures for Scalable Image Recognition](https://arxiv.org/pdf/1707.07012.pdf)
+
+[2] [Review: NASNet — Neural Architecture Search Network (Image Classification)](https://medium.com/@sh.tsang/review-nasnet-neural-architecture-search-network-image-classification-23139ea0425d)
+
+[3] [Keras Implementation](https://github.com/keras-team/keras-applications/blob/master/keras_applications/nasnet.py)
+
+## MnasNet
+
+
 
 
 ## BatchNorm
@@ -807,6 +902,7 @@ Finally, batch normalization layers can also resolve the issue. As stated before
 
   应该根据具体情况选择距离度量，不同的距离度量会产生不同的结果。可以选取的常用度量有欧式距离、曼哈顿距离、马氏距离等
   
+
 [**back to contents**](#content)
 
 ## PCA
@@ -829,5 +925,6 @@ Finally, batch normalization layers can also resolve the issue. As stated before
 
   去均值之后计算数据的协方差变得非常简单，只要计算$x \cdot x^T$即可。
   
+
 [**back to contents**](#content)
 
