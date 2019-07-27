@@ -1,6 +1,6 @@
 # What should we do to find an ideal job as a deep learning engineer
 
-# Content
+# Contents
 
 [1. Books](#1books)
 
@@ -747,7 +747,7 @@ batch normalization adds two trainable parameters to each layer, so the normaliz
 
 # 3.Concept Explanation
 
-## Content
+## Contents
 [Loss Function](#loss-function)
 
 [Optimizers](#optimizers)
