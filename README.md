@@ -9,14 +9,24 @@
 [3. Concept Explanation](#3concept-explanation)
 
 # 1.Books
-- [ ] 李航 **"统计学习方法"**
-- [ ] 周志华 **"机器学习"**
-- [ ] 何海涛 **"剑指offer"**
-- [ ] 诸葛越 **"百面机器学习"**
-- [ ] scutan90 **"DeepLearning-500-questions"** https://github.com/scutan90/DeepLearning-500-questions
-- [ ] Stephen Prata **"C++ Primer Plus"**
-- [ ] **"数据结构"**
-- [ ] Ian Goodfellow [**"深度学习"**](https://exacity.github.io/deeplearningbook-chinese/)
+
+- 李航 **"统计学习方法"**
+
+- 周志华 **"机器学习"**
+
+- 何海涛 **"剑指offer"**
+
+- 诸葛越 **"百面机器学习"**
+
+- scutan90 **"DeepLearning-500-questions"** https://github.com/scutan90/DeepLearning-500-questions
+
+- huihut [**C/C++ 技术面试基础知识总结**](https://github.com/huihut/interview)
+
+- Stephen Prata **"C++ Primer Plus"**
+
+- **"数据结构"**
+
+- Ian Goodfellow [**"深度学习"**](https://exacity.github.io/deeplearningbook-chinese/)
 
 # 2.Papers
 
@@ -43,12 +53,21 @@
 ## Image Classification
 
 ##### 2012
-<b><details><summary>AlexNet [**"Imagenet classification with deep convolutional neural networks"**](#AlexNet)</summary></b>
-aaa
+
+<b><details><summary>AlexNet **"Imagenet classification with deep convolutional neural networks"**</summary></b>
+	
+#### Reference
+
+[1][**"Imagenet classification with deep convolutional neural networks"**](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)
+
 </details>
 
 ##### 2014
-- [x] VGGNet [**"Very deep convolutional networks for large-scale image recognition"**](#VGGNet)
+
+- <b><details><summary>VGGNet **"Very deep convolutional networks for large-scale image recognition"**</summary></b>
+	
+</details>
+
 - [x] Network in Network [**"Network In Network"**](#NIN)
 ##### 2015
 - [x] GoogLeNet [**"Going deeper with convolutions"**](#GoogLeNet)
