@@ -54,9 +54,9 @@
 ##### 2012
 
 <b><details><summary> AlexNet **"Imagenet classification with deep convolutional neural networks"**</summary></b>
-	#### Reference
+#### Reference
 	
-	[1][**"Imagenet classification with deep convolutional neural networks"**](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)
+[1][**"Imagenet classification with deep convolutional neural networks"**](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)
 
 </details>
 
@@ -86,37 +86,11 @@
 	
 ##### 2016
 
-<b><details><summary>Inception-v4 [**"Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning"**](#Inception-v4)</summary></b>
+<b><details><summary>Inception-v4 **"Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning"**</summary></b>
 	
 </details>
 	
 <b><details><summary>Attention **"Show, Attend and Tell Neural Image Caption Generation with Visual Attention"**</summary></b>
-	
-</details>
-	
-<b><details><summary>SqueezeNet **"SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size"**</summary></b>
-	
-</details>
-	
-##### 2017
-
-<b><details><summary>Xception **"Xception: Deep Learning with Depthwise Separable Convolutions"**</summary></b>
-	
-</details>
-	
-<b><details><summary>MobileNet [**"MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications"**](#MobileNet)</summary></b>
-	
-</details>
-	
-<b><details><summary>ResNeXt **"Aggregated Residual Transformations for Deep Neural Networks"**</summary></b>
-	
-</details>
-
-<b><details><summary>ShuffleNet [**"ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices"**](#shufflenet)</summary></b>
-	
-</details>
-
-<b><details><summary>CondenseNet **"CondenseNet: An Efficient DenseNet using Learned Group Convolutions"**</summary></b>
 	
 </details>
 
@@ -126,145 +100,244 @@
 	
 </details>
 
-<b><details><summary>MobileNetV2 [**"MobileNetV2: Inverted Residuals and Linear Bottlenecks"**](#MobileNetV2)</summary></b>
+## Compact Network Design
+
+##### 2016
+
+<b><details><summary>SqueezeNet **"SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size"**</summary></b>
 	
 </details>
 
-<b><details><summary>NASNet [**"Learning Transferable Architectures for Scalable Image Recognition"**](#NasNet)</summary></b>
+##### 2017
+
+<b><details><summary>Xception **"Xception: Deep Learning with Depthwise Separable Convolutions"**</summary></b>
+	
+</details>
+	
+<b><details><summary>MobileNet **"MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications"**</summary></b>
+	
+</details>
+	
+<b><details><summary>ResNeXt **"Aggregated Residual Transformations for Deep Neural Networks"**</summary></b>
 	
 </details>
 
-<b><details><summary>ShuffleNetV2 [**"ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design"**](#shufflenetv2)</summary></b>
+<b><details><summary>ShuffleNet **"ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices"**</summary></b>
+	
+</details>
+
+<b><details><summary>CondenseNet **"CondenseNet: An Efficient DenseNet using Learned Group Convolutions"**</summary></b>
+	
+</details>
+
+##### 2018
+
+<b><details><summary>MobileNetV2 **"MobileNetV2: Inverted Residuals and Linear Bottlenecks"**</summary></b>
+	
+</details>
+
+<b><details><summary>ShuffleNetV2 **"ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design"**</summary></b>
+	
+</details>
+
+## Neural Architecture Search
+
+##### 2016
+
+<b><details><summary>Nas **Neural Architecture Search with Reinforcement Learning**</summary></b>
+	
+</details>
+
+##### 2018
+
+<b><details><summary>NASNet **"Learning Transferable Architectures for Scalable Image Recognition"**</summary></b>
 	
 </details>
 
 ##### 2019
 
-<b><details><summary>MobileNetV3 [**"Searching for MobileNetV3"**](#MobileNetV3)</summary></b>
+<b><details><summary>MobileNetV3 **"Searching for MobileNetV3"**</summary></b>
 	
 </details>
 
-<b><details><summary>MnasNet [**"MnasNet: Platform-Aware Neural Architecture Search for Mobile"**](#MnasNet)</summary></b>
+<b><details><summary>MnasNet **"MnasNet: Platform-Aware Neural Architecture Search for Mobile"**</summary></b>
 	
 </details>
 
 ## Models
 
 ##### 2014
-- [ ] DropOut **"Dropout: a simple way to prevent neural networks from overfitting"**
+
+<b><details><summary>DropOut **"Dropout: a simple way to prevent neural networks from overfitting"**</summary></b>
+	
+</details>
+
 ##### 2015
-- [x] BatchNorm [**"Batch normalization: Accelerating deep network training by reducing internal covariate shift"**](#BatchNorm)
-- [ ] Net2Net **"Net2net: Accelerating learning via knowledge transfer"**
 
-## Compact Network Design
+<b><details><summary>BatchNorm **"Batch normalization: Accelerating deep network training by reducing internal covariate shift"**</summary></b>
+	
+</details>
 
+<b><details><summary>Net2Net **"Net2net: Accelerating learning via knowledge transfer"**</summary></b>
+	
+</details>
+
+## Optimization
+
+##### 2013
+
+<b><details><summary>Momentum **"On the importance of initialization and momentum in deep learning"**</summary></b>
+	
+</details>
+
+##### 2014
+
+<b><details><summary>Adam **"Adam: A method for stochastic optimization"**</summary></b>
+	
+</details>
+	
 ##### 2016
 
-- [ ] SqueezeNet **"SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size"**
-
-##### 2017
-
-- [ ] Xception **"Xception: Deep Learning with Depthwise Separable Convolutions"**
-- [ ] MobileNet [**"MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications"**](#MobileNet)
-- [ ] ResNeXt **"Aggregated Residual Transformations for Deep Neural Networks"**
-- [x] ShuffleNet [**"ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices"**](#shufflenet)
-- [ ] CondenseNet **"CondenseNet: An Efficient DenseNet using Learned Group Convolutions"**
-
-##### 2018
-
-- [ ] MobileNetV2 [**"MobileNetV2: Inverted Residuals and Linear Bottlenecks"**](#MobileNetV2)
-- [ ] ShuffleNetV2 [**"ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design"**](#shufflenetv2)
-
-##### 
-
-## Neural Architecture Search
-
-##### 2016
-
-- [ ] Nas **Neural Architecture Search with Reinforcement Learning**
-
-##### 2018
-
-- [ ] NASNet [**"Learning Transferable Architectures for Scalable Image Recognition"**](#NasNet)
-
-##### 2019
-
-- [ ] MobileNetV3 [**"Searching for MobileNetV3"**](#MobileNetV3)
-- [ ] MnasNet [**"MnasNet: Platform-Aware Neural Architecture Search for Mobile"**](#MnasNet)
+<b><details><summary>Neural Optimizer **"Learning to learn by gradient descent by gradient descent"**</summary></b>
+	
+</details>
 
 ## Efficient Computation
+
 ##### 2015
-- [ ] Deep Compression **"Deep compression: Compressing deep neural network with pruning, trained quantization and huffman coding"**
-##### 2017
-- [x] Survey [**"A Survey of Model Compression and Acceleration for Deep Neural Networks"**](#model-compression)
+
+<b><details><summary>Deep Compression **"Deep compression: Compressing deep neural network with pruning, trained quantization and huffman coding"**</summary></b>
+	
+</details>
+
 ##### 2018
 
-- [ ] Survey **"Recent Advances in Efficient Computation of Deep Convolutional Neural Networks"**
+<b><details><summary>Survey **"Recent Advances in Efficient Computation of Deep Convolutional Neural Networks"**</summary></b>
+	
+</details>
 
 ### Pruning
+
+### Low-Rank
 
 ### Quantization
 
 ### Knowledge Distillation
 
-## Optimization
-
-##### 2013
-- [ ] Momentum **"On the importance of initialization and momentum in deep learning"**
-##### 2014
-- [ ] Adam **"Adam: A method for stochastic optimization"**
-##### 2016
-- [ ] Neural Optimizer **"Learning to learn by gradient descent by gradient descent"**
-
 ## Object Detection
 
 ##### 2014
-- [ ] RCNN **"Rich feature hierarchies for accurate object detection and semantic segmentation"**
-- [ ] SPPNet **"Spatial pyramid pooling in deep convolutional networks for visual recognition"**
+
+<b><details><summary>RCNN **"Rich feature hierarchies for accurate object detection and semantic segmentation"**</summary></b>
+	
+</details>
+
+<b><details><summary>SPPNet **"Spatial pyramid pooling in deep convolutional networks for visual recognition"**</summary></b>
+	
+</details>
+
 ##### 2015
-- [ ] Faster R-CNN **"Faster R-CNN: Towards real-time object detection with region proposal networks"**
-- [ ] YOLO **"You only look once: Unified, real-time object detection"**
+
+<b><details><summary>Faster R-CNN **"Faster R-CNN: Towards real-time object detection with region proposal networks"**</summary></b>
+	
+</details>
+
+<b><details><summary>YOLO **"You only look once: Unified, real-time object detection"**</summary></b>
+	
+</details>
+
 ##### 2016
-- [ ] R-FCN **"R-FCN: Object Detection via Region-based Fully Convolutional Networks"**
+
+<b><details><summary>R-FCN **"R-FCN: Object Detection via Region-based Fully Convolutional Networks"**</summary></b>
+	
+</details>
+
 ##### 2017
-- [ ] **"Mask R-CNN"**
+
+<b><details><summary>**"Mask R-CNN"**</summary></b>
+	
+</details>
 
 ## Deep Generative Model
 
 ##### 2013
-- [ ] VAE **"Auto-encoding variational bayes"**
+
+<b><details><summary>VAE **"Auto-encoding variational bayes"**</summary></b>
+	
+</details>
+
 ##### 2014
-- [ ] GAN **"Generative adversarial nets"**
+
+<b><details><summary>GAN **"Generative adversarial nets"**</summary></b>
+	
+</details>
+
 ##### 2015
-- [ ] VAE with attention **"DRAW: A recurrent neural network for image generation"**
+
+<b><details><summary>VAE with attention **"DRAW: A recurrent neural network for image generation"**</summary></b>
+	
+</details>
 
 
 ## Deep Reinforcement Learning
 
 ##### 2013
 
-- [ ] **"Playing atari with deep reinforcement learning"**
+<b><details><summary>**"Playing atari with deep reinforcement learning"**</summary></b>
+	
+</details>
 
 ##### 2015
 
-- [ ] **"Human-level control through deep reinforcement learning"**
-- [ ] **"Continuous control with deep reinforcement learning"**
+<b><details><summary>**"Human-level control through deep reinforcement learning"**</summary></b>
+	
+</details>
+
+<b><details><summary>**"Continuous control with deep reinforcement learning"**</summary></b>
+	
+</details>
+
 ##### 2016
-- [ ] **"Asynchronous methods for deep reinforcement learning"**
-- [ ] AlphaGo **"Mastering the game of Go with deep neural networks and tree search"**
-- [ ] **"Deep reinforcement learning with double q-learning"**
+
+<b><details><summary>**"Asynchronous methods for deep reinforcement learning"**</summary></b>
+	
+</details>
+
+<b><details><summary>AlphaGo **"Mastering the game of Go with deep neural networks and tree search"**</summary></b>
+	
+</details>
+
+<b><details><summary>**"Deep reinforcement learning with double q-learning"**</summary></b>
+	
+</details>
 
 ##### 2017
 
-- [ ] **"Deep reinforcement learning: An overview"**
-- [ ] **"Target-driven visual navigation in indoor scenes using deep reinforcement learning"**
-- [ ] **"Deep reinforcement learning for robotic manipulation with asynchronous off-policy updates"**
-- [ ] **"Playing FPS games with deep reinforcement learning"**
+<b><details><summary>**"Deep reinforcement learning: An overview"**</summary></b>
+	
+</details>
+
+<b><details><summary>**"Target-driven visual navigation in indoor scenes using deep reinforcement learning"**</summary></b>
+	
+</details>
+
+<b><details><summary>**"Deep reinforcement learning for robotic manipulation with asynchronous off-policy updates"**</summary></b>
+	
+</details>
+
+<b><details><summary>**"Playing FPS games with deep reinforcement learning"**</summary></b>
+	
+</details>
 
 ##### 2018
 
-- [ ] **"Rainbow: Combining improvements in deep reinforcement learning"**
-- [ ] **"Deep reinforcement learning that matters"**
+<b><details><summary>**"Rainbow: Combining improvements in deep reinforcement learning"**</summary></b>
+	
+</details>
+
+<b><details><summary>**"Deep reinforcement learning that matters"**</summary></b>
+	
+</details>
 
 ---------------------------
 # Papers Summaries
