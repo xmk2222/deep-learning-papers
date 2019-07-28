@@ -53,11 +53,11 @@
 
 ##### 2012
 
-- [ ] <b><details><summary> AlexNet **"Imagenet classification with deep convolutional neural networks"**</summary></b>
+<b><details><summary> AlexNet **"Imagenet classification with deep convolutional neural networks"**</summary></b>
 	
-#### Reference
+	#### Reference
 
-[1][**"Imagenet classification with deep convolutional neural networks"**](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)
+	[1][**"Imagenet classification with deep convolutional neural networks"**](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)
 
 </details>
 
