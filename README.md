@@ -17,7 +17,7 @@
 
 - 诸葛越 **"百面机器学习"**
 
-- scutan90 **"DeepLearning-500-questions"** https://github.com/scutan90/DeepLearning-500-questions
+- scutan90 [**"DeepLearning-500-questions"**](https://github.com/scutan90/DeepLearning-500-questions)
 
 - huihut [**C/C++ 技术面试基础知识总结**](https://github.com/huihut/interview)
 
@@ -53,7 +53,7 @@
 
 ##### 2012
 
-<b><details><summary>AlexNet **"Imagenet classification with deep convolutional neural networks"**</summary></b>
+<b><details><summary> [ ] AlexNet **"Imagenet classification with deep convolutional neural networks"**</summary></b>
 	
 #### Reference
 
@@ -67,13 +67,13 @@
 	
 </details>
 
-<b><details><summary>Network in Network [**"Network In Network"**](#NIN)</summary></b>
+<b><details><summary>NIN **"Network In Network"**</summary></b>
 	
 </details>
 	
 ##### 2015
 
-<b><details><summary>GoogLeNet [**"Going deeper with convolutions"**](#GoogLeNet)</summary></b>
+<b><details><summary>GoogLeNet **"Going deeper with convolutions"**</summary></b>
 	
 </details>
 	
@@ -81,7 +81,7 @@
 	
 </details>
 	
-<b><details><summary>Inception-v3 [**"Rethinking the Inception Architecture for Computer Vision"**](#InceptionV3)</summary></b>
+<b><details><summary>Inception-v3 **"Rethinking the Inception Architecture for Computer Vision"**</summary></b>
 	
 </details>
 	
