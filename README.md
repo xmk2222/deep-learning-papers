@@ -238,11 +238,19 @@
 
 ##### 2015
 
+<b><details><summary>Fast R-CNN **"Fast R-CNN"**</summary></b>
+	
+</details>
+
 <b><details><summary>Faster R-CNN **"Faster R-CNN: Towards real-time object detection with region proposal networks"**</summary></b>
 	
 </details>
 
 <b><details><summary>YOLO **"You only look once: Unified, real-time object detection"**</summary></b>
+	
+</details>
+
+<b><details><summary>SSD **"SSD: Single Shot MultiBox Detector"**</summary></b>
 	
 </details>
 
@@ -252,9 +260,31 @@
 	
 </details>
 
+<b><details><summary>YOLOv2 **"YOLO9000: Better, Faster, Stronger"**</summary></b>
+	
+</details>
+
+<b><details><summary>FPN **"Feature Pyramid Networks for Object Detection"**</summary></b>
+	
+</details>
+
 ##### 2017
 
 <b><details><summary>**"Mask R-CNN"**</summary></b>
+	
+</details>
+
+<b><details><summary>RetinaNet **"Focal Loss for Dense Object Detection"**</summary></b>
+	
+</details>
+
+<b><details><summary>DCN **"Deformable Convolutional Networks"**</summary></b>
+	
+</details>
+
+##### 2018
+
+<b><details><summary>YOLOv3 **"YOLOv3: An Incremental Improvement"**</summary></b>
 	
 </details>
 
