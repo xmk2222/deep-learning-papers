@@ -388,7 +388,9 @@ $$
 	
 </details>
 
-<b><details><summary>CondenseNet **"CondenseNet: An Efficient DenseNet using Learned Group Convolutions"**</summary></b>
+### CondenseNet 
+
+<b><details><summary>**"CondenseNet: An Efficient DenseNet using Learned Group Convolutions"**</summary></b>
 	
 </details>
 
