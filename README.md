@@ -43,9 +43,10 @@
 ## Image Classification
 
 ##### 2012
-<b><details><summary> AlexNet [**"Imagenet classification with deep convolutional neural networks"**](#AlexNet)</summary></b>
+<b><details> AlexNet [**"Imagenet classification with deep convolutional neural networks"**](#AlexNet)</b>
 aaa
 </details>
+
 ##### 2014
 - [x] VGGNet [**"Very deep convolutional networks for large-scale image recognition"**](#VGGNet)
 - [x] Network in Network [**"Network In Network"**](#NIN)
