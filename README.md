@@ -11,7 +11,6 @@
 # 1.Books
 
 - 李航 **"统计学习方法"**
-
 - 周志华 **"机器学习"**
 
 - 何海涛 **"剑指offer"**
@@ -64,35 +63,91 @@
 
 ##### 2014
 
-- <b><details><summary>VGGNet **"Very deep convolutional networks for large-scale image recognition"**</summary></b>
+<b><details><summary>VGGNet **"Very deep convolutional networks for large-scale image recognition"**</summary></b>
 	
 </details>
 
-- [x] Network in Network [**"Network In Network"**](#NIN)
+<b><details><summary>Network in Network [**"Network In Network"**](#NIN)</summary></b>
+	
+</details>
+	
 ##### 2015
-- [x] GoogLeNet [**"Going deeper with convolutions"**](#GoogLeNet)
-- [ ] ResNet **"Deep residual learning for image recognition"**
-- [x] Inception-v3 [**"Rethinking the Inception Architecture for Computer Vision"**](#InceptionV3)
+
+<b><details><summary>GoogLeNet [**"Going deeper with convolutions"**](#GoogLeNet)</summary></b>
+	
+</details>
+	
+<b><details><summary>ResNet **"Deep residual learning for image recognition"**</summary></b>
+	
+</details>
+	
+<b><details><summary>Inception-v3 [**"Rethinking the Inception Architecture for Computer Vision"**](#InceptionV3)</summary></b>
+	
+</details>
+	
 ##### 2016
-- [x] Inception-v4 [**"Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning"**](#Inception-v4)
-- [ ] Attention **"Show, Attend and Tell Neural Image Caption Generation with Visual Attention"**
-- [ ] SqueezeNet **"SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size"**
+
+<b><details><summary>Inception-v4 [**"Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning"**](#Inception-v4)</summary></b>
+	
+</details>
+	
+<b><details><summary>Attention **"Show, Attend and Tell Neural Image Caption Generation with Visual Attention"**</summary></b>
+	
+</details>
+	
+<b><details><summary>SqueezeNet **"SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size"**</summary></b>
+	
+</details>
+	
 ##### 2017
-- [ ] Xception **"Xception: Deep Learning with Depthwise Separable Convolutions"**
-- [x] MobileNet [**"MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications"**](#MobileNet)
-- [ ] ResNeXt **"Aggregated Residual Transformations for Deep Neural Networks"**
-- [x] ShuffleNet [**"ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices"**](#shufflenet)
-- [ ] CondenseNet **"CondenseNet: An Efficient DenseNet using Learned Group Convolutions"**
+
+<b><details><summary>Xception **"Xception: Deep Learning with Depthwise Separable Convolutions"**</summary></b>
+	
+</details>
+	
+<b><details><summary>MobileNet [**"MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications"**](#MobileNet)</summary></b>
+	
+</details>
+	
+<b><details><summary>ResNeXt **"Aggregated Residual Transformations for Deep Neural Networks"**</summary></b>
+	
+</details>
+
+<b><details><summary>ShuffleNet [**"ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices"**](#shufflenet)</summary></b>
+	
+</details>
+
+<b><details><summary>CondenseNet **"CondenseNet: An Efficient DenseNet using Learned Group Convolutions"**</summary></b>
+	
+</details>
+
 ##### 2018
-- [ ] DenseNet **"Densely Connected Convolutional Networks"**
-- [x] MobileNetV2 [**"MobileNetV2: Inverted Residuals and Linear Bottlenecks"**](#MobileNetV2)
-- [ ] NASNet [**"Learning Transferable Architectures for Scalable Image Recognition"**](#NasNet)
-- [ ] ShuffleNetV2 [**"ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design"**](#shufflenetv2)
+
+<b><details><summary>DenseNet **"Densely Connected Convolutional Networks"**</summary></b>
+	
+</details>
+
+<b><details><summary>MobileNetV2 [**"MobileNetV2: Inverted Residuals and Linear Bottlenecks"**](#MobileNetV2)</summary></b>
+	
+</details>
+
+<b><details><summary>NASNet [**"Learning Transferable Architectures for Scalable Image Recognition"**](#NasNet)</summary></b>
+	
+</details>
+
+<b><details><summary>ShuffleNetV2 [**"ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design"**](#shufflenetv2)</summary></b>
+	
+</details>
 
 ##### 2019
 
-- [ ] MobileNetV3 [**"Searching for MobileNetV3"**](#MobileNetV3)
-- [ ] MnasNet [**"MnasNet: Platform-Aware Neural Architecture Search for Mobile"**](#MnasNet)
+<b><details><summary>MobileNetV3 [**"Searching for MobileNetV3"**](#MobileNetV3)</summary></b>
+	
+</details>
+
+<b><details><summary>MnasNet [**"MnasNet: Platform-Aware Neural Architecture Search for Mobile"**](#MnasNet)</summary></b>
+	
+</details>
 
 ## Models
 
