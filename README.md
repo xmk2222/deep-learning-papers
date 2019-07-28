@@ -149,12 +149,16 @@
 [3][Review: GoogLeNet (Inception v1)— Winner of ILSVRC 2014 (Image Classification)](https://medium.com/coinmonks/paper-review-of-googlenet-inception-v1-winner-of-ilsvlc-2014-image-classification-c2b3565a64e7)
 	
 </details>
-	
-<b><details><summary>ResNet **"Deep residual learning for image recognition"**</summary></b>
+
+### ResNet
+
+<b><details><summary> **"Deep residual learning for image recognition"**</summary></b>
 	
 </details>
-	
-<b><details><summary>Inception-v3 **"Rethinking the Inception Architecture for Computer Vision"**</summary></b>
+
+### Inception-v3
+
+<b><details><summary> **"Rethinking the Inception Architecture for Computer Vision"**</summary></b>
 	
 1. Factorizing Convolutions with Large Filter Size
 
@@ -221,7 +225,9 @@ With the efficient grid size reduction, **320 feature maps** are done by **conv 
 	
 ##### 2016
 
-<b><details><summary>Inception-v4 **"Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning"**</summary></b>
+### Inception-v4
+
+<b><details><summary> **"Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning"**</summary></b>
 	
 1. It is studied that whether the Inception itself can be made more efficient by making it deeper and wider.
 
@@ -249,13 +255,17 @@ With the efficient grid size reduction, **320 feature maps** are done by **conv 
 	
 </details>
 	
-<b><details><summary>Attention **"Show, Attend and Tell Neural Image Caption Generation with Visual Attention"**</summary></b>
+### Attention
+
+<b><details><summary>**"Show, Attend and Tell Neural Image Caption Generation with Visual Attention"**</summary></b>
 	
 </details>
 
 ##### 2018
 
-<b><details><summary>DenseNet **"Densely Connected Convolutional Networks"**</summary></b>
+### DenseNet 
+
+<b><details><summary>**"Densely Connected Convolutional Networks"**</summary></b>
 	
 </details>
 
@@ -263,17 +273,23 @@ With the efficient grid size reduction, **320 feature maps** are done by **conv 
 
 ##### 2016
 
-<b><details><summary>SqueezeNet **"SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size"**</summary></b>
+### SqueezeNet 
+
+<b><details><summary>**"SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size"**</summary></b>
 	
 </details>
 
 ##### 2017
 
-<b><details><summary>Xception **"Xception: Deep Learning with Depthwise Separable Convolutions"**</summary></b>
+### Xception 
+
+<b><details><summary>**"Xception: Deep Learning with Depthwise Separable Convolutions"**</summary></b>
 	
 </details>
 	
-<b><details><summary>MobileNet **"MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications"**</summary></b>
+### MobileNet 
+
+<b><details><summary>**"MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications"**</summary></b>
 	
 1. Depthwise separable convolution
 
@@ -322,11 +338,15 @@ $$
 	
 </details>
 	
-<b><details><summary>ResNeXt **"Aggregated Residual Transformations for Deep Neural Networks"**</summary></b>
+### ResNeXt 
+
+<b><details><summary>**"Aggregated Residual Transformations for Deep Neural Networks"**</summary></b>
 	
 </details>
 
-<b><details><summary>ShuffleNet **"ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices"**</summary></b>
+### ShuffleNet 
+
+<b><details><summary>**"ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices"**</summary></b>
 	
 1. Channel shuffle![channel shuffle](./images/ShuffleNet/channel_shuffle.png)
 
@@ -374,7 +394,9 @@ $$
 
 ##### 2018
 
-<b><details><summary>MobileNetV2 **"MobileNetV2: Inverted Residuals and Linear Bottlenecks"**</summary></b>
+### MobileNetV2 
+
+<b><details><summary>**"MobileNetV2: Inverted Residuals and Linear Bottlenecks"**</summary></b>
 	
 1. Linear Bottlenecks
 
@@ -420,12 +442,11 @@ The first 1x1 Conv in MobileNetV2 is used for expanding input depth (by 6 defaul
 
 [3][Review: MobileNetV2 — Light Weight Model (Image Classification)](https://towardsdatascience.com/review-mobilenetv2-light-weight-model-image-classification-8febb490e61c)
 
-[**back to top**](#content)
-
-	
 </details>
 
-<b><details><summary>ShuffleNetV2 **"ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design"**</summary></b>
+### ShuffleNetV2 
+
+<b><details><summary>**"ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design"**</summary></b>
 	
 1. Metrics for efficient computation
 
@@ -514,13 +535,17 @@ The first 1x1 Conv in MobileNetV2 is used for expanding input depth (by 6 defaul
 
 ##### 2016
 
-<b><details><summary>Nas **Neural Architecture Search with Reinforcement Learning**</summary></b>
+### Nas 
+
+<b><details><summary>**Neural Architecture Search with Reinforcement Learning**</summary></b>
 	
 </details>
 
 ##### 2018
 
-<b><details><summary>NASNet **"Learning Transferable Architectures for Scalable Image Recognition"**</summary></b>
+### NASNet 
+
+<b><details><summary>**"Learning Transferable Architectures for Scalable Image Recognition"**</summary></b>
 	
 1. **Search for an architectural building block on a small dataset and the transfer the block to a larger dataset.**
 
@@ -569,11 +594,15 @@ The first 1x1 Conv in MobileNetV2 is used for expanding input depth (by 6 defaul
 
 ##### 2019
 
-<b><details><summary>MobileNetV3 **"Searching for MobileNetV3"**</summary></b>
+### MobileNetV3 
+
+<b><details><summary>**"Searching for MobileNetV3"**</summary></b>
 	
 </details>
 
-<b><details><summary>MnasNet **"MnasNet: Platform-Aware Neural Architecture Search for Mobile"**</summary></b>
+### MnasNet 
+
+<b><details><summary>**"MnasNet: Platform-Aware Neural Architecture Search for Mobile"**</summary></b>
 	
 </details>
 
@@ -581,13 +610,17 @@ The first 1x1 Conv in MobileNetV2 is used for expanding input depth (by 6 defaul
 
 ##### 2014
 
-<b><details><summary>DropOut **"Dropout: a simple way to prevent neural networks from overfitting"**</summary></b>
+### DropOut 
+
+<b><details><summary>**"Dropout: a simple way to prevent neural networks from overfitting"**</summary></b>
 	
 </details>
 
 ##### 2015
 
-<b><details><summary>BatchNorm **"Batch normalization: Accelerating deep network training by reducing internal covariate shift"**</summary></b>
+### BatchNorm 
+
+<b><details><summary>**"Batch normalization: Accelerating deep network training by reducing internal covariate shift"**</summary></b>
 	
 1. Why we use batch normalization?
 
@@ -660,7 +693,9 @@ batch normalization adds two trainable parameters to each layer, so the normaliz
 	
 </details>
 
-<b><details><summary>Net2Net **"Net2net: Accelerating learning via knowledge transfer"**</summary></b>
+### Net2Net 
+
+<b><details><summary>**"Net2net: Accelerating learning via knowledge transfer"**</summary></b>
 	
 </details>
 
@@ -668,19 +703,25 @@ batch normalization adds two trainable parameters to each layer, so the normaliz
 
 ##### 2013
 
-<b><details><summary>Momentum **"On the importance of initialization and momentum in deep learning"**</summary></b>
+### Momentum 
+
+<b><details><summary>**"On the importance of initialization and momentum in deep learning"**</summary></b>
 	
 </details>
 
 ##### 2014
 
-<b><details><summary>Adam **"Adam: A method for stochastic optimization"**</summary></b>
+### Adam 
+
+<b><details><summary>**"Adam: A method for stochastic optimization"**</summary></b>
 	
 </details>
 	
 ##### 2016
 
-<b><details><summary>Neural Optimizer **"Learning to learn by gradient descent by gradient descent"**</summary></b>
+### Neural Optimizer 
+
+<b><details><summary>**"Learning to learn by gradient descent by gradient descent"**</summary></b>
 	
 </details>
 
@@ -688,13 +729,17 @@ batch normalization adds two trainable parameters to each layer, so the normaliz
 
 ##### 2015
 
-<b><details><summary>Deep Compression **"Deep compression: Compressing deep neural network with pruning, trained quantization and huffman coding"**</summary></b>
+### Deep Compression 
+
+<b><details><summary>**"Deep compression: Compressing deep neural network with pruning, trained quantization and huffman coding"**</summary></b>
 	
 </details>
 
 ##### 2018
 
-<b><details><summary>Survey **"Recent Advances in Efficient Computation of Deep Convolutional Neural Networks"**</summary></b>
+### Survey 
+
+<b><details><summary>**"Recent Advances in Efficient Computation of Deep Convolutional Neural Networks"**</summary></b>
 	
 1. Pruning 剪枝
   
@@ -728,63 +773,89 @@ batch normalization adds two trainable parameters to each layer, so the normaliz
 
 ##### 2014
 
-<b><details><summary>RCNN **"Rich feature hierarchies for accurate object detection and semantic segmentation"**</summary></b>
+### RCNN 
+
+<b><details><summary>**"Rich feature hierarchies for accurate object detection and semantic segmentation"**</summary></b>
 	
 </details>
 
-<b><details><summary>SPPNet **"Spatial pyramid pooling in deep convolutional networks for visual recognition"**</summary></b>
+### SPPNet 
+
+<b><details><summary>**"Spatial pyramid pooling in deep convolutional networks for visual recognition"**</summary></b>
 	
 </details>
 
 ##### 2015
 
-<b><details><summary>Fast R-CNN **"Fast R-CNN"**</summary></b>
+### Fast R-CNN 
+
+<b><details><summary>**"Fast R-CNN"**</summary></b>
 	
 </details>
 
-<b><details><summary>Faster R-CNN **"Faster R-CNN: Towards real-time object detection with region proposal networks"**</summary></b>
+### Faster R-CNN 
+
+<b><details><summary>**"Faster R-CNN: Towards real-time object detection with region proposal networks"**</summary></b>
 	
 </details>
 
-<b><details><summary>YOLO **"You only look once: Unified, real-time object detection"**</summary></b>
+### YOLO 
+
+<b><details><summary>**"You only look once: Unified, real-time object detection"**</summary></b>
 	
 </details>
 
-<b><details><summary>SSD **"SSD: Single Shot MultiBox Detector"**</summary></b>
+### SSD 
+
+<b><details><summary>**"SSD: Single Shot MultiBox Detector"**</summary></b>
 	
 </details>
 
 ##### 2016
 
-<b><details><summary>R-FCN **"R-FCN: Object Detection via Region-based Fully Convolutional Networks"**</summary></b>
+### R-FCN 
+
+<b><details><summary>**"R-FCN: Object Detection via Region-based Fully Convolutional Networks"**</summary></b>
 	
 </details>
 
-<b><details><summary>YOLOv2 **"YOLO9000: Better, Faster, Stronger"**</summary></b>
+### YOLOv2 
+
+<b><details><summary>**"YOLO9000: Better, Faster, Stronger"**</summary></b>
 	
 </details>
 
-<b><details><summary>FPN **"Feature Pyramid Networks for Object Detection"**</summary></b>
+### FPN 
+
+<b><details><summary>**"Feature Pyramid Networks for Object Detection"**</summary></b>
 	
 </details>
 
 ##### 2017
 
+### Mask R-CNN
+
 <b><details><summary>**"Mask R-CNN"**</summary></b>
 	
 </details>
 
-<b><details><summary>RetinaNet **"Focal Loss for Dense Object Detection"**</summary></b>
+### RetinaNet 
+
+<b><details><summary>**"Focal Loss for Dense Object Detection"**</summary></b>
 	
 </details>
 
-<b><details><summary>DCN **"Deformable Convolutional Networks"**</summary></b>
+### DCN 
+
+<b><details><summary>**"Deformable Convolutional Networks"**</summary></b>
 	
 </details>
 
 ##### 2018
 
-<b><details><summary>YOLOv3 **"YOLOv3: An Incremental Improvement"**</summary></b>
+### YOLOv3 
+
+<b><details><summary>**"YOLOv3: An Incremental Improvement"**</summary></b>
 	
 </details>
 
@@ -792,19 +863,25 @@ batch normalization adds two trainable parameters to each layer, so the normaliz
 
 ##### 2013
 
-<b><details><summary>VAE **"Auto-encoding variational bayes"**</summary></b>
+### VAE 
+
+<b><details><summary>**"Auto-encoding variational bayes"**</summary></b>
 	
 </details>
 
 ##### 2014
 
-<b><details><summary>GAN **"Generative adversarial nets"**</summary></b>
+### GAN 
+
+<b><details><summary>**"Generative adversarial nets"**</summary></b>
 	
 </details>
 
 ##### 2015
 
-<b><details><summary>VAE with attention **"DRAW: A recurrent neural network for image generation"**</summary></b>
+### VAE with attention 
+
+<b><details><summary>**"DRAW: A recurrent neural network for image generation"**</summary></b>
 	
 </details>
 
@@ -812,15 +889,21 @@ batch normalization adds two trainable parameters to each layer, so the normaliz
 
 ##### 2013
 
+### atari
+
 <b><details><summary>**"Playing atari with deep reinforcement learning"**</summary></b>
 	
 </details>
 
 ##### 2015
 
+### Human-level control through deep reinforcement learning
+
 <b><details><summary>**"Human-level control through deep reinforcement learning"**</summary></b>
 	
 </details>
+
+### Continuous control with deep reinforcement learning
 
 <b><details><summary>**"Continuous control with deep reinforcement learning"**</summary></b>
 	
@@ -828,13 +911,19 @@ batch normalization adds two trainable parameters to each layer, so the normaliz
 
 ##### 2016
 
+### Asynchronous methods for deep reinforcement learning
+
 <b><details><summary>**"Asynchronous methods for deep reinforcement learning"**</summary></b>
 	
 </details>
 
-<b><details><summary>AlphaGo **"Mastering the game of Go with deep neural networks and tree search"**</summary></b>
+### AlphaGo 
+
+<b><details><summary>**"Mastering the game of Go with deep neural networks and tree search"**</summary></b>
 	
 </details>
+
+### Deep reinforcement learning with double q-learning
 
 <b><details><summary>**"Deep reinforcement learning with double q-learning"**</summary></b>
 	
@@ -842,17 +931,25 @@ batch normalization adds two trainable parameters to each layer, so the normaliz
 
 ##### 2017
 
+### Deep reinforcement learning: An overview
+
 <b><details><summary>**"Deep reinforcement learning: An overview"**</summary></b>
 	
 </details>
+
+### Target-driven visual navigation in indoor scenes using deep reinforcement learning
 
 <b><details><summary>**"Target-driven visual navigation in indoor scenes using deep reinforcement learning"**</summary></b>
 	
 </details>
 
+### Deep reinforcement learning for robotic manipulation with asynchronous off-policy updates
+
 <b><details><summary>**"Deep reinforcement learning for robotic manipulation with asynchronous off-policy updates"**</summary></b>
 	
 </details>
+
+### Playing FPS games with deep reinforcement learning
 
 <b><details><summary>**"Playing FPS games with deep reinforcement learning"**</summary></b>
 	
@@ -860,9 +957,13 @@ batch normalization adds two trainable parameters to each layer, so the normaliz
 
 ##### 2018
 
+### Rainbow
+
 <b><details><summary>**"Rainbow: Combining improvements in deep reinforcement learning"**</summary></b>
 	
 </details>
+
+### Deep reinforcement learning that matters
 
 <b><details><summary>**"Deep reinforcement learning that matters"**</summary></b>
 	
