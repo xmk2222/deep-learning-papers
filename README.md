@@ -53,7 +53,7 @@
 
 ##### 2012
 
-<b><details><summary> [ ] AlexNet **"Imagenet classification with deep convolutional neural networks"**</summary></b>
+<b><details><summary> - [ ] AlexNet **"Imagenet classification with deep convolutional neural networks"**</summary></b>
 	
 #### Reference
 
