@@ -54,6 +54,7 @@
 ##### 2012
 
 ### AlexNet 
+
 <b><details><summary> **"Imagenet classification with deep convolutional neural networks"**</summary></b>
 #### Reference
 	
@@ -63,7 +64,9 @@
 
 ##### 2014
 
-<b><details><summary>VGGNet **"Very deep convolutional networks for large-scale image recognition"**</summary></b>
+### VGGNet
+
+<b><details><summary> **"Very deep convolutional networks for large-scale image recognition"**</summary></b>
 	
 1. The use of stack 3×3 filters is effient than of 5×5 or 7×7 filters
 
@@ -83,7 +86,9 @@
 
 </details>
 
-<b><details><summary>NIN **"Network In Network"**</summary></b>
+### NIN
+
+<b><details><summary>**"Network In Network"**</summary></b>
 	
 1. Proposed a new network structure--mlpconv layer
 
@@ -101,7 +106,9 @@
 	
 ##### 2015
 
-<b><details><summary>GoogLeNet **"Going deeper with convolutions"**</summary></b>
+### GoogLeNet
+
+<b><details><summary>**"Going deeper with convolutions"**</summary></b>
 	
 ![inception_naive](./images/GoogleNet/inception_module_naive.png)
 
