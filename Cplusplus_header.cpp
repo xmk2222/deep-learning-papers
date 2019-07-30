@@ -8,6 +8,7 @@
 #include<deque> //push_back(), push_front()
 #include<queue> //push(), pop()
 // priority_queue<>, first element is the greatest, top(), push(), pop()
+// priority_queue<int, vector<int>, greater<int> > 小顶堆 priority_queue<int, vector<int>, less<int> > 大顶堆（默认）
 #include<stack> //top(), push(), pop()
 #include<string> //substr(pos, len), count(str.begin(), str.end(), ch)
 #include<set> //insert(), erase(), count(), find()
@@ -45,6 +46,13 @@ vector<string> split(string s, char delimiter) {
 }
 
 int main() {
-    
+    string str;
+    getline(cin, str);
+    stringstream ss(str);
+    int p;
+    //char delimiter;
+    while(ss >> p) {
+        ss >> delimiter;
+    }
     return 0;
 }
