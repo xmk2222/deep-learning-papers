@@ -30,7 +30,9 @@ struct TreeNode {
     TreeNode *right;
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
- 
+struct cmp {     //priority_queue<int,vector<int>,cmp>que;
+　　operator bool ()(int x, int y) {return　x > y;}　　 // x小的优先级高      
+};
 static bool compare(int n1, int n2) {return n1 > n2;}
 
 #include <sstream>
