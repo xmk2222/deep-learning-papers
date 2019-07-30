@@ -49,10 +49,12 @@ int main() {
     string str;
     getline(cin, str);
     stringstream ss(str);
-    int p;
+    int input;
+    vector<int> inputs;
     //char delimiter;
-    while(ss >> p) {
-        ss >> delimiter;
+    while(ss >> input) {
+        inputs.push_back(input);
+        //ss >> delimiter;
     }
     return 0;
 }
