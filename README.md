@@ -57,7 +57,7 @@
 
 <b><details><summary> **"Imagenet classification with deep convolutional neural networks"**</summary></b>
 #### Reference
-	
+
 [1][**"Imagenet classification with deep convolutional neural networks"**](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)
 
 </details>
@@ -153,7 +153,61 @@
 ### ResNet
 
 <b><details><summary> **"Deep residual learning for image recognition"**</summary></b>
-	
+
+
+
+1. Degradation problem
+
+   With the network depth increasing, accuracy gets saturated and degrades rapidly, this may be caused by vanishing/exploding gradients problem. But in theory, a deeper network should produce no higher training error than its shallower counterpart.
+
+2. Residual Block
+
+   To solve the degradation problem, residual learning was proposed. Instead of hoping each layer directly fit a desired underlying mapping, we explicitly hope it fit a residual mapping. Denoting the underlying mapping as H(x), we fit a mapping F(x) = H(x) - x.
+
+   Let's consider an extreme condition, if the identity mapping were optimal, it would be easier to push the residual to zero than to fit an identity mapping.
+
+   ![res_block](./images/ResNet/ResBlock.png)
+
+   The dimension of x and F(x) must be equal, if not, we could perform a linear projection to match the dimensions.
+
+3. Bottleneck Architecture
+
+   ![bottleneck](./images/ResNet/bottleneck.png)
+
+   The 1x1 conv layer are used to reduce and then increase dimensions, leaving the 3x3 conv a bottleneck with smaller input/output dimensions.
+
+#### Questions
+
+1. ResNet的创新点？
+
+   ResNet提出了残差学习的概念，以往的网络学习的是输入输出的潜在映射，假设为H(x)，而ResNet学习的是潜在映射与输入的残差，即F(x)=H(x)-x。作者认为学习残差比直接学习映射要更容易。假设当前输入已经最优，那么理论上没有残差，此时神经网络学习令残差为0显然是更容易的。
+
+2. ResNet如何解决深层网络训练困难的问题
+
+   神经网络越来越深以后，面对严重的梯度消失和梯度爆炸的问题，正确率常常呈现饱和然后快速下降的趋势，然而理论上更深的网络性能不应低于其较浅的版本。通过残差学习的方法，令神经网络的每一层更容易学习到我们想要的潜在映射，训练速度也更快，解决了深层网络训练困难的问题。
+
+3. ResNet为什么能提升性能？
+
+   学习残差相比直接学习潜在映射要更容易，因此也更容易达到最优。
+
+4. 讲讲ResNet提出的bottleneck结构
+
+   bottleneck是卷积核大小分别为1x1,3x3,1x1的三层网络的叠加，其中1x1 conv用于通道变换，分别将输入通道减少为原来的1/k，以及在3x3卷积之后将通道数恢复。这样可以大大减小3x3卷积的参数量及运算量。
+
+5. ResNet的shortcut可以之间可以只有一层卷积层吗？
+
+   不可以，因为这样残差块的表达式变为H(x) = F(x) + x = relu(Wx)+x, 接近于一个线性单元，实际测试效果也并不好。
+
+#### Reference
+
+[1] [Deep Residual Learning for Image Recognition](https://arxiv.org/abs/1512.03385)
+
+[2] [Keras Implementation](https://github.com/keras-team/keras-applications/blob/master/keras_applications/resnet_common.py)
+
+[3] [PyTorch Implementation](https://github.com/pytorch/vision/blob/master/torchvision/models/resnet.py)
+
+
+
 </details>
 
 ### Inception-v3
@@ -162,9 +216,9 @@
 	
 1. Factorizing Convolutions with Large Filter Size
 
-In theory, we can **replace any n x n convolution by a 1 x n convolution followed by a n x 1 convolution** and the computational cost saving increases dramatically as n grows.
+   In theory, we can **replace any n x n convolution by a 1 x n convolution followed by a n x 1 convolution** and the computational cost saving increases dramatically as n grows.
 
-In practice, **it is found that employing this factorization does not work well on early layers, but it gives very good results on medium grid-size.**
+   In practice, **it is found that employing this factorization does not work well on early layers, but it gives very good results on medium grid-size.**
 
 ![moduleA](./images/InceptionV2/moduleA.png)
 
@@ -174,13 +228,13 @@ In practice, **it is found that employing this factorization does not work well 
 
 2. Utility of Auxiliary Classifiers
 
-The auxiliary classifiers act as **relularizer**.
+   The auxiliary classifiers act as **relularizer**.
 
 ![auxiliary](./images/InceptionV2/auxiliary.png)
 
 3. Efficient Grid Size Reduction
 
-**Conventionally**, such as AlexNet and VGGNet, the feature map downsizing is done by max pooling. But the drawback is either **too greedy by max pooling followed by conv layer**, or **too expensive by conv layer followed by max pooling**. Here, an efficient grid size reduction is proposed as follows:
+   ** Conventionally**, such as AlexNet and VGGNet, the feature map downsizing is done by max pooling. But the drawback is either **too greedy by max pooling followed by conv layer**, or **too expensive by conv layer followed by max pooling**. Here, an efficient grid size reduction is proposed as follows:
 
 ![grid](./images/InceptionV2/grid.png)
 
@@ -224,6 +278,12 @@ With the efficient grid size reduction, **320 feature maps** are done by **conv 
 </details>
 	
 ##### 2016
+
+### ResNet-v2
+
+<b><details><summary>**"Identity Mappings in Deep Residual Networks"**</summary></b>
+	
+</details>
 
 ### Inception-v4
 
@@ -761,6 +821,7 @@ batch normalization adds two trainable parameters to each layer, so the normaliz
 
 5. Compact Design 结构设计
 	
+
 </details>
 
 ### Pruning
