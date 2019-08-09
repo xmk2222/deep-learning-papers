@@ -277,6 +277,7 @@ With the efficient grid size reduction, **320 feature maps** are done by **conv 
 	
 </details>
 	
+
 ##### 2016
 
 ### ResNet-v2
@@ -326,7 +327,11 @@ With the efficient grid size reduction, **320 feature maps** are done by **conv 
 ### DenseNet 
 
 <b><details><summary>**"Densely Connected Convolutional Networks"**</summary></b>
-	
+
+
+
+
+
 </details>
 
 ## Compact Network Design
@@ -344,9 +349,18 @@ With the efficient grid size reduction, **320 feature maps** are done by **conv 
 ### Xception 
 
 <b><details><summary>**"Xception: Deep Learning with Depthwise Separable Convolutions"**</summary></b>
-	
+
+1. 
+
+#### Questions
+
+#### Reference
+
+
+
 </details>
 	
+
 ### MobileNet 
 
 <b><details><summary>**"MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications"**</summary></b>
@@ -593,6 +607,8 @@ The first 1x1 Conv in MobileNetV2 is used for expanding input depth (by 6 defaul
 	
 </details>
 
+
+
 ## Neural Architecture Search
 
 ##### 2016
@@ -656,16 +672,24 @@ The first 1x1 Conv in MobileNetV2 is used for expanding input depth (by 6 defaul
 
 ##### 2019
 
-### MobileNetV3 
-
-<b><details><summary>**"Searching for MobileNetV3"**</summary></b>
-	
-</details>
-
 ### MnasNet 
 
 <b><details><summary>**"MnasNet: Platform-Aware Neural Architecture Search for Mobile"**</summary></b>
 	
+</details>
+
+### MobileNetV3
+
+<b><details><summary>**Searching for MobileNetV3**</summary></b>
+
+
+
+#### Questions
+
+#### Reference
+
+[1] [Searching for MobileNetV3](https://arxiv.org/abs/1905.02244)
+
 </details>
 
 ## Models

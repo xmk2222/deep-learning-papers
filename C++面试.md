@@ -103,9 +103,14 @@
 1. 定义
 
    ```c++
-   int (*pf)(int a);
+   int func(int a){return a;}
+       
+   int (*pf)(int) = func;
+   cout << pf(10);
    
-   typedef int (*pf)(int a);
+   typedef int (*PF)(int);
+   PF pf1 = func;
+   cout << pf1(10);
    ```
 
 2. 指针辨析
@@ -118,6 +123,8 @@
    int (*p)(); //函数指针
    int (*p[])(); //存放函数指针的数组
    ```
+
+### lambda表达式
 
 ### inline函数
 
@@ -242,6 +249,15 @@
 ### 深拷贝与浅拷贝
 
 ### new，delete与malloc，free
+
+### RAII
+
+### 动态链接与静态链接
+
+### 头文件
+
+1. 如何避免头文件被多次包含？
+2. include头文件时编译器的操作？
 
 ## STL模板库
 
