@@ -779,6 +779,12 @@ batch normalization adds two trainable parameters to each layer, so the normaliz
 	
 </details>
 
+### Rectifier
+
+<b><details><summary>**"Delving deep into rectifiers: Surpassing human-level performance on imagenet classification"**</summary></b>
+	
+</details>
+
 ### Net2Net 
 
 <b><details><summary>**"Net2net: Accelerating learning via knowledge transfer"**</summary></b>
