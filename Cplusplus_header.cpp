@@ -10,7 +10,7 @@
 // priority_queue<>, first element is the greatest, top(), push(), pop()
 // priority_queue<int, vector<int>, greater<int> > 小顶堆 priority_queue<int, vector<int>, less<int> > 大顶堆（默认）
 #include<stack> //top(), push(), pop()
-#include<string> //substr(pos, len), count(str.begin(), str.end(), ch)
+#include<string> //substr(pos, len), count(str.begin(), str.end(), ch), size_t str.find(string s)
 #include<set> //insert(), erase(), count(), find()
 #include<map> //count(), erase(key), insert({key, element})
 #include<unordered_set>
