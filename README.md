@@ -373,9 +373,70 @@ With the efficient grid size reduction, **320 feature maps** are done by **conv 
 
 <b><details><summary>**"Densely Connected Convolutional Networks"**</summary></b>
 
+1. DenseBlock
 
+   Standard ConvNet
 
+   ![standard](.\images\DenseNet\standard.png)
 
+   ResNet
+
+   ![resnet](.\images\DenseNet\resnet.png)
+
+   DenseNet
+
+   ![densenet](.\images\DenseNet\densenet.png)
+
+   Each layer obtains additional inputs from all preceding layers and passes on its own feature maps to all subsequent layers. 
+
+   Feature maps output by current layer and preceding layers are combined together by concatenating them.
+
+   ![concat](.\images\DenseNet\forward.PNG)
+
+   DenseNet layers are very narrow (e.g., 12 filters per layer), adding only a small set of feature maps to the collective knowledge of remaining feature maps unchanged and the final classifier makes a decision based on all feature map in the network.
+
+   Besides better parameter efficiency, one big advantage of DenseNets is their **improved flow of information and gradients** througout the network, which makes them easy to train. Each layer has direct access to the gradients from the loss function and the original input signal, leading to an implicit deep supervision.
+
+2. Overall architecture
+
+   ![architecture](.\images\DenseNet\architecture.png)
+
+3. Model Compactness
+
+   As a direct consequence of the input concatenation, the feature-maps learned by any of the DenseNet layers can be accessed by all subsequent layers. This encourages feature reuse throughout the network, and leads to more compact models.
+
+4. Implicit Deep Supervision
+
+   One explanation for the improved accuracy of dense convolutional networks may be that individual layers receive additional supervision from the loss function through the shorter connections.
+
+   A single classifier on top of the network provides direct supervision to all layers through at most two or three transition layers. However, the loss function and gradient of DenseNets are substantially less complicated, as the same loss function is shared between all layers.
+
+5. Feature Reuse
+
+   By design, DenseNets allow layers access to feature-maps from all of its preceding layers (although sometimes through transition layers). We conduct an experiment to investigate if a trained network takes advantage of this opportunity.
+
+   1. All layers spread their weights over many inputs within the same block. This indicates that features extracted by very early layers are, indeed, directly used by deep layers throughout the same dense block.
+   2. The weights of the transition layers also spread their weight across all layers within the preceding dense block, indicating information flow from the first to the last layers of the DenseNet through few indirections.
+   3. The layers within the second and third dense block consistently assign the least weight to the outputs of the transition layer (the top row of the triangles), indicating that the transition layer outputs many redundant features (with low weight on average). This is in keeping with the strong results of DenseNet-BC where exactly these outputs are compressed
+   4. Although the final classification layer, shown on the very right, also uses weights across the entire dense block, there seems to be a concentration towards final feature-maps, suggesting that there may be some more high-level features produced late in the network.
+
+#### Questions
+
+1. 讲讲DenseNet
+
+   DenseNet的主要思想是用shortcut connection将所有网络层都连接起来，形成密集的层之间的全连接，这样可以让每一层都能得到之前所有层的信息作为输入，同时，每一层都能与最后的分类器连接，这样可以让信息和梯度的流通更加顺畅。
+
+2. DenseNet和ResNet的异同
+
+   DenseNet和ResNetV2很像，区别是DenseNet的shortcut是用filter concatenation，而ResNet的shortcut是feature addition.不仅数据连通流动的方式不同，网络结构上也因此产生了很大的区别。DenseNet每一层的filter数很少，产生的新的feature map 直接拼接到输入数据中，对之前层产生信息的重复利用，让DenseNet的filter数可以很少，参数量少于ResNet
+
+#### Reference
+
+[1] [Densely Connected Convolutional Networks](https://arxiv.org/abs/1608.06993)
+
+[2] [Review: DenseNet — **Dense Convolutional Network** (Image Classification)](https://towardsdatascience.com/review-densenet-image-classification-b6631a8ef803)
+
+[2] [Keras Implementation](https://github.com/pytorch/vision/blob/master/torchvision/models/densenet.py)
 
 </details>
 
