@@ -283,7 +283,52 @@ With the efficient grid size reduction, **320 feature maps** are done by **conv 
 ### ResNet-v2
 
 <b><details><summary>**"Identity Mappings in Deep Residual Networks"**</summary></b>
-	
+
+![new residual](./images/ResNetV2/new_residual.png)
+
+1. Analysis of Deep Residual Networks
+
+   Original residual unit:
+   $$
+   y_l = h(x_l) + F(x_l, W_l)\\
+   x_{l+1} = f(y_l)
+   $$
+   If h and f are identity mapping:
+   $$
+   x_{l+1} = x_l + F(x_l, W_l)\\
+   x_L = x_l + \sum_{i=l}^{L-1}F(x_i, W_i)
+   $$
+   Which means the feature $x_L$ of any deeper unit L can be represented as the feature $x_l$ of any shallower unit l plus a residual function F, the feature $x_L$ of any deep unit L, is the summation of the outputs of all preceding residual functions (plus $x_0$). **This ensures that information is directly propagated back to any shallower unit.**
+
+2. Importance of Identity Skip Connections
+
+   Shortcut connections are the most direct paths for the information to propagate. Multiplicative manipulations (scaling, gating, 1x1 convolutions, dropout) on the shortcuts can hamper information propagation and lead to optimization problem
+
+3. Pre-Activation
+
+   1. the optimization is further eased because f is an identity mapping
+   2. using BN as pre-activation improves regularization of the model
+
+#### Questions
+
+1. ResNetV2 主要讲了什么？
+
+   作者重新思考了resnet的residual unit，提出了一种新的residual unit，shortcut改为完全的identity connection，去除之前的ReLU层，同时将每一层之后的激活和BN放到之前
+
+2. 为什么Identity Skip Connection效果好
+
+   根据文章的介绍，直接的identity连接可以让每一层直接连接到前面所有层的输出上，让梯度反向传播更加通畅，identity的连接也不容易发生梯度消失或爆炸的问题。
+
+3. 为什么采用pre-activation
+
+   将BN和激活函数放在卷积之前，可以保证卷积输入的分布一定是稳定的，防止未经BN激活的shorcut流入卷积层，同时还保证了shortcut的identity
+
+#### Reference
+
+[1] [Identity Mappings in Deep Residual Networks](https://arxiv.org/abs/1603.05027)
+
+[2] [Keras Implementation](https://github.com/keras-team/keras-applications/blob/master/keras_applications/resnet_common.py)
+
 </details>
 
 ### Inception-v4
