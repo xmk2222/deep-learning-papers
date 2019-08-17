@@ -899,6 +899,33 @@ batch normalization adds two trainable parameters to each layer, so the normaliz
 
 ## Optimization
 
+### SGD
+
+<b><details><summary>**"Stochastic Gradient Descent"**</summary></b>
+$$
+w_{t+1} = w_t -\alpha\frac{\partial L}{\partial w_t}
+$$
+#### Questions
+
+1. SGD的缺点
+
+   缺点：对每一样本进行更新，收敛速度慢，同时loss函数常常会剧烈震荡，需要对输入数据进行洗牌。
+
+2. mini-batch sgd and batch sgd
+
+   - mini-batch sgd：每次用一小批样本更新梯度。优点是收敛过程更稳定，也更快，也可以利用矩阵运算加速。缺点是容易被困在鞍点和局部最优
+   - batch sgd：对整个数据集计算梯度然后更新。优点是每次更新方向一定是最优；缺点是会被困在鞍点或局部最优，且数据集大时更新速度非常慢
+
+#### Reference
+
+[1] [10 Gradient Descent Optimisation Algorithms + Cheat Sheet](https://towardsdatascience.com/10-gradient-descent-optimisation-algorithms-86989510b5e9)
+
+[2] [优化器详解](https://www.cnblogs.com/guoyaohua/p/8542554.html)
+
+[3] [一文看懂各种神经网络优化算法：从梯度下降到Adam方法](https://zhuanlan.zhihu.com/p/27449596)
+
+</details>
+
 ##### 2013
 
 ### Momentum 
