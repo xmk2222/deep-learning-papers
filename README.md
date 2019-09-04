@@ -874,6 +874,11 @@ batch normalization adds two trainable parameters to each layer, so the normaliz
 - BN的参数数量
 
   BN层计算参数时将整个输入的feature map当做一个特征进行处理，因此参数数量只与输入的通道数相关（4C）
+  
+- BN的缺点
+
+  - 当batch size太小的时候，归一化没有什么意义，数据分布依然会剧烈震荡
+  - 在RNN中，每个时间点的数据分布不同，需要为每个time-step进行归一化，大大增加了模型的复杂度
 
 #### Reference
 
@@ -881,8 +886,30 @@ batch normalization adds two trainable parameters to each layer, so the normaliz
 
 [2][Review: Batch normalization in Neural Networks](https://towardsdatascience.com/batch-normalization-in-neural-networks-1ac91516821c)
 
-[3][Review: Batch Normalization — What the hey?](https://gab41.lab41.org/batch-normalization-what-the-hey-d480039a9e3b)
+[3][Review: Batch Normalization — What the hey?](https://gab41.lab41.org/batch-normalization-what-the-hey-d480039a9e3b)
 	
+</details>
+
+##### 2016
+
+### Layer Normalization
+
+<b><details><summary>**"Layer Normalization"**</summary></b>
+
+#### Reference
+
+[1] [Layer Normalization](https://arxiv.org/abs/1607.06450)
+
+</details>
+
+### Weight Normalization
+
+<b><details><summary>**"Weight Normalization: A Simple Reparameterization to Accelerate Training of Deep Neural Networks"**</summary></b>
+
+#### Reference
+
+[1] [Weight Normalization: A Simple Reparameterization to Accelerate Training of Deep Neural Networks](https://arxiv.org/abs/1602.07868)
+
 </details>
 
 ### Rectifier
