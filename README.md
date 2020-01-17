@@ -1075,13 +1075,59 @@ $$
 ### RCNN 
 
 <b><details><summary>**"Rich feature hierarchies for accurate object detection and semantic segmentation"**</summary></b>
-	
+
+![architecture](./images/RCNN/architecture.jpg)
+
+#### Questions
+
+1. 简要介绍RCNN
+
+   RCNN是最早使用CNN进行目标检测的方法，具体来说，RCNN首先用selective search选择候选框，resize成固定大小然后输入预训练好的CNN中，保存feature map，然后通过SVM进行分类，最后进行边界框的回归。
+
+2. RCNN的缺点
+
+   1. 多阶段训练，训练复杂
+   2. 训练时间和空间消耗大，RCNN将每个候选框输入CNN进行运算，造成了大量的重复运算，且SVM分类效果一般，参数量大，速度慢。
+   3. 预测速度慢
+
+3. 简述NMS：
+
+   主要目的是剔除过于接近的候选框。具体来说，对于IoU超过阈值的框，只保留可信度较高的。
+
+4. 损失函数：
+
+   预训练CNN时对于和ground truth的IoU大于0.5的框视为正类，训练SVM时阈值为0.3
+
 </details>
 
 ### SPPNet 
 
 <b><details><summary>**"Spatial pyramid pooling in deep convolutional networks for visual recognition"**</summary></b>
-	
+
+![architecture](./images/SPPNet/architecture.jpg)
+
+![feature](./images/SPPNet/feature.jpg)
+
+![pyramid](./images/SPPNet/pyramid.jpg)
+
+#### Questions
+
+1. SPPNet主要思想
+
+   SPPNet主要时为了解决CNN必须输入特定尺寸图像的问题。SPPNet采用了spatial pyramid pooling的方法，对神经网络的输出特征图进行max-pooling，将其pooling到不同尺寸，这样便可以使用不同尺寸的全连接层，检测不同尺度的特征
+
+2. 相比RCNN的改进
+
+   SPPNet只将输入图像通过CNN一次，在最后的输出特征图上，根据不同尺度的classifier来进行分类与检测，节约了大量的计算
+
+3. 为什么在特征图上也可以实现检测
+
+   因为文章发现输入图像中的目标会在特征图的对应位置上产生强响应，因此不必像RCNN一样在输入之前进行特征位置选择。
+
+4. SPPNet的缺点
+
+   多阶段训练，需要硬盘存储
+
 </details>
 
 ##### 2015
