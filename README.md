@@ -2,32 +2,11 @@
 
 # Content
 
-[1. Books](#1books)
+[1. Papers](#1papers)
 
-[2. Papers](#2papers)
+[2. Concept Explanation](#2concept-explanation)
 
-[3. Concept Explanation](#3concept-explanation)
-
-# 1.Books
-
-- 李航 **"统计学习方法"**
-- 周志华 **"机器学习"**
-
-- 何海涛 **"剑指offer"**
-
-- 诸葛越 **"百面机器学习"**
-
-- scutan90 [**"DeepLearning-500-questions"**](https://github.com/scutan90/DeepLearning-500-questions)
-
-- huihut [**C/C++ 技术面试基础知识总结**](https://github.com/huihut/interview)
-
-- Stephen Prata **"C++ Primer Plus"**
-
-- **"数据结构"**
-
-- Ian Goodfellow [**"深度学习"**](https://exacity.github.io/deeplearningbook-chinese/)
-
-# 2.Papers
+# 1.Papers
 
 ## Content
 
@@ -1314,7 +1293,7 @@ $$
 	
 </details>
 
-# 3.Concept Explanation
+# 2.Concept Explanation
 
 ## Contents
 [Loss Function](#loss-function)
