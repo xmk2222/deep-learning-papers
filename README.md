@@ -2,11 +2,32 @@
 
 # Content
 
-[1. Papers](#1papers)
+[1. Books](#1books)
 
-[2. Concept Explanation](#2concept-explanation)
+[2. Papers](#2papers)
 
-# 1.Papers
+[3. Concept Explanation](#3concept-explanation)
+
+# 1.Books
+
+- 李航 **"统计学习方法"**
+- 周志华 **"机器学习"**
+
+- 何海涛 **"剑指offer"**
+
+- 诸葛越 **"百面机器学习"**
+
+- scutan90 [**"DeepLearning-500-questions"**](https://github.com/scutan90/DeepLearning-500-questions)
+
+- huihut [**C/C++ 技术面试基础知识总结**](https://github.com/huihut/interview)
+
+- Stephen Prata **"C++ Primer Plus"**
+
+- **"数据结构"**
+
+- Ian Goodfellow [**"深度学习"**](https://exacity.github.io/deeplearningbook-chinese/)
+
+# 2.Papers
 
 ## Content
 
@@ -35,9 +56,10 @@
 ### AlexNet 
 
 <b><details><summary> **"Imagenet classification with deep convolutional neural networks"**</summary></b>
+
 #### Reference
 
-[1][**"Imagenet classification with deep convolutional neural networks"**](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)
+[1] [**"Imagenet classification with deep convolutional neural networks"**](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)
 
 </details>
 
@@ -47,6 +69,7 @@
 
 <b><details><summary> **"Very deep convolutional networks for large-scale image recognition"**</summary></b>
 	
+
 1. The use of stack 3×3 filters is effient than of 5×5 or 7×7 filters
 
 2. A deep net with small filters outperforms a shallow net with larger filters
@@ -55,13 +78,13 @@
 
 #### Reference
 
-[1][**"Very deep convolutional networks for large-scale image recognition"**](https://arxiv.org/pdf/1409.1556.pdf)
+[1] [**"Very deep convolutional networks for large-scale image recognition"**](https://arxiv.org/pdf/1409.1556.pdf)
 
-[2][Review: VGGNet — 1st Runner-Up (Image Classification), Winner (Localization) in ILSVRC 2014](https://medium.com/coinmonks/paper-review-of-vggnet-1st-runner-up-of-ilsvlc-2014-image-classification-d02355543a11)
+[2] [Review: VGGNet — 1st Runner-Up (Image Classification), Winner (Localization) in ILSVRC 2014](https://medium.com/coinmonks/paper-review-of-vggnet-1st-runner-up-of-ilsvlc-2014-image-classification-d02355543a11)
 
-[3][Keras implement vgg-16](https://github.com/keras-team/keras-applications/blob/master/keras_applications/vgg16.py)
+[3] [Keras implement vgg-16](https://github.com/keras-team/keras-applications/blob/master/keras_applications/vgg16.py)
 
-[4][Keras implement vgg-19](https://github.com/keras-team/keras-applications/blob/master/keras_applications/vgg19.py)
+[4] [Keras implement vgg-19](https://github.com/keras-team/keras-applications/blob/master/keras_applications/vgg19.py)
 
 </details>
 
@@ -77,12 +100,13 @@
 
 #### Reference
 
-[1][**"Network In Network"**](https://arxiv.org/abs/1312.4400)
+[1] [**"Network In Network"**](https://arxiv.org/abs/1312.4400)
 
-[2][Review: NIN — Network In Network (Image Classification)](https://towardsdatascience.com/review-nin-network-in-network-image-classification-69e271e499ee)
+[2] [Review: NIN — Network In Network (Image Classification)](https://towardsdatascience.com/review-nin-network-in-network-image-classification-69e271e499ee)
 	
 </details>
 	
+
 ##### 2015
 
 ### GoogLeNet
@@ -93,11 +117,11 @@
 
 ![inception_module](./images/GoogleNet/Inception_module.png)
 
-1. 1×1 convolution is used as a dimension reduction module to reduce the computation. By reducing the computation bottleneck, depth and width can be increased
-2. When image’s coming in, different sizes of convolutions as well as max pooling are tried. Then different kinds of features are extracted.
-3. Global average pooling is used nearly at the end of network by averaging each feature map from 7×7 to 1×1, and authors found that a move from FC layers to average pooling improved the top-1 accuracy by about 0.6%.
-4. Auxiliary classifiers for combating gradient vanishing problem, also providing regularization.
-5. besides the network design, the other stuffs like ensemble methods, multi-scale and multi-crop approaches are also essential to reduce the error rate
+1. **1×1 convolution** is used as a dimension reduction module to reduce the computation. By reducing the computation bottleneck, depth and width can be increased
+2. When image’s coming in, **different sizes of convolutions** as well as max pooling are tried. Then different kinds of features are extracted.
+3. **Global average pooling** is used nearly at the end of network by averaging each feature map from 7×7 to 1×1, and authors found that a move from FC layers to average pooling improved the top-1 accuracy by about 0.6%.
+4. **Auxiliary classifiers** for combating gradient vanishing problem, also providing regularization.
+5. besides the network design, the other stuffs like **ensemble methods**, multi-scale and multi-crop approaches are also essential to reduce the error rate
 
 ![googlenet](./images/GoogleNet/googlenet.png)
 
@@ -121,11 +145,11 @@
 
 #### Reference
 
-[1][**"Going deeper with convolutions"**](https://www.cs.unc.edu/~wliu/papers/GoogLeNet.pdf)
+[1] [**"Going deeper with convolutions"**](https://www.cs.unc.edu/~wliu/papers/GoogLeNet.pdf)
 
-[2][Pytorch implement](https://github.com/pytorch/vision/blob/master/torchvision/models/inception.py)
+[2] [Pytorch implement](https://github.com/pytorch/vision/blob/master/torchvision/models/inception.py)
 
-[3][Review: GoogLeNet (Inception v1)— Winner of ILSVRC 2014 (Image Classification)](https://medium.com/coinmonks/paper-review-of-googlenet-inception-v1-winner-of-ilsvlc-2014-image-classification-c2b3565a64e7)
+[3] [Review: GoogLeNet (Inception v1)— Winner of ILSVRC 2014 (Image Classification)](https://medium.com/coinmonks/paper-review-of-googlenet-inception-v1-winner-of-ilsvlc-2014-image-classification-c2b3565a64e7)
 	
 </details>
 
@@ -1293,7 +1317,7 @@ $$
 	
 </details>
 
-# 2.Concept Explanation
+# 3.Concept Explanation
 
 ## Contents
 [Loss Function](#loss-function)
