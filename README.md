@@ -1138,13 +1138,46 @@ $$
 ### Fast R-CNN 
 
 <b><details><summary>**"Fast R-CNN"**</summary></b>
-	
+
+​	![Architecture](.\images\FastRCNN\Architecture.JPG)
+
+A Fast R-CNN network takes as input an entire image and a set of object proposals. The network first processes the whole image with several convolutional (*conv*) and max pooling layers to produce a conv feature map. Then, for each object proposal a region of interest (*RoI*) pooling layer extracts a fixed-length feature vector from the feature map. Each feature vector is fed into a sequence of fully connected (*fc*) layers that finally branch into two sibling output layers: one that produces softmax probability estimates over K* object classes plus a catch-all “background” class and another layer that outputs four real-valued numbers for each of the *K* object classes. Each set of 4 values encodes refined bounding-box positions for one of the *K* classes.
+
+#### Questions
+
+1. Fast-RCNN的改进
+
+   - RCNN每次提取RoI都要通过一次卷积，FastRCNN借鉴SPPNet的结论，每幅图像只进行一次卷积，而在特征图上通过映射区域选取RoI，大大减少了卷积的运算量。
+
+   - 通过multi-task loss实现single-stage训练，训练可直接更新所有网络层。
+
+
+2. loss函数：
+   $$
+L(p,u,t^u,v) = L_{cls}(p,u) + \lambda[u \ge 1]L_{loc}(t^u,v)
+   $$
+   其中p为预测值，k个类别有k+1个值，u为对应的真值，$L_{cls}$为log loss。v代表真实的边界框的四个坐标值，t为预测值，对每个类别输出对应的坐标偏移值，$L_{loc}$为平滑L1.
+   
+3. 如何实现多尺度的识别：
+
+   
+   1. 暴力搜索：所有图像在输入和输出时处理成固定像素
+   2. 图像金字塔：训练时随机采样金字塔尺度
+
 </details>
 
 ### Faster R-CNN 
 
 <b><details><summary>**"Faster R-CNN: Towards real-time object detection with region proposal networks"**</summary></b>
-	
+
+#### Questions
+
+1. 最重要的改进
+
+   之前框架最大的局限在于候选区域的选定，本文提出RPN来自动生成region proposals，
+
+2. 
+
 </details>
 
 ### YOLO 
