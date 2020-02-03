@@ -1170,13 +1170,42 @@ L(p,u,t^u,v) = L_{cls}(p,u) + \lambda[u \ge 1]L_{loc}(t^u,v)
 
 <b><details><summary>**"Faster R-CNN: Towards real-time object detection with region proposal networks"**</summary></b>
 
+![multi-scale](./images/FasterRCNN/multi-scale.jpg)
+
+![architecture](./images/FasterRCNN/architecture.jpg)
+
+![RPN](./images/FasterRCNN/RPN.jpg)
+
 #### Questions
 
 1. 最重要的改进
 
-   之前框架最大的局限在于候选区域的选定，本文提出RPN来自动生成region proposals，
+   之前框架最大的局限在于候选区域的选定，本文提出RPN来自动生成region proposals，只在FastRCNN的基础上增加了几层全连接网络。
 
-2. 
+2. RPN的原理与loss
+
+   RPN建立在FastRCNN的卷积层的基础上，输出为候选框以及候选框是否包含物体。通过在VGG或ZF网络输出的最后一层特征图上，进行3x3卷积，在每一个滑动窗的中心设置k（k=9）个anchor boxes，对应回原图九种不同尺寸不同长宽比的框，当卷积滑动就可以覆盖原图几乎所有可能的候选窗；卷积之后有两个相邻的1x1卷积，分别为分类层（输出2k个值）和回归层（输出4k个坐标偏移值）。损失函数如下：
+   $$
+   L(\{p_i\},\{t_i\})=\frac{1}{N_{cls}}\sum_i L_{cls}(p_i, p_i^*)+\lambda\frac{1}{N_{reg}}\sum_i p_i^* L_{reg}(t_i, t_i^*)
+   $$
+   其中，分类损失为log loss，回归损失为smooth-L1.
+
+   用anchor的好处是可以实现平移不变性。
+
+   在训练时，正样本为IOU最大的anchor以及IOU大于0.7的anchor，负样本为IOU小于0.3的anchor，其他忽略。
+
+3. 如何训练
+
+   通过4步训练来实现RPN与RCNN的参数共享：
+
+   1. 用ImageNet的预训练网络训练RPN
+   2. 用上一步RPN得到的候选框训练FastRCNN，RCNN同样适用ImageNet预训练网络，此时二者不共享参数
+   3. 用上一步得到的RCNN的网络作为RPN的基网络，固定该网络，只训练RPN的顶上几层，此时二者已共享基网络的参数
+   4. 最后一步，训练RCNN的顶上几层
+
+#### Reference
+
+[1] [pytorch implementation](https://github.com/chenyuntc/simple-faster-rcnn-pytorch)
 
 </details>
 
