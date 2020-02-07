@@ -1191,7 +1191,50 @@ L(p,u,t^u,v) = L_{cls}(p,u) + \lambda[u \ge 1]L_{loc}(t^u,v)
 ### YOLO 
 
 <b><details><summary>**"You only look once: Unified, real-time object detection"**</summary></b>
-	
+
+![model](./images/YOLO/model.jpg)
+
+#### Questions
+
+1. YOLO与之前目标识别框架的不同
+
+   YOLO是单阶段检测模型，将分类与检测任务放在一起，训练简单，速度更快。此外YOLO在预测时分类器可以看到整幅图像的信息，因此YOLO对北京的分类错误比FastRCNN少一半。此外，YOLO的泛化性能更强。
+
+2. YOLO 的原理
+
+   YOLO在整张图的输入上，预测所有物体框与所有类别，从而实现单阶段的快速检测。具体来说，YOLO将输入图像分为S x S 个网格，如果物体中心落入某个网格中，该网格用来检测那个物体。每个网格会预测出B个bounding boxes和对应的confidence值。confidence代表该box内有物体的概率，即$ Pr(Object) * IOU$，若无物体则为0，这样confidence为一个介于0与IOU之间的值。每个bounding box包括五个预测值x，y，w，h和confidence，前四个分别为预测框的中心与宽高，而confidence则代表IOU。
+
+   每个网格还预测C个条件概率$Pr(Class_i | Object)$，即在网格中有物体的情况下物体为类别i的概率。每个网格预测C个，与框的数量B无关。在测试时我们将二者相乘
+   $$
+   Pr(Class_i | Object) * Pr(Object) * IOU = Pr(Class_i) * IOU
+   $$
+   这样就得到了每一类的confidence。
+
+3. Loss设计
+
+   $$
+   \lambda_{coord}\sum^{S^2}_{i=0}\sum^B_{j=0}1^{obj}_{ij}[(x_i-\hat{x_i})^2 + (y_i-\hat{y_i})^2]  + \lambda_{coord}\sum^{S^2}_{i=0}\sum^B_{j=0}1^{obj}_{ij}[(\sqrt{w_i}-\sqrt{\hat{w_i}})^2 + (\sqrt{h_i}-\sqrt{\hat{h_i}})^2] + \sum^{S^2}_{i=0}\sum^B_{j=0}1_{ij}^{obj}(C_i-\hat{C_i})^2+\lambda_{noobj}\sum^{S^2}_{i=0}\sum^B_{j=0}1_{ij}^{noobj}(C_i-\hat{C_i})^2 + \sum_{i=0}^{S^2}1_i^{obj}\sum_{c\in classes}(p_i(c)-\hat{p_i}(c))^2
+   $$
+   前两项代表每一个网格以及其预测出的每一个有物体的框的位置的回归loss，其中$1_{ij}^{obj}$代表第i个网格的第j个框是否有物体。注意这里对每个网格，只会选出IOU最大的那个框，也就是B个框中只有一个框会对loss产生影响。
+
+   接下来的两项代表每一个有物体的框的预测confidence即IOU的损失以及没有物体的框的confidence损失。这里注意到有很多很多框是没有物体的，因此第四项loss容易更大，因此将这一项的权重$\lambda{noobj}$设为0.5，而将回归损失的权重设为5.
+
+   最后一项为每个有物体的网格对应的物体的种类的预测损失。
+
+   应该注意到这个Loss函数的设计，只有有物体的网格会对loss造成影响，且每个网格中只有一个框（IOU最大的框）会对loss造成影响。
+
+4. 缺点
+
+   - 对于小物体或成群出现的物体会有识别困难。
+   - 对于不同尺度的物体识别能力欠佳。
+   - 小框的小错误比大框的小错误在IOU上产生的影响更大，这是设计中不合理的一个点。
+
+#### Reference
+
+**[1] [You Only Look Once: Unified, Real-Time Object Detection](http://arxiv.org/pdf/1506.02640)**
+
+
+
 </details>
 
 ### SSD 
