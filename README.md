@@ -1291,6 +1291,22 @@ L(p,u,t^u,v) = L_{cls}(p,u) + \lambda[u \ge 1]L_{loc}(t^u,v)
 	
 </details>
 
+## Image Segmentation
+
+FCN
+
+DeconvNet
+
+U-Net
+
+SegNet
+
+DeepLab
+
+PSPNet
+
+Mask-RCNN
+
 ## Deep Generative Model
 
 ##### 2013
