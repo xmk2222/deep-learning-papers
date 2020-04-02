@@ -695,7 +695,7 @@ The first 1x1 Conv in MobileNetV2 is used for expanding input depth (by 6 defaul
 	
 </details>
 
-
+### EfficientNet
 
 ## Neural Architecture Search
 
