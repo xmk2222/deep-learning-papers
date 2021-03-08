@@ -1,4 +1,4 @@
-# What should we do to find an ideal job as a deep learning engineer
+# Deep Learning Papers
 
 # Content
 
@@ -73,7 +73,7 @@
 	
 1. Proposed a new network structure--mlpconv layer
 
-  ![mlpconv](./images/NIN/mlpconv.png)
+  ![mlpconv](images/NIN/mlpconv.png)
 
 2. Usually, fully connected layers are used at the end of network, however, they are prone to overfitting. This article used global average pooling layer as the last layer of the network, it is more native to the convolution structure by enforcing correspondences between feature maps and categories, and could prevent over-fitting.
 
@@ -92,9 +92,9 @@
 
 <b><details><summary>**"Going deeper with convolutions"**</summary></b>
 	
-![inception_naive](./images/GoogleNet/inception_module_naive.png)
+![inception_naive](images/GoogleNet/inception_module_naive.png)
 
-![inception_module](./images/GoogleNet/Inception_module.png)
+![inception_module](images/GoogleNet/Inception_module.png)
 
 1. **1×1 convolution** is used as a dimension reduction module to reduce the computation. By reducing the computation bottleneck, depth and width can be increased
 2. When image’s coming in, **different sizes of convolutions** as well as max pooling are tried. Then different kinds of features are extracted.
@@ -102,7 +102,7 @@
 4. **Auxiliary classifiers** for combating gradient vanishing problem, also providing regularization.
 5. besides the network design, the other stuffs like **ensemble methods**, multi-scale and multi-crop approaches are also essential to reduce the error rate
 
-![googlenet](./images/GoogleNet/googlenet.png)
+![googlenet](images/GoogleNet/googlenet.png)
 
 #### Questions
 
@@ -148,13 +148,13 @@
 
    Let's consider an extreme condition, if the identity mapping were optimal, it would be easier to push the residual to zero than to fit an identity mapping.
 
-   ![res_block](./images/ResNet/ResBlock.png)
+   ![res_block](images/ResNet/ResBlock.png)
 
    The dimension of x and F(x) must be equal, if not, we could perform a linear projection to match the dimensions.
 
 3. Bottleneck Architecture
 
-   ![bottleneck](./images/ResNet/bottleneck.png)
+   ![bottleneck](images/ResNet/bottleneck.png)
 
    The 1x1 conv layer are used to reduce and then increase dimensions, leaving the 3x3 conv a bottleneck with smaller input/output dimensions.
 
@@ -202,23 +202,23 @@
 
    In practice, **it is found that employing this factorization does not work well on early layers, but it gives very good results on medium grid-size.**
 
-![moduleA](./images/InceptionV2/moduleA.png)
+![moduleA](images/InceptionV2/moduleA.png)
 
-![moduleB](./images/InceptionV2/moduleB.png)
+![moduleB](images/InceptionV2/moduleB.png)
 
-![moduleC](./images/InceptionV2/moduleC.png)
+![moduleC](images/InceptionV2/moduleC.png)
 
 2. Utility of Auxiliary Classifiers
 
    The auxiliary classifiers act as **relularizer**.
 
-![auxiliary](./images/InceptionV2/auxiliary.png)
+![auxiliary](images/InceptionV2/auxiliary.png)
 
 3. Efficient Grid Size Reduction
 
    ** Conventionally**, such as AlexNet and VGGNet, the feature map downsizing is done by max pooling. But the drawback is either **too greedy by max pooling followed by conv layer**, or **too expensive by conv layer followed by max pooling**. Here, an efficient grid size reduction is proposed as follows:
 
-![grid](./images/InceptionV2/grid.png)
+![grid](images/InceptionV2/grid.png)
 
 With the efficient grid size reduction, **320 feature maps** are done by **conv with stride 2**. **320 feature maps** are obtained by **max pooling**. And these 2 sets of feature maps are **concatenated as 640 feature maps** and go to the next level of inception module.
 
@@ -226,7 +226,7 @@ With the efficient grid size reduction, **320 feature maps** are done by **conv 
 
 4. Overall Architecture
 
-![architecture](./images/InceptionV2/architecture.png)
+![architecture](images/InceptionV2/architecture.png)
 
 5. General Design Principles
    1. **Avoid representational bottlenecks, especially early in the network.** One should avoid bottlenecks with extreme compression. In general, the representation size should gently decrease. Theoretically, information content can not be assessed merely by the dimensionality of the representation as it discards important factors like correlation structure, the dimensional merely provides a rough estimate of information content.
@@ -266,7 +266,7 @@ With the efficient grid size reduction, **320 feature maps** are done by **conv 
 
 <b><details><summary>**"Identity Mappings in Deep Residual Networks"**</summary></b>
 
-![new residual](./images/ResNetV2/new_residual.png)
+![new residual](images/ResNetV2/new_residual.png)
 
 1. Analysis of Deep Residual Networks
 
@@ -359,21 +359,21 @@ With the efficient grid size reduction, **320 feature maps** are done by **conv 
 
    Standard ConvNet
 
-   ![standard](.\images\DenseNet\standard.png)
+   ![standard](images\DenseNet\standard.png)
 
    ResNet
 
-   ![resnet](.\images\DenseNet\resnet.png)
+   ![resnet](images\DenseNet\resnet.png)
 
    DenseNet
 
-   ![densenet](.\images\DenseNet\densenet.png)
+   ![densenet](images\DenseNet\densenet.png)
 
    Each layer obtains additional inputs from all preceding layers and passes on its own feature maps to all subsequent layers. 
 
    Feature maps output by current layer and preceding layers are combined together by concatenating them.
 
-   ![concat](.\images\DenseNet\forward.PNG)
+   ![concat](images\DenseNet\forward.png)
 
    DenseNet layers are very narrow (e.g., 12 filters per layer), adding only a small set of feature maps to the collective knowledge of remaining feature maps unchanged and the final classifier makes a decision based on all feature map in the network.
 
@@ -381,7 +381,7 @@ With the efficient grid size reduction, **320 feature maps** are done by **conv 
 
 2. Overall architecture
 
-   ![architecture](.\images\DenseNet\architecture.png)
+   ![architecture](images\DenseNet\architecture.png)
 
 3. Model Compactness
 
@@ -455,7 +455,7 @@ With the efficient grid size reduction, **320 feature maps** are done by **conv 
 	
 1. Depthwise separable convolution
 
-![DepthWiseConv](./images/MobileNet/DepthWiseConv.png)
+![DepthWiseConv](images/MobileNet/DepthWiseConv.png)
 
 (This figure is a little confusing that the last 1x1 conv actually is a ordinary 1x1 conv layer that has depth of M, and there are N such filters)
 
@@ -478,7 +478,7 @@ $$
 
 4. Overall architecture
 
-![architecture](./images/MobileNet/architecture.png)
+![architecture](images/MobileNet/architecture.png)
 
 #### Questions
 
@@ -510,7 +510,7 @@ $$
 
 <b><details><summary>**"ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices"**</summary></b>
 	
-1. Channel shuffle![channel shuffle](./images/ShuffleNet/channel_shuffle.png)
+1. Channel shuffle![channel shuffle](images/ShuffleNet/channel_shuffle.png)
 
    Stacked group convolutions has one side effect: outputs from a certain channel are only derived from a small fraction of input channel, this property blocks information flow between channel groups and weakens representation.
 
@@ -518,7 +518,7 @@ $$
 
 2. Shuffle Unit
 
-   ![shuffle unit](./images/ShuffleNet/unit.png)
+   ![shuffle unit](images/ShuffleNet/unit.png)
 
    (a) is a residual block with 3x3 depthwise convolution. Then replace the first 1x1 layer with pointwise group convolution followed by a channel shuffle operation. And the second pointwise group convolution is to recover the channel dimension to match the shortcut path.(Which is (b))
 
@@ -573,19 +573,19 @@ Assuming the manifold of interest is low-dimensional we can capture this by inse
 
 2. Inverted residuals
 
-![Inverted](./images/MobileNetV2/inverted.png)
+![Inverted](images/MobileNetV2/inverted.png)
 
 $h \cdot w \cdot k \cdot t (k + d^2 + k')$
 
 3. Convolutional Blocks
 
-![conv block](./images/MobileNetV2/ConvBlocks.png)
+![conv block](images/MobileNetV2/ConvBlocks.png)
 
 The first 1x1 Conv in MobileNetV2 is used for expanding input depth (by 6 default).
 
 4. Overall Architecture
 
-![architecture](./images/MobileNetV2/architecture.png)
+![architecture](images/MobileNetV2/architecture.png)
 
 #### Questions
 
@@ -653,9 +653,9 @@ The first 1x1 Conv in MobileNetV2 is used for expanding input depth (by 6 defaul
 
 3. ShuffleNetV2 
 
-   ![unit](./images/ShuffleNetV2/unit.png)
+   ![unit](images/ShuffleNetV2/unit.png)
 
-   ![overall](./images/ShuffleNetV2/overall.png)
+   ![overall](images/ShuffleNetV2/overall.png)
 
    Note that there is an additional 1x1 convolution layer added right before global averaged pooling to mix up features.
 
@@ -721,32 +721,32 @@ The first 1x1 Conv in MobileNetV2 is used for expanding input depth (by 6 defaul
 
    By doing this, it is enough to only predict a **Normal Cell** and a **Reduction Cell**, and simply stack them in series.
 
-   ![cell](./images/NasNet/cell.png)
+   ![cell](images/NasNet/cell.png)
 
 3. RNN Controller
 
-   ![rnn](./images/NasNet/rnn.png)
+   ![rnn](images/NasNet/rnn.png)
 
-   ![steps](./images/NasNet/steps.png)
+   ![steps](images/NasNet/steps.png)
 
    - The algorithm appends the newly-created hidden state to the set of existing hidden states as a potential input in subsequent blocks. The controller RNN repeats the above 5 prediction steps B times corresponding to the B blocks in a convolutional cell.(B=5)
 
    - In steps 3 and 4, the controller RNN selects an operation to apply to the hidden states:
 
-   ![operations](./images/NasNet/operations.png)
+   ![operations](images/NasNet/operations.png)
 
    - In step 5 the controller RNN selects a method to combine the two hidden states, either (1) element-wise addition between two hidden states or (2) concatenation between two hidden states along the ﬁlter dimension
 - Specifically, the controller RNN is a one-layer LSTM with 100 hidden units at each layer and 2×5*B* softmax predictions for the two convolutional cells (where *B* is typically 5) associated with each architecture decision.
    - Each of the 10*B* predictions of the controller RNN is associated with a probability. The joint probability of a child network is the product of all probabilities at these 10*B* softmaxes. This joint probability is used to compute the gradient for the controller RNN.
    - The gradient is scaled by the validation accuracy of the child network to update the controller RNN such that the controller assigns low probabilities for bad child networks and high probabilities for good child networks.
    
-   ![schema](./images/NasNet/schema.png)
+   ![schema](images/NasNet/schema.png)
    
-   ![a](./images/NasNet/a.png)
+   ![a](images/NasNet/a.png)
    
-   ![b](./images/NasNet/b.png)
+   ![b](images/NasNet/b.png)
    
-   ![c](./images/NasNet/c.png)
+   ![c](images/NasNet/c.png)
 
 #### Reference
 
@@ -806,9 +806,9 @@ batch normalization normalizes the output of a previous activation layer by subt
 
 batch normalization adds two trainable parameters to each layer, so the normalized output is multiplied by a “standard deviation” parameter (gamma) and add a “mean” parameter (beta). In other words, batch normalization lets SGD do the denormalization by changing only these two weights for each activation, instead of losing the stability of the network by changing all the weights
 
-![algorithm1](./images/BatchNorm/algorithm.png)
+![algorithm1](images/BatchNorm/algorithm.png)
 
-![algorithm2](./images/BatchNorm/algorithm2.png)
+![algorithm2](images/BatchNorm/algorithm2.png)
 
 > There is a subtle difference between training and inferencing, During training, it is normalized by 
 
@@ -1058,7 +1058,7 @@ $$
 
 <b><details><summary>**"Rich feature hierarchies for accurate object detection and semantic segmentation"**</summary></b>
 
-![architecture](./images/RCNN/architecture.jpg)
+![architecture](images/RCNN/architecture.jpg)
 
 #### Questions
 
@@ -1086,11 +1086,11 @@ $$
 
 <b><details><summary>**"Spatial pyramid pooling in deep convolutional networks for visual recognition"**</summary></b>
 
-![architecture](./images/SPPNet/architecture.jpg)
+![architecture](images/SPPNet/architecture.jpg)
 
-![feature](./images/SPPNet/feature.jpg)
+![feature](images/SPPNet/feature.jpg)
 
-![pyramid](./images/SPPNet/pyramid.jpg)
+![pyramid](images/SPPNet/pyramid.jpg)
 
 #### Questions
 
@@ -1118,7 +1118,7 @@ $$
 
 <b><details><summary>**"Fast R-CNN"**</summary></b>
 
-​	![Architecture](.\images\FastRCNN\Architecture.JPG)
+​	![Architecture](images\FastRCNN\Architecture.JPG)
 
 A Fast R-CNN network takes as input an entire image and a set of object proposals. The network first processes the whole image with several convolutional (*conv*) and max pooling layers to produce a conv feature map. Then, for each object proposal a region of interest (*RoI*) pooling layer extracts a fixed-length feature vector from the feature map. Each feature vector is fed into a sequence of fully connected (*fc*) layers that finally branch into two sibling output layers: one that produces softmax probability estimates over K* object classes plus a catch-all “background” class and another layer that outputs four real-valued numbers for each of the *K* object classes. Each set of 4 values encodes refined bounding-box positions for one of the *K* classes.
 
@@ -1149,11 +1149,11 @@ L(p,u,t^u,v) = L_{cls}(p,u) + \lambda[u \ge 1]L_{loc}(t^u,v)
 
 <b><details><summary>**"Faster R-CNN: Towards real-time object detection with region proposal networks"**</summary></b>
 
-![multi-scale](./images/FasterRCNN/multi-scale.jpg)
+![multi-scale](images/FasterRCNN/multi-scale.jpg)
 
-![architecture](./images/FasterRCNN/architecture.jpg)
+![architecture](images/FasterRCNN/architecture.jpg)
 
-![RPN](./images/FasterRCNN/RPN.jpg)
+![RPN](images/FasterRCNN/RPN.jpg)
 
 #### Questions
 
@@ -1192,7 +1192,7 @@ L(p,u,t^u,v) = L_{cls}(p,u) + \lambda[u \ge 1]L_{loc}(t^u,v)
 
 <b><details><summary>**"You only look once: Unified, real-time object detection"**</summary></b>
 
-![model](./images/YOLO/model.jpg)
+![model](images/YOLO/model.jpg)
 
 #### Questions
 
