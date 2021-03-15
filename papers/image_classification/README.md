@@ -1,22 +1,38 @@
 # Image Classification
+## Content
+### 2012
+- [ ] [AlexNet](#alexnet)
 
-##### 2012
+### 2014
+- [x] [VGG](#vggnet)
+- [x] [NIN](#nin)
 
+### 2015
+- [x] [GoogleNet](#googlenet)
+- [x] [ResNet](#resnet)
+- [x] [Inception-v3](#inception-v3)
+
+###  2016
+- [x] [ResNet-v2](#resnet-v2)
+- [x] [Inception-v4](#inception-v4)
+
+### 2018
+- [x] [DenseNet](#densenet)
+
+-----------------
 ### AlexNet 
 
-<b><details><summary> **"Imagenet classification with deep convolutional neural networks"**</summary></b>
+**"Imagenet classification with deep convolutional neural networks"**
 
 #### Reference
 
 [1] [**"Imagenet classification with deep convolutional neural networks"**](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)
 
-</details>
 
-##### 2014
-
+--------------------
 ### VGGNet
 
-<b><details><summary> **"Very deep convolutional networks for large-scale image recognition"**</summary></b>
+**"Very deep convolutional networks for large-scale image recognition"**
 	
 
 1. The use of stack 3×3 filters is effient than of 5×5 or 7×7 filters
@@ -35,15 +51,15 @@
 
 [4] [Keras implement vgg-19](https://github.com/keras-team/keras-applications/blob/master/keras_applications/vgg19.py)
 
-</details>
 
+----------------------
 ### NIN
 
-<b><details><summary>**"Network In Network"**</summary></b>
+**"Network In Network"**
 	
 1. Proposed a new network structure--mlpconv layer
 
-  ![mlpconv](images/NIN/mlpconv.png)
+  ![mlpconv](../../images/NIN/mlpconv.png)
 
 2. Usually, fully connected layers are used at the end of network, however, they are prone to overfitting. This article used global average pooling layer as the last layer of the network, it is more native to the convolution structure by enforcing correspondences between feature maps and categories, and could prevent over-fitting.
 
@@ -53,18 +69,16 @@
 
 [2] [Review: NIN — Network In Network (Image Classification)](https://towardsdatascience.com/review-nin-network-in-network-image-classification-69e271e499ee)
 	
-</details>
+
 	
-
-##### 2015
-
+------------------
 ### GoogLeNet
 
-<b><details><summary>**"Going deeper with convolutions"**</summary></b>
+**"Going deeper with convolutions"**
 	
-![inception_naive](images/GoogleNet/inception_module_naive.png)
+![inception_naive](../../images/GoogleNet/inception_module_naive.png)
 
-![inception_module](images/GoogleNet/Inception_module.png)
+![inception_module](../../images/GoogleNet/Inception_module.png)
 
 1. **1×1 convolution** is used as a dimension reduction module to reduce the computation. By reducing the computation bottleneck, depth and width can be increased
 2. When image’s coming in, **different sizes of convolutions** as well as max pooling are tried. Then different kinds of features are extracted.
@@ -72,7 +86,7 @@
 4. **Auxiliary classifiers** for combating gradient vanishing problem, also providing regularization.
 5. besides the network design, the other stuffs like **ensemble methods**, multi-scale and multi-crop approaches are also essential to reduce the error rate
 
-![googlenet](images/GoogleNet/googlenet.png)
+![googlenet](../../images/GoogleNet/googlenet.png)
 
 #### Questions
 
@@ -99,14 +113,11 @@
 [2] [Pytorch implement](https://github.com/pytorch/vision/blob/master/torchvision/models/inception.py)
 
 [3] [Review: GoogLeNet (Inception v1)— Winner of ILSVRC 2014 (Image Classification)](https://medium.com/coinmonks/paper-review-of-googlenet-inception-v1-winner-of-ilsvlc-2014-image-classification-c2b3565a64e7)
-	
-</details>
 
+---------------------
 ### ResNet
 
-<b><details><summary> **"Deep residual learning for image recognition"**</summary></b>
-
-
+**"Deep residual learning for image recognition"**
 
 1. Degradation problem
 
@@ -118,13 +129,13 @@
 
    Let's consider an extreme condition, if the identity mapping were optimal, it would be easier to push the residual to zero than to fit an identity mapping.
 
-   ![res_block](images/ResNet/ResBlock.png)
+   ![res_block](../../images/ResNet/ResBlock.png)
 
    The dimension of x and F(x) must be equal, if not, we could perform a linear projection to match the dimensions.
 
 3. Bottleneck Architecture
 
-   ![bottleneck](images/ResNet/bottleneck.png)
+   ![bottleneck](../../images/ResNet/bottleneck.png)
 
    The 1x1 conv layer are used to reduce and then increase dimensions, leaving the 3x3 conv a bottleneck with smaller input/output dimensions.
 
@@ -159,12 +170,10 @@
 [3] [PyTorch Implementation](https://github.com/pytorch/vision/blob/master/torchvision/models/resnet.py)
 
 
-
-</details>
-
+------------
 ### Inception-v3
 
-<b><details><summary> **"Rethinking the Inception Architecture for Computer Vision"**</summary></b>
+**"Rethinking the Inception Architecture for Computer Vision"**
 	
 1. Factorizing Convolutions with Large Filter Size
 
@@ -172,23 +181,23 @@
 
    In practice, **it is found that employing this factorization does not work well on early layers, but it gives very good results on medium grid-size.**
 
-![moduleA](images/InceptionV2/moduleA.png)
+![moduleA](../../images/InceptionV2/moduleA.png)
 
-![moduleB](images/InceptionV2/moduleB.png)
+![moduleB](../../images/InceptionV2/moduleB.png)
 
-![moduleC](images/InceptionV2/moduleC.png)
+![moduleC](../../images/InceptionV2/moduleC.png)
 
 2. Utility of Auxiliary Classifiers
 
    The auxiliary classifiers act as **relularizer**.
 
-![auxiliary](images/InceptionV2/auxiliary.png)
+![auxiliary](../../images/InceptionV2/auxiliary.png)
 
 3. Efficient Grid Size Reduction
 
    ** Conventionally**, such as AlexNet and VGGNet, the feature map downsizing is done by max pooling. But the drawback is either **too greedy by max pooling followed by conv layer**, or **too expensive by conv layer followed by max pooling**. Here, an efficient grid size reduction is proposed as follows:
 
-![grid](images/InceptionV2/grid.png)
+![grid](../../images/InceptionV2/grid.png)
 
 With the efficient grid size reduction, **320 feature maps** are done by **conv with stride 2**. **320 feature maps** are obtained by **max pooling**. And these 2 sets of feature maps are **concatenated as 640 feature maps** and go to the next level of inception module.
 
@@ -196,7 +205,7 @@ With the efficient grid size reduction, **320 feature maps** are done by **conv 
 
 4. Overall Architecture
 
-![architecture](images/InceptionV2/architecture.png)
+![architecture](../../images/InceptionV2/architecture.png)
 
 5. General Design Principles
    1. **Avoid representational bottlenecks, especially early in the network.** One should avoid bottlenecks with extreme compression. In general, the representation size should gently decrease. Theoretically, information content can not be assessed merely by the dimensionality of the representation as it discards important factors like correlation structure, the dimensional merely provides a rough estimate of information content.
@@ -227,16 +236,12 @@ With the efficient grid size reduction, **320 feature maps** are done by **conv 
 
 [4] [Review: Inception-v3 — 1st Runner Up (Image Classification) in ILSVRC 2015](https://medium.com/@sh.tsang/review-inception-v3-1st-runner-up-image-classification-in-ilsvrc-2015-17915421f77c)
 	
-</details>
-	
-
-##### 2016
-
+---------------
 ### ResNet-v2
 
-<b><details><summary>**"Identity Mappings in Deep Residual Networks"**</summary></b>
+**"Identity Mappings in Deep Residual Networks"**
 
-![new residual](images/ResNetV2/new_residual.png)
+![new residual](../../images/ResNetV2/new_residual.png)
 
 1. Analysis of Deep Residual Networks
 
@@ -281,11 +286,11 @@ With the efficient grid size reduction, **320 feature maps** are done by **conv 
 
 [2] [Keras Implementation](https://github.com/keras-team/keras-applications/blob/master/keras_applications/resnet_common.py)
 
-</details>
 
+----------------------
 ### Inception-v4
 
-<b><details><summary> **"Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning"**</summary></b>
+**"Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning"**
 	
 1. It is studied that whether the Inception itself can be made more efficient by making it deeper and wider.
 
@@ -310,40 +315,32 @@ With the efficient grid size reduction, **320 feature maps** are done by **conv 
 [1] [[Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning](https://www.aaai.org/ocs/index.php/AAAI/AAAI17/paper/download/14806/14311)
 
 [2] [Keras Implementation](https://github.com/keras-team/keras-applications/blob/master/keras_applications/inception_resnet_v2.py)
-	
-</details>
-	
-### Attention
 
-<b><details><summary>**"Show, Attend and Tell Neural Image Caption Generation with Visual Attention"**</summary></b>
-	
-</details>
 
-##### 2018
-
+-------------------
 ### DenseNet 
 
-<b><details><summary>**"Densely Connected Convolutional Networks"**</summary></b>
+**"Densely Connected Convolutional Networks"**
 
 1. DenseBlock
 
    Standard ConvNet
 
-   ![standard](images\DenseNet\standard.png)
+   ![standard](../../images\DenseNet\standard.png)
 
    ResNet
 
-   ![resnet](images\DenseNet\resnet.png)
+   ![resnet](../../images\DenseNet\resnet.png)
 
    DenseNet
 
-   ![densenet](images\DenseNet\densenet.png)
+   ![densenet](../../images\DenseNet\densenet.png)
 
    Each layer obtains additional inputs from all preceding layers and passes on its own feature maps to all subsequent layers. 
 
    Feature maps output by current layer and preceding layers are combined together by concatenating them.
 
-   ![concat](images\DenseNet\forward.png)
+   ![concat](../../images\DenseNet\forward.png)
 
    DenseNet layers are very narrow (e.g., 12 filters per layer), adding only a small set of feature maps to the collective knowledge of remaining feature maps unchanged and the final classifier makes a decision based on all feature map in the network.
 
@@ -351,7 +348,7 @@ With the efficient grid size reduction, **320 feature maps** are done by **conv 
 
 2. Overall architecture
 
-   ![architecture](images\DenseNet\architecture.png)
+   ![architecture](../../images\DenseNet\architecture.png)
 
 3. Model Compactness
 
@@ -389,5 +386,3 @@ With the efficient grid size reduction, **320 feature maps** are done by **conv 
 [2] [Review: DenseNet — **Dense Convolutional Network** (Image Classification)](https://towardsdatascience.com/review-densenet-image-classification-b6631a8ef803)
 
 [2] [Keras Implementation](https://github.com/pytorch/vision/blob/master/torchvision/models/densenet.py)
-
-</details>

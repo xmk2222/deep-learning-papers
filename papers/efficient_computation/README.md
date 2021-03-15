@@ -1,18 +1,24 @@
 # Efficient Computation
+## Content
+### 2015
+- [ ] [Deep Compression](#deep-compression)
+
+### 2018
+- [ ] [survey](#survey)
 
 ##### 2015
 
 ### Deep Compression 
 
-<b><details><summary>**"Deep compression: Compressing deep neural network with pruning, trained quantization and huffman coding"**</summary></b>
+**"Deep compression: Compressing deep neural network with pruning, trained quantization and huffman coding"**
 	
-</details>
+
 
 ##### 2018
 
 ### Survey 
 
-<b><details><summary>**"Recent Advances in Efficient Computation of Deep Convolutional Neural Networks"**</summary></b>
+**"Recent Advances in Efficient Computation of Deep Convolutional Neural Networks"**
 	
 1. Pruning 剪枝
   
@@ -33,7 +39,6 @@
 5. Compact Design 结构设计
 	
 
-</details>
 
 ### Pruning
 

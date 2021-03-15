@@ -1,18 +1,27 @@
 # Modules
+## Content
+### 2014
+- [ ] [DropOut](#dropout)
 
-##### 2014
+### 2015
+- [x] [BatchNorm](#batchnorm)
 
+### 2016
+- [ ] [Layer Normalization](#layer-normalization)
+- [ ] [Weight Normalization](#weight-normalization)
+- [ ] [Rectifier](#rectifier)
+- [ ] [Net2Net](#net2net)
+
+----------------
 ### DropOut 
 
-<b><details><summary>**"Dropout: a simple way to prevent neural networks from overfitting"**</summary></b>
+**"Dropout: a simple way to prevent neural networks from overfitting"**
 	
-</details>
 
-##### 2015
-
+---------------------
 ### BatchNorm 
 
-<b><details><summary>**"Batch normalization: Accelerating deep network training by reducing internal covariate shift"**</summary></b>
+**"Batch normalization: Accelerating deep network training by reducing internal covariate shift"**
 	
 1. Why we use batch normalization?
 
@@ -24,9 +33,9 @@ batch normalization normalizes the output of a previous activation layer by subt
 
 batch normalization adds two trainable parameters to each layer, so the normalized output is multiplied by a “standard deviation” parameter (gamma) and add a “mean” parameter (beta). In other words, batch normalization lets SGD do the denormalization by changing only these two weights for each activation, instead of losing the stability of the network by changing all the weights
 
-![algorithm1](images/BatchNorm/algorithm.png)
+![algorithm1](../../images/BatchNorm/algorithm.png)
 
-![algorithm2](images/BatchNorm/algorithm2.png)
+![algorithm2](../../images/BatchNorm/algorithm2.png)
 
 > There is a subtle difference between training and inferencing, During training, it is normalized by 
 
@@ -88,38 +97,36 @@ batch normalization adds two trainable parameters to each layer, so the normaliz
 
 [3][Review: Batch Normalization — What the hey?](https://gab41.lab41.org/batch-normalization-what-the-hey-d480039a9e3b)
 	
-</details>
+	
 
-##### 2016
-
+-----------------
 ### Layer Normalization
 
-<b><details><summary>**"Layer Normalization"**</summary></b>
+**"Layer Normalization"**
 
 #### Reference
 
 [1] [Layer Normalization](https://arxiv.org/abs/1607.06450)
 
-</details>
 
+---------------------
 ### Weight Normalization
 
-<b><details><summary>**"Weight Normalization: A Simple Reparameterization to Accelerate Training of Deep Neural Networks"**</summary></b>
+**"Weight Normalization: A Simple Reparameterization to Accelerate Training of Deep Neural Networks"**
 
 #### Reference
 
 [1] [Weight Normalization: A Simple Reparameterization to Accelerate Training of Deep Neural Networks](https://arxiv.org/abs/1602.07868)
 
-</details>
 
+-----------------------
 ### Rectifier
 
-<b><details><summary>**"Delving deep into rectifiers: Surpassing human-level performance on imagenet classification"**</summary></b>
+**"Delving deep into rectifiers: Surpassing human-level performance on imagenet classification"**
 	
-</details>
 
+-----------------
 ### Net2Net 
 
-<b><details><summary>**"Net2net: Accelerating learning via knowledge transfer"**</summary></b>
+**"Net2net: Accelerating learning via knowledge transfer"**
 	
-</details>

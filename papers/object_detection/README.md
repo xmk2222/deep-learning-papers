@@ -1,12 +1,32 @@
 # Object Detection
+## Content
+### 2014
+- [x] [RCNN](#rcnn)
+- [x] [SPPNet](#sppnet)
 
-##### 2014
+### 2015
+- [x] [Fast RCNN](#fast-rcnn)
+- [x] [Faster RCNN](#faster-rcnn)
+- [x] [YOLO](#yolo)
+- [ ] [SSD](#ssd)
 
+### 2016
+- [ ] [R-FCN](#r-fcn)
+- [ ] [YOLO-V2](#yolo-v2)
+- [ ] [FPN](#fpn)
+
+### 2017
+- [ ] [RetinaNet](#retinanet)
+- [ ] [DCN](#dcn)
+- [ ] [YOLO-v3](#yolo-v3)
+
+
+--------------
 ### RCNN 
 
-<b><details><summary>**"Rich feature hierarchies for accurate object detection and semantic segmentation"**</summary></b>
+**"Rich feature hierarchies for accurate object detection and semantic segmentation"**
 
-![architecture](images/RCNN/architecture.jpg)
+![architecture](../../images/RCNN/architecture.jpg)
 
 #### Questions
 
@@ -28,17 +48,17 @@
 
    预训练CNN时对于和ground truth的IoU大于0.5的框视为正类，训练SVM时阈值为0.3
 
-</details>
 
+------------------
 ### SPPNet 
 
-<b><details><summary>**"Spatial pyramid pooling in deep convolutional networks for visual recognition"**</summary></b>
+**"Spatial pyramid pooling in deep convolutional networks for visual recognition"**
 
-![architecture](images/SPPNet/architecture.jpg)
+![architecture](../../images/SPPNet/architecture.jpg)
 
-![feature](images/SPPNet/feature.jpg)
+![feature](../../images/SPPNet/feature.jpg)
 
-![pyramid](images/SPPNet/pyramid.jpg)
+![pyramid](../../images/SPPNet/pyramid.jpg)
 
 #### Questions
 
@@ -58,15 +78,12 @@
 
    多阶段训练，需要硬盘存储
 
-</details>
+--------------
+### Fast RCNN 
 
-##### 2015
+**"Fast R-CNN"**
 
-### Fast R-CNN 
-
-<b><details><summary>**"Fast R-CNN"**</summary></b>
-
-​	![Architecture](images\FastRCNN\Architecture.JPG)
+![Architecture](../../images\FastRCNN\Architecture.JPG)
 
 A Fast R-CNN network takes as input an entire image and a set of object proposals. The network first processes the whole image with several convolutional (*conv*) and max pooling layers to produce a conv feature map. Then, for each object proposal a region of interest (*RoI*) pooling layer extracts a fixed-length feature vector from the feature map. Each feature vector is fed into a sequence of fully connected (*fc*) layers that finally branch into two sibling output layers: one that produces softmax probability estimates over K* object classes plus a catch-all “background” class and another layer that outputs four real-valued numbers for each of the *K* object classes. Each set of 4 values encodes refined bounding-box positions for one of the *K* classes.
 
@@ -91,17 +108,15 @@ L(p,u,t^u,v) = L_{cls}(p,u) + \lambda[u \ge 1]L_{loc}(t^u,v)
    1. 暴力搜索：所有图像在输入和输出时处理成固定像素
    2. 图像金字塔：训练时随机采样金字塔尺度
 
-</details>
+-------------------
+### Faster RCNN 
+**"Faster R-CNN: Towards real-time object detection with region proposal networks"**
 
-### Faster R-CNN 
+![multi-scale](../../images/FasterRCNN/multi-scale.jpg)
 
-<b><details><summary>**"Faster R-CNN: Towards real-time object detection with region proposal networks"**</summary></b>
+![architecture](../../images/FasterRCNN/architecture.jpg)
 
-![multi-scale](images/FasterRCNN/multi-scale.jpg)
-
-![architecture](images/FasterRCNN/architecture.jpg)
-
-![RPN](images/FasterRCNN/RPN.jpg)
+![RPN](../../images/FasterRCNN/RPN.jpg)
 
 #### Questions
 
@@ -134,13 +149,12 @@ L(p,u,t^u,v) = L_{cls}(p,u) + \lambda[u \ge 1]L_{loc}(t^u,v)
 
 [1] [pytorch implementation](https://github.com/chenyuntc/simple-faster-rcnn-pytorch)
 
-</details>
-
+----------------
 ### YOLO 
 
-<b><details><summary>**"You only look once: Unified, real-time object detection"**</summary></b>
+**"You only look once: Unified, real-time object detection"**
 
-![model](images/YOLO/model.jpg)
+![model](../../images/YOLO/model.jpg)
 
 #### Questions
 
@@ -182,63 +196,48 @@ L(p,u,t^u,v) = L_{cls}(p,u) + \lambda[u \ge 1]L_{loc}(t^u,v)
 **[1] [You Only Look Once: Unified, Real-Time Object Detection](http://arxiv.org/pdf/1506.02640)**
 
 
-
-</details>
-
+----------------
 ### SSD 
 
-<b><details><summary>**"SSD: Single Shot MultiBox Detector"**</summary></b>
+**"SSD: Single Shot MultiBox Detector"**
 	
-</details>
 
-##### 2016
-
+---------------
 ### R-FCN 
 
-<b><details><summary>**"R-FCN: Object Detection via Region-based Fully Convolutional Networks"**</summary></b>
+**"R-FCN: Object Detection via Region-based Fully Convolutional Networks"**
 	
-</details>
 
+--------------------
 ### YOLOv2 
 
-<b><details><summary>**"YOLO9000: Better, Faster, Stronger"**</summary></b>
+**"YOLO9000: Better, Faster, Stronger"**
 	
-</details>
 
+-------------------
 ### FPN 
 
-<b><details><summary>**"Feature Pyramid Networks for Object Detection"**</summary></b>
+**"Feature Pyramid Networks for Object Detection"**
 	
-</details>
 
-##### 2017
-
-### Mask R-CNN
-
-<b><details><summary>**"Mask R-CNN"**</summary></b>
-	
-</details>
-
+-------------------
 ### RetinaNet 
 
-<b><details><summary>**"Focal Loss for Dense Object Detection"**</summary></b>
+**"Focal Loss for Dense Object Detection"**
 	
-</details>
 
+-------------------------
 ### DCN 
 
-<b><details><summary>**"Deformable Convolutional Networks"**</summary></b>
+**"Deformable Convolutional Networks"**
 	
-</details>
+----------------------------
+### YOLO-v3 
 
-##### 2018
+**"YOLOv3: An Incremental Improvement"**
 
-### YOLOv3 
 
-<b><details><summary>**"YOLOv3: An Incremental Improvement"**</summary></b>
-	
-</details>
-
+---------------------------
 ## Image Segmentation
 
 FCN

@@ -1,25 +1,31 @@
 # Deep Generative Model
+## Content
+### 2013
+- [ ] [VAE](#vae)
 
-##### 2013
+### 2014
+- [ ] [GAN](#gan)
 
+### 2015
+- [ ] [VAE with Attention](#vae-with-attention)
+
+
+----------------
 ### VAE 
 
-<b><details><summary>**"Auto-encoding variational bayes"**</summary></b>
+**"Auto-encoding variational bayes"**
 	
-</details>
 
-##### 2014
 
+---------------
 ### GAN 
 
-<b><details><summary>**"Generative adversarial nets"**</summary></b>
+**"Generative adversarial nets"**
 	
-</details>
 
-##### 2015
 
+----------------
 ### VAE with attention 
 
-<b><details><summary>**"DRAW: A recurrent neural network for image generation"**</summary></b>
+**"DRAW: A recurrent neural network for image generation"**
 	
-</details>
