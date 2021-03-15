@@ -1,37 +1,42 @@
 # Compact Network Design
+## Content
+### 2016
+- [ ] [SqueezeNet](#squeezenet)
 
-##### 2016
+### 2017
+- [ ] [Xception](#xception)
+- [ ] [MobileNet](#mobilenet)
+- [ ] [ResNeXt](#resnext)
+- [ ] [ShuffleNet](#shufflenet)
+- [ ] [CondenseNet](#condensenet)
 
+### 2018
+- [ ] [MobileNetV2](#mobilenetv2)
+- [ ] [ShuffleNetV2](#shufflenetv2)
+- [ ] [EfficientNet](#efficientnet)
+---------------------
 ### SqueezeNet 
 
-<b><details><summary>**"SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size"**</summary></b>
+**"SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size"**
 	
-</details>
-
-##### 2017
 
 ### Xception 
 
-<b><details><summary>**"Xception: Deep Learning with Depthwise Separable Convolutions"**</summary></b>
+**"Xception: Deep Learning with Depthwise Separable Convolutions"**
 
-1. 
 
 #### Questions
 
 #### Reference
-
-
-
-</details>
 	
 
 ### MobileNet 
 
-<b><details><summary>**"MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications"**</summary></b>
+**"MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications"**
 	
 1. Depthwise separable convolution
 
-![DepthWiseConv](images/MobileNet/DepthWiseConv.png)
+![DepthWiseConv](../../images/MobileNet/DepthWiseConv.png)
 
 (This figure is a little confusing that the last 1x1 conv actually is a ordinary 1x1 conv layer that has depth of M, and there are N such filters)
 
@@ -54,7 +59,7 @@ $$
 
 4. Overall architecture
 
-![architecture](images/MobileNet/architecture.png)
+![architecture](../../images/MobileNet/architecture.png)
 
 #### Questions
 
@@ -73,20 +78,19 @@ $$
 [2][Keras implementation](https://github.com/keras-team/keras-applications/blob/master/keras_applications/mobilenet.py)
 
 [3][Review: MobileNetV1 — Depthwise Separable Convolution (Light Weight Model)](https://towardsdatascience.com/review-mobilenetv1-depthwise-separable-convolution-light-weight-model-a382df364b69)
-	
-</details>
+
 	
 ### ResNeXt 
 
-<b><details><summary>**"Aggregated Residual Transformations for Deep Neural Networks"**</summary></b>
+**"Aggregated Residual Transformations for Deep Neural Networks"**
 	
-</details>
+
 
 ### ShuffleNet 
 
-<b><details><summary>**"ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices"**</summary></b>
+**"ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices"**
 	
-1. Channel shuffle![channel shuffle](images/ShuffleNet/channel_shuffle.png)
+1. Channel shuffle![channel shuffle](../../images/ShuffleNet/channel_shuffle.png)
 
    Stacked group convolutions has one side effect: outputs from a certain channel are only derived from a small fraction of input channel, this property blocks information flow between channel groups and weakens representation.
 
@@ -94,7 +98,7 @@ $$
 
 2. Shuffle Unit
 
-   ![shuffle unit](images/ShuffleNet/unit.png)
+   ![shuffle unit](../../images/ShuffleNet/unit.png)
 
    (a) is a residual block with 3x3 depthwise convolution. Then replace the first 1x1 layer with pointwise group convolution followed by a channel shuffle operation. And the second pointwise group convolution is to recover the channel dimension to match the shortcut path.(Which is (b))
 
@@ -124,19 +128,17 @@ $$
 
 [1] [ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices](https://arxiv.org/abs/1707.01083)
 	
-</details>
+
 
 ### CondenseNet 
 
-<b><details><summary>**"CondenseNet: An Efficient DenseNet using Learned Group Convolutions"**</summary></b>
-	
-</details>
+**"CondenseNet: An Efficient DenseNet using Learned Group Convolutions"**
 
-##### 2018
+
 
 ### MobileNetV2 
 
-<b><details><summary>**"MobileNetV2: Inverted Residuals and Linear Bottlenecks"**</summary></b>
+**"MobileNetV2: Inverted Residuals and Linear Bottlenecks"**
 	
 1. Linear Bottlenecks
 
@@ -149,19 +151,19 @@ Assuming the manifold of interest is low-dimensional we can capture this by inse
 
 2. Inverted residuals
 
-![Inverted](images/MobileNetV2/inverted.png)
+![Inverted](../../images/MobileNetV2/inverted.png)
 
 $h \cdot w \cdot k \cdot t (k + d^2 + k')$
 
 3. Convolutional Blocks
 
-![conv block](images/MobileNetV2/ConvBlocks.png)
+![conv block](../../images/MobileNetV2/ConvBlocks.png)
 
 The first 1x1 Conv in MobileNetV2 is used for expanding input depth (by 6 default).
 
 4. Overall Architecture
 
-![architecture](images/MobileNetV2/architecture.png)
+![architecture](../../images/MobileNetV2/architecture.png)
 
 #### Questions
 
@@ -182,11 +184,11 @@ The first 1x1 Conv in MobileNetV2 is used for expanding input depth (by 6 defaul
 
 [3][Review: MobileNetV2 — Light Weight Model (Image Classification)](https://towardsdatascience.com/review-mobilenetv2-light-weight-model-image-classification-8febb490e61c)
 
-</details>
+
 
 ### ShuffleNetV2 
 
-<b><details><summary>**"ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design"**</summary></b>
+**"ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design"**
 	
 1. Metrics for efficient computation
 
@@ -229,9 +231,9 @@ The first 1x1 Conv in MobileNetV2 is used for expanding input depth (by 6 defaul
 
 3. ShuffleNetV2 
 
-   ![unit](images/ShuffleNetV2/unit.png)
+   ![unit](../../images/ShuffleNetV2/unit.png)
 
-   ![overall](images/ShuffleNetV2/overall.png)
+   ![overall](../../images/ShuffleNetV2/overall.png)
 
    Note that there is an additional 1x1 convolution layer added right before global averaged pooling to mix up features.
 
@@ -269,7 +271,7 @@ The first 1x1 Conv in MobileNetV2 is used for expanding input depth (by 6 defaul
 
 [**back to top**](#content)
 	
-</details>
+
 
 ### EfficientNet
 
