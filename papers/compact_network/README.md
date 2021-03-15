@@ -19,7 +19,7 @@
 
 **"SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size"**
 	
-
+----------------
 ### Xception 
 
 **"Xception: Deep Learning with Depthwise Separable Convolutions"**
@@ -29,7 +29,7 @@
 
 #### Reference
 	
-
+-------------------
 ### MobileNet 
 
 **"MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications"**
@@ -79,13 +79,13 @@ $$
 
 [3][Review: MobileNetV1 — Depthwise Separable Convolution (Light Weight Model)](https://towardsdatascience.com/review-mobilenetv1-depthwise-separable-convolution-light-weight-model-a382df364b69)
 
-	
+---------------------
 ### ResNeXt 
 
 **"Aggregated Residual Transformations for Deep Neural Networks"**
 	
 
-
+---------------------
 ### ShuffleNet 
 
 **"ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices"**
@@ -129,13 +129,13 @@ $$
 [1] [ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices](https://arxiv.org/abs/1707.01083)
 	
 
-
+---------------------
 ### CondenseNet 
 
 **"CondenseNet: An Efficient DenseNet using Learned Group Convolutions"**
 
 
-
+----------------------
 ### MobileNetV2 
 
 **"MobileNetV2: Inverted Residuals and Linear Bottlenecks"**
@@ -185,7 +185,7 @@ The first 1x1 Conv in MobileNetV2 is used for expanding input depth (by 6 defaul
 [3][Review: MobileNetV2 — Light Weight Model (Image Classification)](https://towardsdatascience.com/review-mobilenetv2-light-weight-model-image-classification-8febb490e61c)
 
 
-
+-------------------
 ### ShuffleNetV2 
 
 **"ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design"**
@@ -272,6 +272,6 @@ The first 1x1 Conv in MobileNetV2 is used for expanding input depth (by 6 defaul
 [**back to top**](#content)
 	
 
-
+----------------------
 ### EfficientNet
 
