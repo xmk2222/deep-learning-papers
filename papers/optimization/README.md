@@ -1,8 +1,15 @@
 # Optimization
+## Content
+- [x] [SGD](#sgd)
+- [x] [Momentum](#momentum)
+- [x] [NAG](#nag)
+- [x] [AdaGrad](#adagrad)
+- [ ] [Adam](#adam)
 
+-------------------
 ### SGD
 
-<b><details><summary>**"Stochastic Gradient Descent"**</summary></b>
+**"Stochastic Gradient Descent"**
 $$
 w_{t+1} = w_t -\alpha\frac{\partial L}{\partial w_t}
 $$
@@ -17,11 +24,10 @@ $$
    - mini-batch sgd：每次用一小批样本更新梯度。优点是收敛过程更稳定，也更快，也可以利用矩阵运算加速。缺点是容易被困在鞍点和局部最优
    - batch sgd：对整个数据集计算梯度然后更新。优点是每次更新方向一定是最优；缺点是会被困在鞍点或局部最优，且数据集大时更新速度非常慢
 
-</details>
-
+--------------------
 ### Momentum 
 
-<b><details><summary>**"On the importance of initialization and momentum in deep learning"**</summary></b>
+**"On the importance of initialization and momentum in deep learning"**
 $$
 w_{t+1} = w_t - \alpha V_t\\
 V_t = \beta V_{t-1} + (1 - \beta)\frac{\part L}{\part w_t}\\
@@ -38,11 +44,10 @@ $$
 
    动量过大容易从坡的一端冲过坡底冲上坡的另一端，来回震荡
 
-</details>
-
+---------------------
 ### NAG
 
-<b><details><summary>**"Nesterov Accelerated Gradient"**</summary></b>
+**"Nesterov Accelerated Gradient"**
 $$
 w_{t+1} = w_t - \alpha V_t\\
 V_t = \beta V_{t-1} + (1-\beta)\frac{\part L}{\part w^*}\\
@@ -56,11 +61,11 @@ $$
 
    为了避免动量法走的太快的问题，我们不是用当前的w的梯度进行更新，而是用预估的下一步的w的梯度进行更新。具体方法是用上一次的梯度，估计下一次更新后w的位置，然后计算该位置的梯度，用于叠加到动量上更新这一步的梯度。这样做的好处是当动量法到坡底后，可以预知下一步的梯度变化从而减速。
 
-</details>
 
+--------------------
 ### AdaGrad
 
-<b><details><summary>**"Adam: A method for stochastic optimization"**</summary></b>
+**"Adam: A method for stochastic optimization"**
 $$
 w_{t+1} = w_t - \frac{\alpha}{\sqrt{S_t+\epsilon}} \frac{\part L}{\part w_t}\\
 S_t = S_{t-1} + (\frac{\part L}{\part w_t})^2\\
@@ -68,28 +73,14 @@ S_t = S_{t-1} + (\frac{\part L}{\part w_t})^2\\
 \epsilon = 10^{-7}
 $$
 
-
-
-
-</details>
-
+----------------
 ### Adam 
 
-<b><details><summary>**"Adam: A method for stochastic optimization"**</summary></b>
-	
-</details>
-
-### 
+**"Adam: A method for stochastic optimization"**
 
 
-
-### Neural Optimizer 
-
-<b><details><summary>**"Learning to learn by gradient descent by gradient descent"**</summary></b>
-	
-</details>
-
-#### Reference
+---------------------------------------
+### Reference
 
 [1] [10 Gradient Descent Optimisation Algorithms + Cheat Sheet](https://towardsdatascience.com/10-gradient-descent-optimisation-algorithms-86989510b5e9)
 
