@@ -8,7 +8,7 @@
 
 ### 2016
 - [ ] [Layer Normalization](#layer-normalization)
-- [ ] [Weight Normalization](#weight normalization)
+- [ ] [Weight Normalization](#weight-normalization)
 - [ ] [Rectifier](#rectifier)
 - [ ] [Net2Net](#net2net)
 
