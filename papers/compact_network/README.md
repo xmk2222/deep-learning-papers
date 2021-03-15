@@ -5,14 +5,14 @@
 
 ### 2017
 - [ ] [Xception](#xception)
-- [ ] [MobileNet](#mobilenet)
+- [x] [MobileNet](#mobilenet)
 - [ ] [ResNeXt](#resnext)
-- [ ] [ShuffleNet](#shufflenet)
+- [x] [ShuffleNet](#shufflenet)
 - [ ] [CondenseNet](#condensenet)
 
 ### 2018
-- [ ] [MobileNetV2](#mobilenetv2)
-- [ ] [ShuffleNetV2](#shufflenetv2)
+- [x] [MobileNetV2](#mobilenetv2)
+- [x] [ShuffleNetV2](#shufflenetv2)
 - [ ] [EfficientNet](#efficientnet)
 ---------------------
 ### SqueezeNet 
